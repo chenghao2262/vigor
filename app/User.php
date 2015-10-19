@@ -38,4 +38,13 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+    public function sportRecords(){
+        return $this->hasMany('App\SportRecord','userName','name');
+    }
+
+    public function getTodaySportRecords(){
+        return $this->sportRecords()->where('date',\Carbon\Carbon::today()->format('Y-m-d'))->first();
+    }
 }

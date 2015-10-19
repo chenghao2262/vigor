@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Auth;
+use App\SportRecord;
 class HomeController extends Controller {
 
 	/*
@@ -31,7 +33,9 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('test');
+		$user = Auth::user();
+		$sportRecord = $user->getTodaySportRecords();
+		return view('test',compact('sportRecord'));
 	}
 
 }
