@@ -13,9 +13,9 @@ class CreateSportRecordsTable extends Migration
     public function up()
     {
         Schema::create('sportRecords', function (Blueprint $table) {
-            $table->increments('sportRed');
-            $table->string('userID');
-            $table->foreign('userID')->references('userID')->on('users')->onDelete('cascade');
+            $table->increments('sportRid');
+            $table->string('userName');
+            $table->foreign('userName')->references('name')->on('users')->onDelete('cascade');
             $table->date('date');
             $table->string('steps_detail');
             $table->string('distance_detail');
