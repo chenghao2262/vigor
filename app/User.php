@@ -45,6 +45,7 @@ class User extends Model implements AuthenticatableContract,
     }
 
     public function getTodaySportRecords(){
-        return $this->sportRecords()->where('date',\Carbon\Carbon::today()->format('Y-m-d'))->first();
+        return $this->sportRecords()->first();
+        //return $this->sportRecords()->where('date',\Carbon\Carbon::today()->format('Y-m-d'))->first();
     }
 }
