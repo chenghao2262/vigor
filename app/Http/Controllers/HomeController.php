@@ -36,6 +36,7 @@ class HomeController extends Controller {
 		$user = Auth::user();
 		$sportRecord = $user->getTodaySportRecords();
 		return view('test',compact('sportRecord'));
+		//return view('backend.homepage');
 	}
 
 }
