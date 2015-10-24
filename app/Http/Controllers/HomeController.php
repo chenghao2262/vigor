@@ -34,9 +34,9 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$user = Auth::user();
-		$sportRecord = $user->getTodaySportRecords();
-		return view('test',compact('sportRecord'));
-		//return view('backend.homepage');
+		 $sportRecord = $user->getTodaySportRecords();
+		// return view('test',compact('sportRecord'));
+		return view('backend.homepage',compact('sportRecord'));
 	}
 
 }

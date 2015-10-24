@@ -184,7 +184,20 @@
                         <li class="active" title="" >
                             <a  href="#" >运动管理</a>
                         </li>
+                         <li class="inactive" title="" >
+                            <a  href="#" >建议管理</a>
+                        </li>
                     </ul>
+                </li>
+                <li class=" nav-dropdown inactive">
+                    <a href="#" title="Dashboard">
+                        <i class="fa fa-paper-plane-o"></i> 兴趣组
+                    </a>
+                </li>
+                <li class=" nav-dropdown inactive">
+                    <a href="#" title="Dashboard">
+                        <i class="fa fa-user fa-fw"></i> 朋友圈
+                    </a>
                 </li>
 
             </ul>
@@ -241,8 +254,7 @@
                         <div class="col-md-6">
                             <div class="panel  panel-solid-success widget-mini">
                                 <div class="panel-body" style="font-size: 130%">
-
-                                    <span class="total text-center">3,200步</span>
+                                    <span class="total text-center">{{$sportRecord->steps}}步</span>
                                     <span class="title text-center">今日已走</span>
                                 </div>
                             </div>
@@ -250,7 +262,7 @@
                         <div class="col-md-6">
                             <div class="panel panel-solid-danger widget-mini">
                                 <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">5,000步</span>
+                                    <span class="total text-center">{{$sportRecord->steps}}步</span>
                                     <span class="title text-center">目标步数</span>
                                 </div>
                             </div>
@@ -258,7 +270,7 @@
                         <div class="col-md-6">
                             <div class="panel panel-solid-success widget-mini">
                                 <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">2.73km</span>
+                                    <span class="total text-center">{{$sportRecord->distance}}km</span>
                                     <span class="title text-center">今日里程</span>
                                 </div>
                             </div>
@@ -266,7 +278,7 @@
                         <div class="col-md-6">
                             <div class="panel panel-solid-warning widget-mini">
                                 <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">198cal</span>
+                                    <span class="total text-center">{{$sportRecord->calories}}cal</span>
                                     <span class="title text-center">今日燃烧</span>
                                 </div>
                             </div>
@@ -284,8 +296,8 @@
                             <canvas width="220" height="136" id="gauge" class=""></canvas>
                             <div class="goal-wrapper">
                                 <span class="gauge-value pull-left"></span>
-                                <span id="gauge-text" class="gauge-value pull-left">3,200</span>
-                                <span id="goal-text" class="goal-value pull-right">5,000</span>
+                                <span id="gauge-text" class="gauge-value pull-left">{{$sportRecord->steps}}</span>
+                                <span id="goal-text" class="goal-value pull-right">2,0000</span>
                             </div>
                         </div>
                     </div>
@@ -615,7 +627,8 @@
 <script src="assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js"></script>
 <!-- Gauge  -->
 <script src="assets/plugins/gauge/gauge.min.js"></script>
-<script src="assets/plugins/gauge/gauge-demo.js"></script>
+<script src="assets/plugins/gauge/gaugeV.js"></script>
+<!-- <script src="assets/plugins/gauge/gauge-demo.js"></script> -->
 <!-- Calendar  -->
 <script src="assets/plugins/calendar/clndr.js"></script>
 <script src="assets/plugins/calendar/clndr-demo.js"></script>
@@ -625,6 +638,7 @@
 <script src="assets/plugins/dropzone/js/dropzone.min.js"></script>
 <!--Load these page level functions-->
 <script>
+    showSteps(20000,{{$sportRecord->steps}});
     $(document).ready(function() {
         app.dateRangePicker();
         app.chartJs();
@@ -633,6 +647,7 @@
         app.spinStop();
     });
 </script>
+
 
 </body>
 

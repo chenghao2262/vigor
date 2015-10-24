@@ -51,3 +51,11 @@ label{
   font-weight:100!important; 
   margin-bottom: 7px!important;
 }
+
+#forgetpasswordBG{
+  background: url(../img/main-bg.jpg) no-repeat center top;
+}
+
+#forgetpasswordMarginBot{
+  margin-bottom: 450px;
+}
