@@ -14,6 +14,14 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('watcherName')->index();
+            $table->foreign('watcherName')->references('name')->on('users')->onDelete('cascade');
+            $table->string('expertName')->index();
+            $table->foreign('expertName')->references('name')->on('experts')->onDelete('cascade');
+            $table->integer('startSegment');
+            $table->integer('endSegment');
+            $table->integer('payment');
+            $table->integer('status');
             $table->timestamps();
         });
     }

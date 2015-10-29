@@ -14,6 +14,9 @@ class CreateOrderChatRecordsTable extends Migration
     {
         Schema::create('orderChatRecords', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('orderId');
+            $table->foreign('orderId')->references('id')->on('orders')->onDelete('cascade');
+            $table->text('content');
             $table->timestamps();
         });
     }

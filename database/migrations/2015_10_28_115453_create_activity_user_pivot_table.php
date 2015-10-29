@@ -14,10 +14,10 @@ class CreateActivityUserPivotTable extends Migration
     {
         Schema::create('activity_user', function (Blueprint $table) {
             $table->integer('activity_id')->unsigned()->index();
-            $table->foreign('activity_id')->references('id')->on('activities')->onDelete('cascade');
-            $table->integer('user_id')->unsigned()->index();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->primary(['activity_id', 'user_id']);
+            $table->foreign('activity_id')->references('activityID')->on('activities')->onDelete('cascade');
+            $table->string('userName')->index();
+            $table->foreign('userName')->references('name')->on('users')->onDelete('cascade');
+            $table->primary(['activity_id', 'userName']);
         });
     }
 

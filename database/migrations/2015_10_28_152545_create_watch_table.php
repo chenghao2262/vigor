@@ -14,6 +14,10 @@ class CreateWatchTable extends Migration
     {
         Schema::create('watch', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('watcherName')->index();
+            $table->foreign('watcherName')->references('name')->on('users')->onDelete('cascade');
+            $table->string('expertName')->index();
+            $table->foreign('expertName')->references('name')->on('experts')->onDelete('cascade');
             $table->timestamps();
         });
     }

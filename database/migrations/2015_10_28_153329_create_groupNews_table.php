@@ -14,6 +14,10 @@ class CreateGroupNewsTable extends Migration
     {
         Schema::create('groupNews', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('groupID');
+            $table->foreign('groupID')->references('id')->on('groups')->onDelete('cascade');
+            $table->string('userName');
+            $table->text('content');
             $table->timestamps();
         });
     }
