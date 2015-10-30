@@ -64,20 +64,20 @@
             return Math.round(Math.random() * 100)
         };
         var barChartData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            labels: ["January", "February", "March", "April", "May", "June", "July"，"January", "February", "March", "April", "May", "June", "July"],
             datasets: [{
                 fillColor: 'rgba(26,188,156,0.5)',
                 strokeColor: 'rgba(255,255,255,0.8)',
                 highlightFill: 'rgba(26,188,156,1)',
                 highlightStroke: 'rgba(255,255,255,0.8)',
-                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()，randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
             }, {
                 label: 'CPU Load',
                 fillColor: 'rgba(31,123,182,0.5)',
                 strokeColor: 'rgba(255,255,255,0.8)',
                 highlightFill: 'rgba(31,123,182,1)',
                 highlightStroke: 'rgba(255,255,255,0.8)',
-                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()，randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
             }]
 
         }

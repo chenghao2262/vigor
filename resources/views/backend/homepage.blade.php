@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{{ asset('/assets/css/simple-line-icons.css') }}">
     <!-- CSS Animate -->
     <link rel="stylesheet" href="{{ asset('/assets/css/animate.css') }}">
+    <!-- C3 Chart-->
+    <link rel="stylesheet" href="assets/plugins/c3Chart/css/c3.css">
     <!-- Daterange Picker -->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/daterangepicker/daterangepicker-bs3.css') }}">
     <!-- Calendar demo -->
@@ -177,28 +179,44 @@
             <h5 class="sidebar-header">Navigation</h5>
             <ul class="nav nav-pills nav-stacked">
                 <li class=" nav-dropdown open active">
-                    <a href="#" title="Dashboard">
-                        <i class="fa  fa-fw fa-tachometer"></i> 健康管理
+                    <a href="#" title="健康管理" >
+                        <i class="fa  fa-fw fa-heartbeat"></i> 健康管理
                     </a>
                     <ul class=" nav-sub">
-                        <li class="active" title="" >
-                            <a  href="#" >运动管理</a>
+                        <li>
+                            <a  href="#" title="运动管理">运动管理</a>
                         </li>
-                         <li class="inactive" title="" >
-                            <a  href="#" >建议管理</a>
+                         <li>
+                            <a  href="#" title="建议管理">建议管理</a>
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-dropdown inactive">
-                    <a href="#" title="Dashboard">
-                        <i class="fa fa-paper-plane-o"></i> 兴趣组
+                <li class=" nav-dropdown">
+                    <a href="#" title="活动管理">
+                        <i class="fa fa-fw fa-tachometer"></i> 活动管理
                     </a>
                 </li>
-                <li class=" nav-dropdown inactive">
-                    <a href="#" title="Dashboard">
+                <li class="nav-dropdown">
+                    <a href="#" title="兴趣组" data-toggle="collapse">
+                        <i class="fa fa-fw fa-paper-plane-o"></i> 兴趣组
+                    </a>
+                </li>
+                <li class=" nav-dropdown">
+                    <a href="activitymanage.blade.php" title="朋友圈">
                         <i class="fa fa-user fa-fw"></i> 朋友圈
                     </a>
                 </li>
+                <li class="nav-dropdown">
+                    <a href="#" title="健货商城" data-toggle="collapse">
+                        <i class="fa fa-fw fa-shopping-cart"></i> 健货商城
+                    </a>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#" title="健货商城" data-toggle="collapse">
+                        <i class="fa fa-fw fa-comment"></i> 专业咨询
+                    </a>
+                </li>
+                
 
             </ul>
         </nav>
@@ -341,6 +359,25 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Interaction Zoom</h3>
+                            <div class="actions pull-right">
+                                <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="panel-body text-center">
+                            <div class="chart">
+                                <div id="zoom"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
         </section>
 
     </section>
@@ -636,6 +673,10 @@
 <!-- Switch -->
 <script src="assets/plugins/switchery/switchery.min.js"></script>
 <script src="assets/plugins/dropzone/js/dropzone.min.js"></script>
+ <!--Page Leve JS -->
+<script src="assets/plugins/c3Chart/js/d3.v3.min.js"></script>
+<script src="assets/plugins/c3Chart/js/c3.js"></script>
+<script src="assets/plugins/c3Chart/js/c3-V.js"></script>
 <!--Load these page level functions-->
 <script>
     showSteps(20000,{{$sportRecord->steps}});
