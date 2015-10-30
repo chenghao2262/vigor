@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Activity;
 
 class ActivityController extends Controller
 {
@@ -14,24 +15,59 @@ class ActivityController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * è¿”å›æ´»åŠ¨ç•Œé¢
+     */
+
     public function index()
     {
-        return ("»î¶¯Ê×Ò³");
+        $user = Auth::user();
+
+        //ç”¨æˆ·å‚ä¸çš„æ´»åŠ¨
+        $activity = $user->activities();
+        //dd($activity->get()->count());
+
+        //å¾—åˆ°æœ€æ–°æ´»åŠ¨
+        $latestActivities = Activity::latest();
+        dd($latestActivities->take(5)->get()->toArray());
+
+        return view('backend.activity',compact('sportRecord','latestActivities'));
+
     }
 
-    public function newActivity()
+    public function newActivity(Request $request)
     {
-        return ("´¦Àí·¢²¼»î¶¯ÇëÇó");
+        dd('ss');
+        $user = Auth::user();
+        $userName = $user->name;
+        $name = $request->input('name');
+        $describe = $request->input('describe');
+        $location = $request->input('location');
+        $start = $request->input('start');
+        $end = $request->input('end');
+
+        Activity::create([
+            'name'=>$name,
+            'describe'=>$describe,
+            'founderName'=>$userName,
+            'location'=>$location,
+            'start'=>$start,
+            'end'=>$end
+        ]);
+
+        return redirect('/activity');
+
+
     }
 
     public function getActivity()
     {
-        return ("·µ»Ø»î¶¯ÏêÇé");
+        return ("è¿”å›æ´»åŠ¨è¯¦æƒ…");
     }
 
     public function postActivity()
     {
-        return ("²ÎÓë»î¶¯");
+        return ("å‚ä¸æ´»åŠ¨");
     }
 
 }

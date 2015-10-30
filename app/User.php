@@ -40,12 +40,18 @@ class User extends Model implements AuthenticatableContract,
     protected $hidden = ['password', 'remember_token'];
 
 
+    public function activities(){
+        return $this->hasMany('App\Activity','founderName','name');
+    }
+
+
     public function sportRecords(){
         return $this->hasMany('App\SportRecord','userName','name');
     }
 
     public function getTodaySportRecords(){
-        return $this->sportRecords()->first();
+
+        return $this->sportRecords()->first();  //for test
         //return $this->sportRecords()->where('date',\Carbon\Carbon::today()->format('Y-m-d'))->first();
     }
 }

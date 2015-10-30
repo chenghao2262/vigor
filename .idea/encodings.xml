@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/database/seeds/ActivityTableSeeder.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/public/assets" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/public/css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/public/fonts" charset="UTF-8" />
@@ -11,5 +13,6 @@
     <file url="file://$PROJECT_DIR$/resources/views/backend/homepage.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/home.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/test.blade.php" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

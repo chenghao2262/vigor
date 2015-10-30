@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
+Route::get('/test','TestController@index');
+Route::get('/testget','ActivityController@index');
 
 Route::get('/sports/index', 'SportsController@index');
 Route::get('/sports/index/{date}', 'SportsController@getStatOn');
