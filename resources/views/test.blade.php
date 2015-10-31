@@ -32,26 +32,32 @@
 </head>
 <body>
     <div>
-        <form class="form-inline signup" role="form" method="POST" action="{{ url('/activity') }}">
+        <form class="form-inline signup" role="form" method="POST" action="{{ url('/friends/news') }}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
-                <div>
-                    <input type="text" class="form-control"  name="name"  placeholder="Name">
-                </div>
-                <div>
-                    <input type="text" class="form-control"  name="describe"  placeholder="describe">
-                </div>
-                <div>
-                    <input type="text" class="form-control" name="location"  placeholder="location">
-                </div>
-                <div>
-                    <input type="text" class="form-control"  name="start"  placeholder="start">
-                </div>
-                <div>
-                    <input type="text" class="form-control"  name="end"  placeholder="end">
-                </div>
+                {{--这是活动创建表单--}}
+                {{--<div>--}}
+                    {{--<input type="text" class="form-control"  name="name"  placeholder="Name">--}}
+                {{--</div>--}}
+                {{--<div>--}}
+                    {{--<input type="text" class="form-control"  name="describe"  placeholder="describe">--}}
+                {{--</div>--}}
+                {{--<div>--}}
+                    {{--<input type="text" class="form-control" name="location"  placeholder="location">--}}
+                {{--</div>--}}
+                {{--<div>--}}
+                    {{--<input type="text" class="form-control"  name="start"  placeholder="start">--}}
+                {{--</div>--}}
+                {{--<div>--}}
+                    {{--<input type="text" class="form-control"  name="end"  placeholder="end">--}}
+                {{--</div>--}}
 
                 <!-- </div> -->
+
+                <div>
+                    <input type="text" class="form-control"  name="content"  placeholder="content">
+                </div>
+
                 <div>
                     <button type="submit" class="btn btn-theme">Sign In</button>
 

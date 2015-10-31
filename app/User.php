@@ -99,7 +99,6 @@ class User extends Model implements AuthenticatableContract,
                                       ->where('friendName',$userName)
                                       ->select(DB::raw('userName as name,portrait'));
 
-
         $all = $first->unionAll($second);
 
         //$result = $all->join('users','name','=','users.name');
@@ -107,6 +106,65 @@ class User extends Model implements AuthenticatableContract,
         return $all;
 
 
+    }
+
+    /**
+     * 返回朋友圈前30条消息
+     */
+    public function friendsNews(){
+
+        $userName = $this->name;
+
+        $first = DB::table('friends')->where('userName',$userName)
+                                     ->select(DB::raw('friendName as name'));
+
+
+        $second = DB::table('friends')->where('friendName',$userName)
+                                      ->select(DB::raw('userName as name'));
+
+        $all = $first->unionAll($second)->get();
+
+        $name = array();
+        $name[] = $userName;
+        for($x=0;$x<count($all);$x++){
+            $name[] = $all[$x]->name;
+        }
+
+        $news =  DB::table('blogs') ->whereIn('userName', $name)
+                                    ->orderBy('created_at','desc')
+                                    ->take('30')
+                                    ->get();
+
+        return $news;
+    }
+
+    /**
+     * 返回朋友运动步数排名
+     */
+    public function friendsRank(){
+        $userName = $this->name;
+
+        $first = DB::table('friends')->where('userName',$userName)
+            ->select(DB::raw('friendName as name'));
+
+
+        $second = DB::table('friends')->where('friendName',$userName)
+            ->select(DB::raw('userName as name'));
+
+        $all = $first->unionAll($second)->get();
+
+        $name = array();
+        $name[] = $userName;
+        for($x=0;$x<count($all);$x++){
+            $name[] = $all[$x]->name;
+        }
+
+        $rank = DB::table('sportRecords')->whereIn('userName',$name)
+                                        // ->where('date',\Carbon\Carbon::today()->format('Y-m-d'))
+                                         ->orderBy('steps','desc')
+                                         ->select('userName','steps')
+                                         ->get();
+        dd($rank);
     }
 
 }

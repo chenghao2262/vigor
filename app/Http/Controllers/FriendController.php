@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Blog;
 
 class FriendController extends Controller
 {
@@ -19,29 +20,43 @@ class FriendController extends Controller
     {
         $user = Auth::user();
         $friends = $user->friends()->get();
-        dd($friends);
+        //dd($friends);
 
         return $friends;
     }
 
     public function getNews()
     {
-        return ("����᷵����Ϣ�б�JSON");
+        $user = Auth::user();
+        $news = $user->friendsNews();
+        return $news;
     }
 
-    public function postNews()
+    public function postNews(Request $request)
     {
-        return ("���ﴦ������Ϣ");
+        $user = Auth::user();
+        $name = $user->name;
+        $content = $request->input('content');
+
+        $blog = new Blog();
+        $blog->userName = $name;
+        $blog->content = $content;
+        $blog->save();
+
+        return redirect('/friends/news');
+
     }
 
     public function postComments()
     {
-        return ("���ﴦ��������");
+        return ("");
     }
 
     public function getRank()
     {
-        return ("���ﷵ������");
+        $user = Auth::user();
+
+        return $user->friendsRank();
     }
 
 
