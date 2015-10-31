@@ -24,20 +24,19 @@ class ActivityController extends Controller
         $user = Auth::user();
 
         //用户参与的活动
-        $activity = $user->activities();
-        //dd($activity->get()->count());
+        $activity = $user->activitiesHasJoined();
+        dd($activity->get()->toArray());
 
         //得到最新活动
-        $latestActivities = Activity::latest();
-        dd($latestActivities->take(5)->get()->toArray());
+        $latestActivities = Activity::latest()->take(5)->get()->toArray();
+        dd($latestActivities);
 
         return view('backend.activity',compact('sportRecord','latestActivities'));
-
     }
 
     public function newActivity(Request $request)
     {
-        dd('ss');
+
         $user = Auth::user();
         $userName = $user->name;
         $name = $request->input('name');
@@ -46,28 +45,33 @@ class ActivityController extends Controller
         $start = $request->input('start');
         $end = $request->input('end');
 
-        Activity::create([
-            'name'=>$name,
-            'describe'=>$describe,
-            'founderName'=>$userName,
-            'location'=>$location,
-            'start'=>$start,
-            'end'=>$end
-        ]);
+        //见鬼，create居然崩溃，只能暂时用如下愚蠢的办法来创建活动了
+        $activity = new Activity();
+        $activity->name=$name;
+        $activity->describe=$describe;
+        $activity->location=$location;
+        $activity->founderName=$userName;
+        $activity->start=$start;
+        $activity->end=$end;
+
+        $activity->save();
 
         return redirect('/activity');
-
-
     }
 
-    public function getActivity()
+    public function getActivity($id)
     {
-        return ("返回活动详情");
+        $activity =  Activity::find($id);
+        $participants = $activity->participants()->get()->toArray();
+        //dd($participants);
+        return $activity;
     }
 
-    public function postActivity()
+    public function joinActivity($id)
     {
-        return ("参与活动");
+        $user = Auth::user();
+        $user->activitiesHasJoined()->attach($id);
+        return redirect('/activity');
     }
 
 }

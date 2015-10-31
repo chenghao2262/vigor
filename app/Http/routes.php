@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::get('/test','TestController@index');
-Route::get('/testget','ActivityController@index');
+Route::get('/testget','FriendController@getlist');
 
 Route::get('/sports/index', 'SportsController@index');
 Route::get('/sports/index/{date}', 'SportsController@getStatOn');
@@ -47,7 +47,7 @@ Route::get ('/friends/rank', 'FriendController@getRank');
 Route::get ('/activity', 'ActivityController@index');
 Route::post('/activity', 'ActivityController@newActivity');
 Route::get ('/activity/{id}', 'ActivityController@getActivity');
-Route::post('/activity/{id}', 'ActivityController@postActivity');
+Route::get ('/activity/{id}/participation', 'ActivityController@joinActivity');
 
 Route::get ('/group', 'GroupController@index');
 Route::get ('/group/{id}', 'GroupController@getGroup');

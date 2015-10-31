@@ -35,11 +35,11 @@ class SportsController extends Controller
 
     public function getStatOn($date)
     {
-        return("没这个功能");
+        return("");
     }
 
 
    public function getStatBetween($start,$end){
-       return("呵呵");
+       return("");
    }
 }

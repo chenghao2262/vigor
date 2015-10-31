@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class FriendController extends Controller
 {
@@ -16,27 +17,31 @@ class FriendController extends Controller
 
     public function getList()
     {
-        return ("这里会返回好友列表JSON");
+        $user = Auth::user();
+        $friends = $user->friends()->get();
+        dd($friends);
+
+        return $friends;
     }
 
     public function getNews()
     {
-        return ("这里会返回信息列表JSON");
+        return ("锟斤拷锟斤拷岱碉拷锟斤拷锟较拷斜锟絁SON");
     }
 
     public function postNews()
     {
-        return ("这里处理创建消息");
+        return ("锟斤拷锟斤处锟斤拷锟斤拷锟斤拷息");
     }
 
     public function postComments()
     {
-        return ("这里处理创建评论");
+        return ("锟斤拷锟斤处锟斤拷锟斤拷锟斤拷锟斤拷");
     }
 
     public function getRank()
     {
-        return ("这里返回排名");
+        return ("锟斤拷锟斤返锟斤拷锟斤拷锟斤拷");
     }
 
 

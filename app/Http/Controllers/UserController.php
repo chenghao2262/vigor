@@ -16,17 +16,17 @@ class UserController extends Controller
 
     public function index()
     {
-        return ("用户管理界面");
+        return ("");
     }
 
     public function getPermission()
     {
-        return ("权限管理页面");
+        return ("");
     }
 
     public function postPermission()
     {
-        return ("权限修改");
+        return ("");
     }
 
 

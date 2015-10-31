@@ -12,7 +12,14 @@ class Activity extends Model
 
     protected $fillable = ['activityID','name', 'describe','location','"founderName','end','portrait'];
 
+
+
     public function scopeLatest($query){
         return $query->orderBy('created_at','desc');
+    }
+
+    public function participants(){
+        return $this->belongsToMany('App\User','activity_user','activity_id','userName');
+
     }
 }
