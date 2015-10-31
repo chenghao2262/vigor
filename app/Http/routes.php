@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::get('/test','TestController@index');
-Route::get('/testget','FriendController@getRank');
+Route::get('/testget/{suggestionId}','ExpertController@getSuggestionAt');
 
 Route::get('/sports/index', 'SportsController@index');
 Route::get('/sports/index/{date}', 'SportsController@getStatOn');
@@ -32,8 +32,10 @@ Route::get ('/expert/articles/{articleId}', 'ExpertController@getArticle');
 Route::post('/expert/article', 'ExpertController@publishArticle');
 Route::get ('/expert/{expertId}/availableTime', 'ExpertController@getAvailableTime');
 Route::post('/expert/order', 'ExpertController@postOrder');
+
 Route::post('/expert/order/chat', 'ExpertController@postChat');
 Route::post('/expert/order/grade', 'ExpertController@postGrade');
+
 Route::post('/expert/suggestion', 'ExpertController@makeSuggestion');
 Route::get ('/expert/suggestion', 'ExpertController@getSuggestion');
 Route::get ('/expert/suggestion/{suggestionId}', 'ExpertController@getSuggestionAt');

@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AvailableTime extends Model
 {
-    //
+    protected $table = 'availableTime';
+
+    protected $primaryKey = 'ATimeID';
 }

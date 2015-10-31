@@ -24,12 +24,12 @@ class ActivityController extends Controller
         $user = Auth::user();
 
         //用户参与的活动
-        $activity = $user->activitiesHasJoined();
-        dd($activity->get()->toArray());
+        $activity = $user->activitiesHasJoined()->get()->toArray();
+        //dd($activity);
 
         //得到最新活动
         $latestActivities = Activity::latest()->take(5)->get()->toArray();
-        dd($latestActivities);
+        //dd($latestActivities);
 
         return view('backend.activity',compact('sportRecord','latestActivities'));
     }

@@ -167,4 +167,19 @@ class User extends Model implements AuthenticatableContract,
         dd($rank);
     }
 
+    /**
+     * 返回关注专家列表
+     */
+    public function getExperts(){
+        return $this->belongsToMany('App\Expert','watch','watcherName','expertName');
+
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * 返回所有获得的建议
+     */
+    public function getSuggestions(){
+        return $this->hasMany('App\Suggestion','watcherName','name');
+    }
 }

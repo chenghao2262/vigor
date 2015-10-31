@@ -32,7 +32,7 @@
 </head>
 <body>
     <div>
-        <form class="form-inline signup" role="form" method="POST" action="{{ url('/friends/news') }}">
+        <form class="form-inline signup" role="form" method="POST" action="{{ url('/expert/order') }}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
                 {{--这是活动创建表单--}}
@@ -54,12 +54,64 @@
 
                 <!-- </div> -->
 
+                {{--这是朋友圈发动态--}}
+                {{--<div>--}}
+                    {{--<input type="text" class="form-control"  name="content"  placeholder="content">--}}
+                {{--</div>--}}
+
+                {{--这是专家发布文章--}}
+                {{--<div>--}}
+                {{--<input type="text" class="form-control"  name="title"  placeholder="title">--}}
+                {{--</div>--}}
+                {{--<div>--}}
+                {{--<input type="text" class="form-control"  name="content"  placeholder="content">--}}
+                {{--</div>--}}
+
+                {{--这里是订单部分--}}
                 <div>
-                    <input type="text" class="form-control"  name="content"  placeholder="content">
+                    <input type="hidden" name="expertName" value="njusmx"/>
                 </div>
 
+                <div class="form-group" >
+                    <label class="col-sm-3 control-label" style="color:#000000;">date</label>
+                    <div class="col-sm-6" >
+                        <label class="radio-inline" style="color:#000000;">
+                            <input class="icheck" type="radio"   name="date" value="2015-10-29">2015-10-29</label>
+                        <label class="radio-inline" style="color:#000000;">
+                            <input class="icheck" type="radio" name="date" value="2015-10-30">2015-10-30</label>
+                        <label class="radio-inline" style="color:#000000;">
+                            <input class="icheck" type="radio" name="date" value="2015-10-31">2015-10-31</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" style="color:#000000;">segment</label>
+                    <div class="col-sm-6">
+                        <label class="checkbox-inline" style="color:#000000;">
+                            <input class="icheck" type="checkbox" name="segment[]" value="37">37</label>
+                        <label class="checkbox-inline" style="color:#000000;">
+                            <input class="icheck" type="checkbox" name="segment[]" value="38">38</label>
+                        <label class="checkbox-inline" style="color:#000000;">
+                            <input class="icheck" type="checkbox" name="segment[]" value="39">39</label>
+                    </div>
+                </div>
                 <div>
-                    <button type="submit" class="btn btn-theme">Sign In</button>
+                     <input type="text" class="form-control"  name="payment"  value="100" readonly>
+                </div>
+
+                {{--这是专家发布建议--}}
+                {{--<div>--}}
+                     {{--<input type="text" class="form-control"  name="title"  placeholder="title">--}}
+                {{--</div>--}}
+                {{--<div>--}}
+                     {{--<input type="text" class="form-control"  name="content"  placeholder="content">--}}
+                {{--</div>--}}
+                {{--<div>--}}
+                     {{--<input type="text" class="form-control"  name="watcherName"  value="njusmx" readonly>--}}
+                {{--</div>--}}
+
+
+                <div>
+                    <button type="submit" class="btn btn-theme">commit</button>
 
                 </div>
             </div>
