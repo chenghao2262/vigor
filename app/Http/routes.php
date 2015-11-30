@@ -16,9 +16,10 @@ Route::get('/home', 'HomeController@index');
 Route::get('/test','TestController@index');
 Route::get('/testget/{suggestionId}','ExpertController@getSuggestionAt');
 
-Route::get('/sports/index', 'SportsController@index');
-Route::get('/sports/index/{date}', 'SportsController@getStatOn');
-Route::get('/sports/index/{start}/{end}', 'SportsController@getStatBetween');
+Route::get ('/sports/index', 'SportsController@index');
+Route::post('/sports/data', 'SportsController@postExcel');
+Route::get ('/sports/index/{date}', 'SportsController@getStatOn');
+Route::get ('/sports/index/{start}/{end}', 'SportsController@getStatBetween');
 
 Route::get('/body/index', 'BodyController@index');
 Route::get('/body/index/{date}', 'BodyController@getStatOn');

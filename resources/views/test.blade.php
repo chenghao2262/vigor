@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
     <link rel="shortcut icon" href="assets/img/favicon.png">
 
     <title>VIGOR</title>
@@ -21,7 +23,7 @@
 
     <!-- siimple style -->
     <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/css/sign.css') }}" rel="stylesheet">!
+    <link href="{{ asset('/assets/css/sign.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -32,9 +34,9 @@
 </head>
 <body>
     <div>
-        <form class="form-inline signup" role="form" method="POST" action="{{ url('/expert/order') }}">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div class="form-group">
+        {{--<form class="form-inline signup" role="form" method="POST" action="{{ url('/expert/order') }}">--}}
+            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
+            {{--<div class="form-group">--}}
                 {{--这是活动创建表单--}}
                 {{--<div>--}}
                     {{--<input type="text" class="form-control"  name="name"  placeholder="Name">--}}
@@ -52,7 +54,7 @@
                     {{--<input type="text" class="form-control"  name="end"  placeholder="end">--}}
                 {{--</div>--}}
 
-                <!-- </div> -->
+                {{--<!-- </div> -->--}}
 
                 {{--这是朋友圈发动态--}}
                 {{--<div>--}}
@@ -68,35 +70,35 @@
                 {{--</div>--}}
 
                 {{--这里是订单部分--}}
-                <div>
-                    <input type="hidden" name="expertName" value="njusmx"/>
-                </div>
+                {{--<div>--}}
+                    {{--<input type="hidden" name="expertName" value="njusmx"/>--}}
+                {{--</div>--}}
 
-                <div class="form-group" >
-                    <label class="col-sm-3 control-label" style="color:#000000;">date</label>
-                    <div class="col-sm-6" >
-                        <label class="radio-inline" style="color:#000000;">
-                            <input class="icheck" type="radio"   name="date" value="2015-10-29">2015-10-29</label>
-                        <label class="radio-inline" style="color:#000000;">
-                            <input class="icheck" type="radio" name="date" value="2015-10-30">2015-10-30</label>
-                        <label class="radio-inline" style="color:#000000;">
-                            <input class="icheck" type="radio" name="date" value="2015-10-31">2015-10-31</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-3 control-label" style="color:#000000;">segment</label>
-                    <div class="col-sm-6">
-                        <label class="checkbox-inline" style="color:#000000;">
-                            <input class="icheck" type="checkbox" name="segment[]" value="37">37</label>
-                        <label class="checkbox-inline" style="color:#000000;">
-                            <input class="icheck" type="checkbox" name="segment[]" value="38">38</label>
-                        <label class="checkbox-inline" style="color:#000000;">
-                            <input class="icheck" type="checkbox" name="segment[]" value="39">39</label>
-                    </div>
-                </div>
-                <div>
-                     <input type="text" class="form-control"  name="payment"  value="100" readonly>
-                </div>
+                {{--<div class="form-group" >--}}
+                    {{--<label class="col-sm-3 control-label" style="color:#000000;">date</label>--}}
+                    {{--<div class="col-sm-6" >--}}
+                        {{--<label class="radio-inline" style="color:#000000;">--}}
+                            {{--<input class="icheck" type="radio"   name="date" value="2015-10-29">2015-10-29</label>--}}
+                        {{--<label class="radio-inline" style="color:#000000;">--}}
+                            {{--<input class="icheck" type="radio" name="date" value="2015-10-30">2015-10-30</label>--}}
+                        {{--<label class="radio-inline" style="color:#000000;">--}}
+                            {{--<input class="icheck" type="radio" name="date" value="2015-10-31">2015-10-31</label>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="form-group">--}}
+                    {{--<label class="col-sm-3 control-label" style="color:#000000;">segment</label>--}}
+                    {{--<div class="col-sm-6">--}}
+                        {{--<label class="checkbox-inline" style="color:#000000;">--}}
+                            {{--<input class="icheck" type="checkbox" name="segment[]" value="37">37</label>--}}
+                        {{--<label class="checkbox-inline" style="color:#000000;">--}}
+                            {{--<input class="icheck" type="checkbox" name="segment[]" value="38">38</label>--}}
+                        {{--<label class="checkbox-inline" style="color:#000000;">--}}
+                            {{--<input class="icheck" type="checkbox" name="segment[]" value="39">39</label>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div>--}}
+                     {{--<input type="text" class="form-control"  name="payment"  value="100" readonly>--}}
+                {{--</div>--}}
 
                 {{--这是专家发布建议--}}
                 {{--<div>--}}
@@ -108,13 +110,21 @@
                 {{--<div>--}}
                      {{--<input type="text" class="form-control"  name="watcherName"  value="njusmx" readonly>--}}
                 {{--</div>--}}
+                {{----}}
 
+            {{--</div>--}}
+        {{--</form>--}}
 
-                <div>
-                    <button type="submit" class="btn btn-theme">commit</button>
+        {{--这是上传文件--}}
+        {{--传文件需要注意: 需要加一个token 需要在meta里面加上csrf-token--}}
+        <form class="form-inline signup"  method="POST" action="{{ url('/sports/data') }}" enctype="multipart/form-data">
 
-                </div>
-            </div>
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="file" name="data" accept="application/vnd.ms-excel" id="exampleInputFile">
+            <p class="help-block">这里放一些提示性的文字.</p>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
         </form>
     </div>
 
