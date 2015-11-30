@@ -75,7 +75,7 @@
                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="meta">
                             <span class="avatar">
-                                <img src="/assets/img/profile.jpg" class="img-circle" alt="">
+                                <img src="assets/img/profile.jpg" class="img-circle" alt="">
                             </span>
                         <span class="text">Mike Adams</span>
                         <span class="caret"></span>
@@ -133,7 +133,7 @@
     <aside class="sidebar sidebar-left">
         <div class="sidebar-profile">
             <div class="avatar">
-                <img class="img-circle profile-image" src="/assets/img/profile.jpg" alt="profile">
+                <img class="img-circle profile-image" src="assets/img/profile.jpg" alt="profile">
                 <i class="on border-dark animated bounceIn"></i>
             </div>
             <div class="profile-body dropdown">
@@ -180,7 +180,7 @@
             <ul class="nav nav-pills nav-stacked">
                 <li class=" nav-dropdown open active">
                     <a href="#" title="健康管理" >
-                        <i class="fa  fa-fw fa-tachometer"></i> 健康管理
+                        <i class="fa  fa-fw fa-heartbeat"></i> 健康管理
                     </a>
                     <ul class=" nav-sub">
                         <li class="active">
@@ -192,25 +192,17 @@
                     </ul>
                 </li>
                 <li class=" nav-dropdown">
-                    <a href="activitymanage.html" title="活动管理">
-                        <i class="fa fa-fw fa-flag"></i> 活动管理
+                    <a href="#" title="活动管理">
+                        <i class="fa fa-fw fa-tachometer"></i> 活动管理
                     </a>
                 </li>
                 <li class="nav-dropdown">
                     <a href="#" title="兴趣组" data-toggle="collapse">
                         <i class="fa fa-fw fa-paper-plane-o"></i> 兴趣组
                     </a>
-                    <ul class="nav-sub">
-                        <li class=>
-                            <a  href="interest.html" title="我的兴趣组">我的兴趣组</a>
-                        </li>
-                         <li>
-                            <a  href="#" title="发现兴趣组">发现兴趣组</a>
-                        </li>
-                    </ul>
                 </li>
                 <li class=" nav-dropdown">
-                    <a href="friendcircle.html" title="朋友圈">
+                    <a href="activitymanage.blade.php" title="朋友圈">
                         <i class="fa fa-user fa-fw"></i> 朋友圈
                     </a>
                 </li>
@@ -225,10 +217,10 @@
                     </a>
                     <ul class=" nav-sub">
                             <li>
-                                <a  href="#" title="医生私教" >医生私教</a>
+                                <a  href="#" title="运动管理" >医生私教</a>
                             </li>
                              <li>
-                                <a  href="suggestion.html" title="建议管理">建议管理</a>
+                                <a  href="#" title="建议管理">建议管理</a>
                             </li>
                         </ul>
                 </li>
@@ -288,7 +280,7 @@
                         <div class="col-md-6">
                             <div class="panel  panel-solid-success widget-mini">
                                 <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">5600步</span>
+                                    <span class="total text-center">{{$sportRecord->steps}}步</span>
                                     <span class="title text-center">今日已走</span>
                                 </div>
                             </div>
@@ -296,7 +288,7 @@
                         <div class="col-md-6">
                             <div class="panel panel-solid-danger widget-mini">
                                 <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">10000步</span>
+                                    <span class="total text-center">{{$sportRecord->steps}}步</span>
                                     <span class="title text-center">目标步数</span>
                                 </div>
                             </div>
@@ -304,7 +296,7 @@
                         <div class="col-md-6">
                             <div class="panel panel-solid-success widget-mini">
                                 <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">6.8km</span>
+                                    <span class="total text-center">{{$sportRecord->distance}}km</span>
                                     <span class="title text-center">今日里程</span>
                                 </div>
                             </div>
@@ -312,7 +304,7 @@
                         <div class="col-md-6">
                             <div class="panel panel-solid-warning widget-mini">
                                 <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">3000cal</span>
+                                    <span class="total text-center">{{$sportRecord->calories}}cal</span>
                                     <span class="title text-center">今日燃烧</span>
                                 </div>
                             </div>
@@ -330,7 +322,7 @@
                             <canvas width="220" height="136" id="gauge" class=""></canvas>
                             <div class="goal-wrapper">
                                 <span class="gauge-value pull-left"></span>
-                                <span id="gauge-text" class="gauge-value pull-left">5600</span>
+                                <span id="gauge-text" class="gauge-value pull-left">{{$sportRecord->steps}}</span>
                                 <span id="goal-text" class="goal-value pull-right">2,0000</span>
                             </div>
                         </div>
@@ -421,7 +413,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar3.png" class="img-circle" alt="">
+                        <img src="assets/img/avatar3.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -435,7 +427,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar1.png" class="img-circle" alt="">
+                        <img src="assets/img/avatar1.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -449,7 +441,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar2.png" class="img-circle" alt="">
+                        <img src="assets/img/avatar2.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -463,7 +455,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">
+                        <img src="assets/img/avatar4.jpg" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -477,7 +469,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar5.png" class="img-circle" alt="">
+                        <img src="assets/img/avatar5.png" class="img-circle" alt="">
                           <i class="away animated bounceIn"></i>
                         </span>
                         </div>
@@ -491,7 +483,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar6.png" class="img-circle" alt="">
+                        <img src="assets/img/avatar6.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -505,7 +497,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar7.png" class="img-circle" alt="">
+                        <img src="assets/img/avatar7.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -519,7 +511,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar8.png" class="img-circle off" alt="">
+                        <img src="assets/img/avatar8.png" class="img-circle off" alt="">
                           <i class="off animated bounceIn"></i>
                         </span>
                         </div>
@@ -533,7 +525,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar9.png" class="img-circle off" alt="">
+                        <img src="assets/img/avatar9.png" class="img-circle off" alt="">
                           <i class="off animated bounceIn"></i>
                         </span>
                         </div>
@@ -694,17 +686,6 @@
 <script src="assets/plugins/c3Chart/js/c3.js"></script>
 <script src="assets/plugins/c3Chart/js/c3-V.js"></script>
 <!--Load these page level functions-->
-<script>
-    showSteps(20000,{{$sportRecord->steps}});
-    $(document).ready(function() {
-        app.dateRangePicker();
-        app.chartJs();
-        app.weather();
-        app.spinStart();
-        app.spinStop();
-    });
-</script>
-
 
 </body>
 

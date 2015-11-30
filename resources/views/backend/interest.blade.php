@@ -21,12 +21,8 @@
     <link rel="stylesheet" href="{{ asset('/assets/css/simple-line-icons.css') }}">
     <!-- CSS Animate -->
     <link rel="stylesheet" href="{{ asset('/assets/css/animate.css') }}">
-    <!-- C3 Chart-->
-    <link rel="stylesheet" href="assets/plugins/c3Chart/css/c3.css">
     <!-- Daterange Picker -->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/daterangepicker/daterangepicker-bs3.css') }}">
-    <!-- Calendar demo -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/clndr.css') }}">
     <!-- Drop Zone-->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/dropzone.css') }}" >
     <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/basic.css') }}">
@@ -50,7 +46,7 @@
         <div class="brand">
             <a href="index.html" class="logo">
                 <i class="icon-heart"></i>
-                <span>Body</span>Board</a>
+                <span>Vigor</span>Board</a>
         </div>
         <!--logo end-->
         <ul class="nav navbar-nav navbar-left">
@@ -75,7 +71,7 @@
                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="meta">
                             <span class="avatar">
-                                <img src="/assets/img/profile.jpg" class="img-circle" alt="">
+                                <img src="Vigor/public/assets/img/profile.jpg" class="img-circle" alt="">
                             </span>
                         <span class="text">Mike Adams</span>
                         <span class="caret"></span>
@@ -133,7 +129,7 @@
     <aside class="sidebar sidebar-left">
         <div class="sidebar-profile">
             <div class="avatar">
-                <img class="img-circle profile-image" src="/assets/img/profile.jpg" alt="profile">
+                <img class="img-circle profile-image" src="Vigor/public/assets/img/profile.jpg" alt="profile">
                 <i class="on border-dark animated bounceIn"></i>
             </div>
             <div class="profile-body dropdown">
@@ -178,13 +174,13 @@
         <nav>
             <h5 class="sidebar-header">Navigation</h5>
             <ul class="nav nav-pills nav-stacked">
-                <li class=" nav-dropdown open active">
+                <li class=" nav-dropdown">
                     <a href="#" title="健康管理" >
                         <i class="fa  fa-fw fa-tachometer"></i> 健康管理
                     </a>
                     <ul class=" nav-sub">
                         <li class="active">
-                            <a  href="#" title="运动管理">运动管理</a>
+                            <a  href="homepage.html" title="运动管理">运动管理</a>
                         </li>
                          <li >
                             <a  href="#" title="健康履历">健康履历</a>
@@ -196,12 +192,12 @@
                         <i class="fa fa-fw fa-flag"></i> 活动管理
                     </a>
                 </li>
-                <li class="nav-dropdown">
+                <li class="nav-dropdown open active">
                     <a href="#" title="兴趣组" data-toggle="collapse">
                         <i class="fa fa-fw fa-paper-plane-o"></i> 兴趣组
                     </a>
                     <ul class="nav-sub">
-                        <li class=>
+                        <li class="active">
                             <a  href="interest.html" title="我的兴趣组">我的兴趣组</a>
                         </li>
                          <li>
@@ -224,13 +220,13 @@
                         <i class="fa fa-fw fa-comment"></i> 专业咨询
                     </a>
                     <ul class=" nav-sub">
-                            <li>
-                                <a  href="#" title="医生私教" >医生私教</a>
-                            </li>
-                             <li>
-                                <a  href="suggestion.html" title="建议管理">建议管理</a>
-                            </li>
-                        </ul>
+                        <li>
+                            <a  href="#" title="运动管理" >医生私教</a>
+                        </li>
+                         <li>
+                            <a  href="suggestion.html" title="建议管理">建议管理</a>
+                        </li>
+                    </ul>
                 </li>
                 
 
@@ -261,139 +257,199 @@
     <!--main content start-->
     <section class="main-content-wrapper">
         <div class="pageheader">
-            <h1>运动管理</h1>
-            <p class="description">这里展示每日运动数据 </p>
+            <h1>兴趣组</h1>
+            <p class="description">这里展示我的兴趣组 </p>
             <div class="breadcrumb-wrapper hidden-xs">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
-                    <li class="active">Dashboard</li>
+                    <li class="active">My Interest</li>
                 </ol>
             </div>
         </div>
         <section id="main-content" class="animated fadeInUp">
             <div class="row">
-                <div class="hidden-xs col-sm-12 col-md-6 col-lg-3">
-                    <div class="panel">
-                        <div class="panel-body">
-                            <div class="calendar-block ">
-                                <div class="cal1">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-5" >
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="panel  panel-solid-success widget-mini">
-                                <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">5600步</span>
-                                    <span class="title text-center">今日已走</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="panel panel-solid-danger widget-mini">
-                                <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">10000步</span>
-                                    <span class="title text-center">目标步数</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="panel panel-solid-success widget-mini">
-                                <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">6.8km</span>
-                                    <span class="title text-center">今日里程</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="panel panel-solid-warning widget-mini">
-                                <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">3000cal</span>
-                                    <span class="title text-center">今日燃烧</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                <div class="col-md-9">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title" style="font-size: 130%">今日进度</h3>
 
-                        </div>
-                        <div class="panel-body widget-gauge">
-                            <canvas width="220" height="136" id="gauge" class=""></canvas>
-                            <div class="goal-wrapper">
-                                <span class="gauge-value pull-left"></span>
-                                <span id="gauge-text" class="gauge-value pull-left">5600</span>
-                                <span id="goal-text" class="goal-value pull-right">2,0000</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title" style="font-size: 130%">运动统计</h3>
-                            <div class="reportdate actions">
-                                <i class="fa fa-calendar-o"></i>
-                                <span>Jan 1 - June 30</span>
-                                <b class="caret"></b>
-                            </div>
-                        </div>
-                        <div class="panel-body server-chart">
                             <div class="row">
-
-                                <div class="col-md-12 col-lg-12">
-                                    <div class="row">
-                                        <div class="col-md-12 col-lg-4">
-                                            <div class="line-chart">
-                                                <canvas id="canvas1" height="100"></canvas>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 col-lg-4">
-                                            <div class="line-chart">
-                                                <canvas id="canvas2" height="100"></canvas>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 col-lg-4">
-                                            <div class="bar-chart">
-                                                <canvas id="doughnut-chart-area" height="100"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="col-md-2">
+                                    <img class="img-circle profile-image" src="Vigor/public/assets/img/profile.jpg" alt="profile">
+                                </div>
+                            
+                                <div class="col-md-8">
+                                    <h3 class="panel-title">抹茶麻薯</h3>
+                                    <small class="title">最近更新   2015年10月7日</small>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Interaction Zoom</h3>
                             <div class="actions pull-right">
                                 <i class="fa fa-expand"></i>
                                 <i class="fa fa-chevron-down"></i>
                                 <i class="fa fa-times"></i>
                             </div>
                         </div>
-                        <div class="panel-body text-center">
-                            <div class="chart">
-                                <div id="zoom"></div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="panel panel-solid-default">
+                                        <div class="panel-heading interest-panel-heading">
+                                            <h3 class="panel-title">你爷爷</h3>
+                                            <small class="title">发布群公告</small>
+                                            <div class="actions pull-right">
+                                                <i class="fa fa-expand"></i>
+                                                <i class="fa fa-chevron-down"></i>
+                                                <i class="fa fa-times"></i>
+                                            </div>
+                                        </div>
+                                    <div class="panel-body interest-panel-body">
+                                        <blockquote class="interest-bq">                                       
+                                        Elit vitae, ridiculus nonummy, vestibulum vivamus cras scelerisque velit magna tincidunt. Torquent amet accumsan, eu maecenas morbi dui eu suspendisse, neque diam accumsan cras nisl ac ridiculus, erat neque. Wisi enim ullamcorper, dolor eleifend pellentesque,
+                                        </blockquote>
+                                    </div>
+                                    <div class="panel-footer interest-panel-footer">2015年10月9号</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="panel panel-solid-info">
+                                        <div class="panel-heading interest-panel-heading">
+                                            <h3 class="panel-title">你爸爸</h3>
+                                            <small class="title">发布群公告</small>
+                                            <div class="actions pull-right">
+                                                <i class="fa fa-expand"></i>
+                                                <i class="fa fa-chevron-down"></i>
+                                                <i class="fa fa-times"></i>
+                                            </div>
+                                        </div>
+                                    <div class="panel-body interest-panel-body">
+                                        <blockquote class="interest-bq">                                       
+                                        Elit vitae, ridiculus nonummy, vestibulum vivamus cras scelerisque velit magna tincidunt. Torquent amet accumsan, eu maecenas morbi dui eu suspendisse, neque diam accumsan cras nisl ac ridiculus, erat neque. Wisi enim ullamcorper, dolor eleifend pellentesque,
+                                        </blockquote>
+                                    </div>
+                                    <div class="panel-footer interest-panel-footer">2015年10月9号</div>
+                                    </div>
+                                </div>
                             </div>
+
+
+                            <button type="button" class="btn btn-default">Default</button>
+                            <button type="button" class="btn btn-primary">Primary</button>
+                            <button type="button" class="btn btn-success">Success</button>
+                            <button type="button" class="btn btn-info">Info</button>
+                            <button type="button" class="btn btn-warning">Warning</button>
+                            <button type="button" class="btn btn-danger">Danger</button>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img class="img-circle profile-image" src="Vigor/public/assets/img/avatar2.png" alt="profile">
+                                </div>
+                            
+                                <div class="col-md-8">
+                                    <h3 class="panel-title">山楂大家族</h3>
+                                    <small class="title">最近更新   2015年10月7日</small>
+                                </div>
+                            </div>
+                            <div class="actions pull-right">
+                                <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="panel panel-solid-default">
+                                        <div class="panel-heading interest-panel-heading">
+                                            <h3 class="panel-title">你爷爷</h3>
+                                            <small class="title">发布群公告</small>
+                                            <div class="actions pull-right">
+                                                <i class="fa fa-expand"></i>
+                                                <i class="fa fa-chevron-down"></i>
+                                                <i class="fa fa-times"></i>
+                                            </div>
+                                        </div>
+                                    <div class="panel-body interest-panel-body">
+                                        <blockquote class="interest-bq">                                       
+                                        Elit vitae, ridiculus nonummy, vestibulum vivamus cras scelerisque velit magna tincidunt. Torquent amet accumsan, eu maecenas morbi dui eu suspendisse, neque diam accumsan cras nisl ac ridiculus, erat neque. Wisi enim ullamcorper, dolor eleifend pellentesque,
+                                        </blockquote>
+                                    </div>
+                                    <div class="panel-footer interest-panel-footer">2015年10月9号</div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="panel panel-solid-info">
+                                        <div class="panel-heading interest-panel-heading">
+                                            <h3 class="panel-title">你爸爸</h3>
+                                            <small class="title">发布群公告</small>
+                                            <div class="actions pull-right">
+                                                <i class="fa fa-expand"></i>
+                                                <i class="fa fa-chevron-down"></i>
+                                                <i class="fa fa-times"></i>
+                                            </div>
+                                        </div>
+                                    <div class="panel-body interest-panel-body">
+                                        <blockquote class="interest-bq">                                       
+                                        Elit vitae, ridiculus nonummy, vestibulum vivamus cras scelerisque velit magna tincidunt. Torquent amet accumsan, eu maecenas morbi dui eu suspendisse, neque diam accumsan cras nisl ac ridiculus, erat neque. Wisi enim ullamcorper, dolor eleifend pellentesque,
+                                        </blockquote>
+                                    </div>
+                                    <div class="panel-footer interest-panel-footer">2015年10月9号</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <button type="button" class="btn btn-default">Default</button>
+                            <button type="button" class="btn btn-primary">Primary</button>
+                            <button type="button" class="btn btn-success">Success</button>
+                            <button type="button" class="btn btn-info">Info</button>
+                            <button type="button" class="btn btn-warning">Warning</button>
+                            <button type="button" class="btn btn-danger">Danger</button>
                         </div>
                     </div>
                 </div>
-            </div>    
+                    
+
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2>我的兴趣组</h3>
+                        </div>
+                        <ul class="interest-list">
+                            <li class="interest-li">
+                                <a href="javascript:void(0)">
+                                    <i class="interest-group">团子大家族</i>
+                                </a>
+                            </li>
+                            <li class="interest-li">
+                                <a href="javascript:void(0)">
+                                    <i class="interest-group">麻薯大家族</i>
+                                </a>                            
+                            </li>
+                            <li class="interest-li">
+                                <a href="javascript:void(0)">
+                                    <i class="interest-group">山楂大家族</i>
+                                </a>                            
+                            </li>
+                            <li class="interest-li">
+                                <a href="javascript:void(0)">
+                                    <i class="interest-group">泡芙大家族</i>
+                                </a>                           
+                            </li>
+                            <li class="interest-li">
+                                <a href="javascript:void(0)">
+                                    <i class="interest-group">锅巴大家族</i>
+                                </a>                            
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </section>
@@ -421,7 +477,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar3.png" class="img-circle" alt="">
+                        <img src="Vigor/public/assets/img/avatar3.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -435,7 +491,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar1.png" class="img-circle" alt="">
+                        <img src="Vigor/public/assets/img/avatar1.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -449,7 +505,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar2.png" class="img-circle" alt="">
+                        <img src="Vigor/public/assets/img/avatar2.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -463,7 +519,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">
+                        <img src="Vigor/public/assets/img/avatar4.jpg" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -477,7 +533,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar5.png" class="img-circle" alt="">
+                        <img src="Vigor/public/assets/img/avatar5.png" class="img-circle" alt="">
                           <i class="away animated bounceIn"></i>
                         </span>
                         </div>
@@ -491,7 +547,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar6.png" class="img-circle" alt="">
+                        <img src="Vigor/public/assets/img/avatar6.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -505,7 +561,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar7.png" class="img-circle" alt="">
+                        <img src="Vigor/public/assets/img/avatar7.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -519,7 +575,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar8.png" class="img-circle off" alt="">
+                        <img src="Vigor/public/assets/img/avatar8.png" class="img-circle off" alt="">
                           <i class="off animated bounceIn"></i>
                         </span>
                         </div>
@@ -533,7 +589,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="/assets/img/avatar9.png" class="img-circle off" alt="">
+                        <img src="Vigor/public/assets/img/avatar9.png" class="img-circle off" alt="">
                           <i class="off animated bounceIn"></i>
                         </span>
                         </div>
@@ -694,17 +750,6 @@
 <script src="assets/plugins/c3Chart/js/c3.js"></script>
 <script src="assets/plugins/c3Chart/js/c3-V.js"></script>
 <!--Load these page level functions-->
-<script>
-    showSteps(20000,{{$sportRecord->steps}});
-    $(document).ready(function() {
-        app.dateRangePicker();
-        app.chartJs();
-        app.weather();
-        app.spinStart();
-        app.spinStop();
-    });
-</script>
-
 
 </body>
 

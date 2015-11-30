@@ -13,31 +13,31 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('/assets/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="Vigor/public/assets/img/favicon.ico" type="image/x-icon">
     <!-- 自创 -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/discover.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/activity.css') }}">
+    <link rel="stylesheet" href="Vigor/public/assets/css/discover.css">
+    <link rel="stylesheet" href="Vigor/public/assets/css/activity.css">
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{ asset('/assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="Vigor/public/assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Fonts  -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/simple-line-icons.css') }}">
+    <link rel="stylesheet" href="Vigor/public/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Vigor/public/assets/css/simple-line-icons.css">
     <!-- CSS Animate -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/animate.css') }}">
+    <link rel="stylesheet" href="Vigor/public/assets/css/animate.css">
     <!-- Daterange Picker -->
-    <link rel="stylesheet" href="{{ asset('/assets/plugins/daterangepicker/daterangepicker-bs3.css') }}">
+    <link rel="stylesheet" href="Vigor/public/assets/plugins/daterangepicker/daterangepicker-bs3.css">
     <!-- Calendar demo -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/clndr.css') }}">
+    <link rel="stylesheet" href="Vigor/public/assets/css/clndr.css">
     <!-- Drop Zone-->
-    <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/dropzone.css') }}" >
-    <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/basic.css') }}">
+    <link rel="stylesheet" href="Vigor/public/assets/plugins/dropzone/css/dropzone.css" >
+    <link rel="stylesheet" href="Vigor/public/assets/plugins/dropzone/css/basic.css">
     <!-- Switchery -->
-    <link rel="stylesheet" href="{{ asset('/assets/plugins/switchery/switchery.min.css') }}">
+    <link rel="stylesheet" href="Vigor/public/assets/plugins/switchery/switchery.min.css">
     <!-- Custom styles for this theme -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/main.css') }}">
+    <link rel="stylesheet" href="Vigor/public/assets/css/main.css">
     <!-- Feature detection -->
-    <script src="{{ asset('/assets/js/vendor/modernizr-2.6.2.min.js') }}"></script>
+    <script src="Vigor/public/assets/js/vendor/modernizr-2.6.2.min.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="{{ asset('/assets/js/vendor/html5shiv.js') }}"></script>
@@ -46,7 +46,7 @@
 </head>
 
 <body>
-    <section id="main-wrapper" class="theme-default">
+   <section id="main-wrapper" class="theme-default">
         <header id="header">
             <!--logo start-->
             <div class="brand">
@@ -77,7 +77,7 @@
                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="meta">
                                 <span class="avatar">
-                                    <img src="assets/img/profile.jpg" class="img-circle" alt="">
+                                    <img src="Vigor/public/assets/img/profile.jpg" class="img-circle" alt="">
                                 </span>
                             <span class="text">Mike Adams</span>
                             <span class="caret"></span>
@@ -135,7 +135,7 @@
         <aside class="sidebar sidebar-left">
             <div class="sidebar-profile">
                 <div class="avatar">
-                    <img class="img-circle profile-image" src="assets/img/profile.jpg" alt="profile">
+                    <img class="img-circle profile-image" src="Vigor/public/assets/img/profile.jpg" alt="profile">
                     <i class="on border-dark animated bounceIn"></i>
                 </div>
                 <div class="profile-body dropdown">
@@ -186,15 +186,15 @@
                         </a>
                         <ul class=" nav-sub">
                             <li>
-                                <a  href="#" title="运动管理">运动管理</a>
+                                <a  href="homepage.html" title="运动管理">运动管理</a>
                             </li>
                              <li>
-                                <a  href="#" title="建议管理">建议管理</a>
+                                <a  href="#" title="健康履历">健康履历</a>
                             </li>
                         </ul>
                     </li>
                     <li class=" nav-dropdown open active">
-                        <a href="#" title="活动管理">
+                        <a href="activitymanage.html" title="活动管理">
                             <i class="fa fa-fw fa-flag"></i> 活动管理
                         </a>
                     </li>
@@ -202,9 +202,17 @@
                         <a href="#" title="兴趣组" data-toggle="collapse">
                             <i class="fa fa-fw fa-paper-plane-o"></i> 兴趣组
                         </a>
+                        <ul class="nav-sub">
+                            <li>
+                                <a  href="interest.html" title="我的兴趣组">我的兴趣组</a>
+                            </li>
+                             <li>
+                                <a  href="#" title="发现兴趣组">发现兴趣组</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class=" nav-dropdown">
-                        <a href="#" title="朋友圈">
+                        <a href="friendcircle.html" title="朋友圈">
                             <i class="fa fa-user fa-fw"></i> 朋友圈
                         </a>
                     </li>
@@ -217,6 +225,14 @@
                         <a href="#" title="专业咨询" data-toggle="collapse">
                             <i class="fa fa-fw fa-comment"></i> 专业咨询
                         </a>
+                        <ul class=" nav-sub">
+                            <li>
+                                <a  href="#" title="医生私教" >医生私教</a>
+                            </li>
+                             <li>
+                                <a  href="suggestion.html" title="建议管理">建议管理</a>
+                            </li>
+                        </ul>
                     </li>
                     
 
@@ -323,7 +339,7 @@
                                     </div>
                                     <div class="row rowbottom">
                                         <div class="col-md-3 col-sm-3 col-xs-3">
-                                            <img src="assets/img/vac-1.jpg" class="img-responsive img-semi-rec" alt="">
+                                            <img src="Vigor/public/assets/img/vac-1.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
                                             <div class="activity-content">
@@ -349,7 +365,7 @@
                                     </div>
                                     <div class="row rowbottom">
                                         <div class="col-md-3 col-sm-3 col-xs-3">
-                                            <img src="assets/img/vac-2.jpg" class="img-responsive img-semi-rec" alt="">
+                                            <img src="Vigor/public/assets/img/vac-2.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
                                             <div class="activity-content">
@@ -375,7 +391,7 @@
                                     </div>
                                     <div class="row rowbottom" >
                                         <div class="col-md-3 col-sm-3 col-xs-3">
-                                            <img src="assets/img/vac-3.jpg" class="img-responsive img-semi-rec" alt="">
+                                            <img src="Vigor/public/assets/img/vac-3.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
                                             <div class="activity-content">
@@ -401,7 +417,7 @@
                                     </div>
                                     <div class="row rowbottom">
                                         <div class="col-md-3 col-sm-3 col-xs-3">
-                                            <img src="assets/img/vac-4.jpg" class="img-responsive img-semi-rec" alt="">
+                                            <img src="Vigor/public/assets/img/vac-4.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
                                             <div class="activity-content">
@@ -455,7 +471,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                     <span class="avatar">
-                            <img src="assets/img/avatar3.png" class="img-circle" alt="">
+                            <img src="Vigor/public/assets/img/avatar3.png" class="img-circle" alt="">
                               <i class="on animated bounceIn"></i>
                             </span>
                             </div>
@@ -469,7 +485,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                     <span class="avatar">
-                            <img src="assets/img/avatar1.png" class="img-circle" alt="">
+                            <img src="Vigor/public/assets/img/avatar1.png" class="img-circle" alt="">
                               <i class="on animated bounceIn"></i>
                             </span>
                             </div>
@@ -483,7 +499,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                     <span class="avatar">
-                            <img src="assets/img/avatar2.png" class="img-circle" alt="">
+                            <img src="Vigor/public/assets/img/avatar2.png" class="img-circle" alt="">
                               <i class="on animated bounceIn"></i>
                             </span>
                             </div>
@@ -497,7 +513,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                     <span class="avatar">
-                            <img src="assets/img/avatar4.jpg" class="img-circle" alt="">
+                            <img src="Vigor/public/assets/img/avatar4.jpg" class="img-circle" alt="">
                               <i class="on animated bounceIn"></i>
                             </span>
                             </div>
@@ -511,7 +527,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                     <span class="avatar">
-                            <img src="assets/img/avatar5.png" class="img-circle" alt="">
+                            <img src="Vigor/public/assets/img/avatar5.png" class="img-circle" alt="">
                               <i class="away animated bounceIn"></i>
                             </span>
                             </div>
@@ -525,7 +541,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                     <span class="avatar">
-                            <img src="assets/img/avatar6.png" class="img-circle" alt="">
+                            <img src="Vigor/public/assets/img/avatar6.png" class="img-circle" alt="">
                               <i class="on animated bounceIn"></i>
                             </span>
                             </div>
@@ -539,7 +555,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                     <span class="avatar">
-                            <img src="assets/img/avatar7.png" class="img-circle" alt="">
+                            <img src="Vigor/public/assets/img/avatar7.png" class="img-circle" alt="">
                               <i class="on animated bounceIn"></i>
                             </span>
                             </div>
@@ -553,7 +569,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                     <span class="avatar">
-                            <img src="assets/img/avatar8.png" class="img-circle off" alt="">
+                            <img src="Vigor/public/assets/img/avatar8.png" class="img-circle off" alt="">
                               <i class="off animated bounceIn"></i>
                             </span>
                             </div>
@@ -567,7 +583,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                     <span class="avatar">
-                            <img src="assets/img/avatar9.png" class="img-circle off" alt="">
+                            <img src="Vigor/public/assets/img/avatar9.png" class="img-circle off" alt="">
                               <i class="off animated bounceIn"></i>
                             </span>
                             </div>
