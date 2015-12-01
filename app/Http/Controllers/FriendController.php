@@ -16,6 +16,15 @@ class FriendController extends Controller
         $this->middleware('auth');
     }
 
+
+    public function index(){
+        $user = Auth::user();
+        $friends = $user->friends()->get();
+
+        return view('backend.friendcircle',compact('friends'));
+
+    }
+
     public function getList()
     {
         $user = Auth::user();

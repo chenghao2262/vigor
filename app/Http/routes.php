@@ -41,6 +41,7 @@ Route::post('/expert/suggestion', 'ExpertController@makeSuggestion');
 Route::get ('/expert/suggestion', 'ExpertController@getSuggestion');
 Route::get ('/expert/suggestion/{suggestionId}', 'ExpertController@getSuggestionAt');
 
+Route::get ('/friends/index', 'FriendController@index');
 Route::get ('/friends/list', 'FriendController@getList');
 Route::get ('/friends/news', 'FriendController@getNews');
 Route::post('/friends/news', 'FriendController@postNews');

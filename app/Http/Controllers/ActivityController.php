@@ -31,7 +31,7 @@ class ActivityController extends Controller
         $latestActivities = Activity::latest()->take(5)->get()->toArray();
         //dd($latestActivities);
 
-        return view('backend.activity',compact('sportRecord','latestActivities'));
+        return view('backend.activitymanage',compact('latestActivities'));
     }
 
     public function newActivity(Request $request)

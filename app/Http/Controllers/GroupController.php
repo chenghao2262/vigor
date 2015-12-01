@@ -16,31 +16,32 @@ class GroupController extends Controller
 
     public function index()
     {
-        return ("ÕâÀï»á·µ»ØĞËÈ¤×éÊ×Ò³");
+
+        return view('backend.interest');
     }
 
     public function getGroup()
     {
-        return ("ÕâÀï·µ»ØĞËÈ¤×éÏêÏ¸ĞÅÏ¢");
+        return ("ï¿½ï¿½ï¿½ï·µï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢");
     }
 
     public function postGroup()
     {
-        return ("´´½¨ĞËÈ¤×é");
+        return ("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½");
     }
 
     public function joinGroup()
     {
-        return ("´¦Àí¼ÓÈëĞËÈ¤×é");
+        return ("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½");
     }
 
     public function getNews()
     {
-        return ("·µ»Ø×éÄÚĞÅÏ¢");
+        return ("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢");
     }
 
     public function postNews()
     {
-        return ("·¢²¼×éÄÚĞÅÏ¢");
+        return ("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢");
     }
 }
