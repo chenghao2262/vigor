@@ -213,7 +213,7 @@
                         </ul>
                     </li>
                     <li class=" nav-dropdown">
-                        <a href="/friends/news" title="朋友圈">
+                        <a href="/friends/index" title="朋友圈">
                             <i class="fa fa-user fa-fw"></i> 朋友圈
                         </a>
                     </li>

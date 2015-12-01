@@ -192,7 +192,7 @@
                     </ul>
                 </li>
                 <li class=" nav-dropdown">
-                    <a href="activitymanage.html" title="活动管理">
+                    <a href="/activity" title="活动管理">
                         <i class="fa fa-fw fa-flag"></i> 活动管理
                     </a>
                 </li>
@@ -202,15 +202,15 @@
                     </a>
                     <ul class="nav-sub">
                         <li class=>
-                            <a  href="interest.html" title="我的兴趣组">我的兴趣组</a>
+                            <a  href="/group" title="我的兴趣组">我的兴趣组</a>
                         </li>
                          <li>
-                            <a  href="#" title="发现兴趣组">发现兴趣组</a>
+                            <a  href="/group" title="发现兴趣组">发现兴趣组</a>
                         </li>
                     </ul>
                 </li>
                 <li class=" nav-dropdown">
-                    <a href="friendcircle.html" title="朋友圈">
+                    <a href="/friends/index" title="朋友圈">
                         <i class="fa fa-user fa-fw"></i> 朋友圈
                     </a>
                 </li>
@@ -220,15 +220,15 @@
                     </a>
                 </li>
                 <li class="nav-dropdown">
-                    <a href="#" title="健货商城" data-toggle="collapse">
+                    <a href="#" title="专业咨询" data-toggle="collapse">
                         <i class="fa fa-fw fa-comment"></i> 专业咨询
                     </a>
                     <ul class=" nav-sub">
                             <li>
-                                <a  href="#" title="医生私教" >医生私教</a>
+                                <a  href="/expert/index" title="医生私教" >医生私教</a>
                             </li>
                              <li>
-                                <a  href="suggestion.html" title="建议管理">建议管理</a>
+                                <a  href="/expert/index" title="建议管理">建议管理</a>
                             </li>
                         </ul>
                 </li>
