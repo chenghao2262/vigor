@@ -76,7 +76,7 @@
                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="meta">
                             <span class="avatar">
-                                <img src="Vigor/public/assets/img/profile.jpg" class="img-circle" alt="">
+                                <img src="/assets/img/profile.jpg" class="img-circle" alt="">
                             </span>
                         <span class="text">Mike Adams</span>
                         <span class="caret"></span>
@@ -134,7 +134,7 @@
     <aside class="sidebar sidebar-left">
         <div class="sidebar-profile">
             <div class="avatar">
-                <img class="img-circle profile-image" src="Vigor/public/assets/img/profile.jpg" alt="profile">
+                <img class="img-circle profile-image" src="/assets/img/profile.jpg" alt="profile">
                 <i class="on border-dark animated bounceIn"></i>
             </div>
             <div class="profile-body dropdown">
@@ -185,15 +185,15 @@
                     </a>
                     <ul class=" nav-sub">
                         <li>
-                            <a  href="homepage.html" title="运动管理">运动管理</a>
+                            <a  href="/body/index" title="运动管理">运动管理</a>
                         </li>
                          <li>
-                            <a  href="#" title="健康履历">健康履历</a>
+                            <a  href="/personal" title="健康履历">健康履历</a>
                         </li>
                     </ul>
                 </li>
                 <li class=" nav-dropdown">
-                    <a href="activitymanage.html" title="活动管理">
+                    <a href="/activity" title="活动管理">
                         <i class="fa fa-fw fa-flag"></i> 活动管理
                     </a>
                 </li>
@@ -203,15 +203,15 @@
                     </a>
                     <ul class="nav-sub">
                         <li class=>
-                            <a  href="interest.html" title="我的兴趣组">我的兴趣组</a>
+                            <a  href="/group" title="我的兴趣组">我的兴趣组</a>
                         </li>
                          <li>
-                            <a  href="#" title="发现兴趣组">发现兴趣组</a>
+                            <a  href="/group" title="发现兴趣组">发现兴趣组</a>
                         </li>
                     </ul>
                 </li>
                 <li class=" nav-dropdown open active">
-                    <a href="friendcircle.html" title="朋友圈">
+                    <a href="/friends/news" title="朋友圈">
                         <i class="fa fa-user fa-fw"></i> 朋友圈
                     </a>
                 </li>
@@ -226,10 +226,10 @@
                     </a>
                     <ul class=" nav-sub">
                         <li>
-                            <a  href="#" title="医生私教" >医生私教</a>
+                            <a  href="/expert/index" title="医生私教" >医生私教</a>
                         </li>
-                         <li class="active">
-                            <a  href="suggestion.html" title="建议管理">建议管理</a>
+                         <li>
+                            <a  href="/expert/suggestion" title="建议管理">建议管理</a>
                         </li>
                     </ul>
                 </li>
@@ -298,7 +298,7 @@
                         <ul>
                             <li>
                                 <div class="date">
-                                    <img class="img-circle profile-image" src="Vigor/public/assets/img/profile.jpg" alt="profile">
+                                    <img class="img-circle profile-image" src="/assets/img/profile.jpg" alt="profile">
                                 </div>
                                 <h4 class="user">袁睿:</h4>
                                 <p>
@@ -315,7 +315,7 @@
                             </li>
                             <li>
                                 <div class="date">
-                                    <img src="Vigor/public/assets/img/avatar3.png" alt="" class="img-circle" width="50" height="50">
+                                    <img src="/assets/img/avatar3.png" alt="" class="img-circle" width="50" height="50">
                                 </div>
                                 <h4>小刚:</h4>
                                 <p>
@@ -334,7 +334,7 @@
                             </li>
                             <li>
                                 <div class="date">
-                                    <img src="Vigor/public/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
+                                    <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
                                 </div>
                                 <h4>小红:</h4>
                                 <p>
@@ -350,7 +350,7 @@
                             </li>
                             <li>
                                 <div class="date">
-                                    <img src="Vigor/public/assets/img/avatar4.jpg" alt="" class="img-circle" width="50" height="50">
+                                    <img src="/assets/img/avatar4.jpg" alt="" class="img-circle" width="50" height="50">
                                 </div>
                                 <h4>孙梦曦:</h4>
                                 <p>
@@ -358,18 +358,18 @@
                                 </p>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <img src="Vigor/public/assets/img/vac-1.jpg" alt="" />
+                                        <img src="/assets/img/vac-1.jpg" alt="" />
                                     </div>
                                     <div class="col-md-6">
-                                        <img src="Vigor/public/assets/img/vac-2.jpg" alt="" />
+                                        <img src="/assets/img/vac-2.jpg" alt="" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <img src="Vigor/public/assets/img/vac-3.jpg" alt="" />
+                                        <img src="/assets/img/vac-3.jpg" alt="" />
                                     </div>
                                     <div class="col-md-6">
-                                        <img src="Vigor/public/assets/img/vac-4.jpg" alt="" />
+                                        <img src="/assets/img/vac-4.jpg" alt="" />
                                     </div>
                                 </div>
                                 <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
@@ -379,7 +379,7 @@
                             </li>
                             <li>
                                 <div class="date">
-                                    <img src="Vigor/public/assets/img/avatar8.png" alt="" class="img-circle" width="50" height="50">
+                                    <img src="/assets/img/avatar8.png" alt="" class="img-circle" width="50" height="50">
                                 </div>
                                 <h4>小狗:</h4>
                                 <p>
@@ -395,7 +395,7 @@
                             </li>
                             <li>
                                 <div class="date">
-                                    <img src="Vigor/public/assets/img/avatar7.png" alt="" class="img-circle" width="50" height="50">
+                                    <img src="/assets/img/avatar7.png" alt="" class="img-circle" width="50" height="50">
                                 </div>
                                 <h4>Boss:</h4>
                                 <p>
@@ -477,7 +477,7 @@
                                             <div class="col-md-2">
 
                                                 <span class="avatar">
-                                                    <img src="Vigor/public/assets/img/avatar3.png" class="img-circle" alt="">
+                                                    <img src="/assets/img/avatar3.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
                                             <div class="col-md-6">
@@ -496,7 +496,7 @@
                                             </div>
                                             <div class="col-md-2">
                                                 <span class="avatar">
-                                                    <img src="Vigor/public/assets/img/avatar1.png" class="img-circle" alt="">                                                 </span>
+                                                    <img src="/assets/img/avatar1.png" class="img-circle" alt="">                                                 </span>
                                                 </span>
                                             </div>
                                             <div class="col-md-6">
@@ -515,7 +515,7 @@
                                             </div>
                                             <div class="col-md-2">
                                                 <span class="avatar">
-                                                    <img src="Vigor/public/assets/img/avatar2.png" class="img-circle" alt="">                                                 </span>
+                                                    <img src="/assets/img/avatar2.png" class="img-circle" alt="">                                                 </span>
                                                 </span>
                                             </div>
                                             <div class="col-md-6">
@@ -534,7 +534,7 @@
                                             </div>
                                             <div class="col-md-2">
                                                 <span class="avatar">
-                                                    <img src="Vigor/public/assets/img/avatar4.jpg" class="img-circle" alt="">                                                 </span>
+                                                    <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">                                                 </span>
                                                 </span>
                                             </div>
                                             <div class="col-md-6">
@@ -554,7 +554,7 @@
                                             <div class="col-md-2">
 
                                                 <span class="avatar">
-                                                    <img src="Vigor/public/assets/img/avatar5.png" class="img-circle" alt="">
+                                                    <img src="/assets/img/avatar5.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
                                             <div class="col-md-6">
@@ -574,7 +574,7 @@
                                             <div class="col-md-2">
 
                                                 <span class="avatar">
-                                                    <img src="Vigor/public/assets/img/avatar6.png" class="img-circle" alt="">
+                                                    <img src="/assets/img/avatar6.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
                                             <div class="col-md-6">
@@ -594,7 +594,7 @@
                                             <div class="col-md-2">
 
                                                 <span class="avatar">
-                                                    <img src="Vigor/public/assets/img/avatar7.png" class="img-circle" alt="">
+                                                    <img src="/assets/img/avatar7.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
                                             <div class="col-md-6">
@@ -615,7 +615,7 @@
                                             <div class="col-md-2">
 
                                                 <span class="avatar">
-                                                    <img src="Vigor/public/assets/img/avatar8.png" class="img-circle" alt="">
+                                                    <img src="/assets/img/avatar8.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
                                             <div class="col-md-6">
@@ -635,7 +635,7 @@
                                             <div class="col-md-2">
 
                                                 <span class="avatar">
-                                                    <img src="Vigor/public/assets/img/avatar9.png" class="img-circle" alt="">
+                                                    <img src="/assets/img/avatar9.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
                                             <div class="col-md-6">
@@ -655,7 +655,7 @@
                                             <div class="col-md-2">
 
                                                 <span class="avatar">
-                                                    <img src="Vigor/public/assets/img/avatar9.png" class="img-circle" alt="">
+                                                    <img src="/assets/img/avatar9.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
                                             <div class="col-md-6">
@@ -698,7 +698,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="Vigor/public/assets/img/avatar3.png" class="img-circle" alt="">
+                        <img src="/assets/img/avatar3.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -712,7 +712,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="Vigor/public/assets/img/avatar1.png" class="img-circle" alt="">
+                        <img src="/assets/img/avatar1.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -726,7 +726,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="Vigor/public/assets/img/avatar2.png" class="img-circle" alt="">
+                        <img src="/assets/img/avatar2.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -740,7 +740,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="Vigor/public/assets/img/avatar4.jpg" class="img-circle" alt="">
+                        <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -754,7 +754,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="Vigor/public/assets/img/avatar5.png" class="img-circle" alt="">
+                        <img src="/assets/img/avatar5.png" class="img-circle" alt="">
                           <i class="away animated bounceIn"></i>
                         </span>
                         </div>
@@ -768,7 +768,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="Vigor/public/assets/img/avatar6.png" class="img-circle" alt="">
+                        <img src="/assets/img/avatar6.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -782,7 +782,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="Vigor/public/assets/img/avatar7.png" class="img-circle" alt="">
+                        <img src="/assets/img/avatar7.png" class="img-circle" alt="">
                           <i class="on animated bounceIn"></i>
                         </span>
                         </div>
@@ -796,7 +796,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="Vigor/public/assets/img/avatar8.png" class="img-circle off" alt="">
+                        <img src="/assets/img/avatar8.png" class="img-circle off" alt="">
                           <i class="off animated bounceIn"></i>
                         </span>
                         </div>
@@ -810,7 +810,7 @@
                     <div class="row">
                         <div class="col-md-3">
                                 <span class="avatar">
-                        <img src="Vigor/public/assets/img/avatar9.png" class="img-circle off" alt="">
+                        <img src="/assets/img/avatar9.png" class="img-circle off" alt="">
                           <i class="off animated bounceIn"></i>
                         </span>
                         </div>
