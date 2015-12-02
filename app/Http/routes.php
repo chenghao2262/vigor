@@ -36,6 +36,9 @@ Route::get('/body/index', 'BodyController@index');
 Route::get('/body/index/{date}', 'BodyController@getStatOn');
 Route::get('/body/index/{start}/{end}', 'BodyController@getStatBetween');
 
+Route::post('/chat','ChatController@postChat');
+
+
 Route::get ('/expert/index', 'ExpertController@index');
 Route::get ('/expert/hotExperts', 'ExpertController@getHotExperts');
 Route::get ('/expert/hotArticles', 'ExpertController@getHotArticles');
@@ -49,6 +52,7 @@ Route::post('/expert/order/chat', 'ExpertController@postChat');
 Route::post('/expert/order/grade', 'ExpertController@postGrade');
 
 Route::post('/expert/suggestion', 'ExpertController@makeSuggestion');
+Route::get ('/expert/suggestion/index', 'ExpertController@suggestionIndex');
 Route::get ('/expert/suggestion', 'ExpertController@getSuggestion');
 Route::get ('/expert/suggestion/{suggestionId}', 'ExpertController@getSuggestionAt');
 

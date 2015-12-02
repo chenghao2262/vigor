@@ -148,6 +148,13 @@ class ExpertController extends Controller
         dd($suggestion);
     }
 
+    public function suggestionIndex(){
+        $user = Auth::user();
+        $suggestions = $user->getSuggestions()->get();
+        return view('backend.experts');
+
+    }
+
     public function getSuggestion()
     {
         $user = Auth::user();
