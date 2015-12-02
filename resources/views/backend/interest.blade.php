@@ -224,7 +224,7 @@
                             <a  href="/expert/index" title="运动管理" >医生私教</a>
                         </li>
                          <li>
-                            <a  href="/expert/suggestion" title="建议管理">建议管理</a>
+                            <a  href="/expert/suggestion/index" title="建议管理">建议管理</a>
                         </li>
                     </ul>
                 </li>

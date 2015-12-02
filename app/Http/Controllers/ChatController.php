@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\ChatRecord;
 class ChatController extends Controller
 {
 
@@ -16,6 +17,11 @@ class ChatController extends Controller
     {
         $user = Auth::user();
         $toId = $request->input('toId');
+        $content = $request->input('content');
+
+        DB::table('friends')->where('userName',$user->name);
+
+
 
     }
 
