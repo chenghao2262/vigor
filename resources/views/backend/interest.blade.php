@@ -274,7 +274,7 @@
 
                             <div class="row">
                                 <div class="col-md-2">
-                                    <img class="img-circle profile-image" src="Vigor/public/assets/img/profile.jpg" alt="profile">
+                                    <img class="img-circle profile-image" src="/assets/img/profile.jpg" alt="profile">
                                 </div>
                             
                                 <div class="col-md-8">
@@ -346,7 +346,7 @@
 
                             <div class="row">
                                 <div class="col-md-2">
-                                    <img class="img-circle profile-image" src="Vigor/public/assets/img/avatar2.png" alt="profile">
+                                    <img class="img-circle profile-image" src="/assets/img/avatar2.png" alt="profile">
                                 </div>
                             
                                 <div class="col-md-8">
@@ -745,10 +745,6 @@
 <!-- Switch -->
 <script src="assets/plugins/switchery/switchery.min.js"></script>
 <script src="assets/plugins/dropzone/js/dropzone.min.js"></script>
- <!--Page Leve JS -->
-<script src="assets/plugins/c3Chart/js/d3.v3.min.js"></script>
-<script src="assets/plugins/c3Chart/js/c3.js"></script>
-<script src="assets/plugins/c3Chart/js/c3-V.js"></script>
 <!--Load these page level functions-->
 
 </body>

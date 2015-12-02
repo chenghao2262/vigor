@@ -340,7 +340,7 @@
                                     </div>
                                     <div class="row rowbottom">
                                         <div class="col-md-3 col-sm-3 col-xs-3">
-                                            <img src="Vigor/public/assets/img/vac-1.jpg" class="img-responsive img-semi-rec" alt="">
+                                            <img src="/assets/img/vac-1.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
                                             <div class="activity-content">
@@ -366,7 +366,7 @@
                                     </div>
                                     <div class="row rowbottom">
                                         <div class="col-md-3 col-sm-3 col-xs-3">
-                                            <img src="Vigor/public/assets/img/vac-2.jpg" class="img-responsive img-semi-rec" alt="">
+                                            <img src="/assets/img/vac-2.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
                                             <div class="activity-content">
@@ -392,7 +392,7 @@
                                     </div>
                                     <div class="row rowbottom" >
                                         <div class="col-md-3 col-sm-3 col-xs-3">
-                                            <img src="Vigor/public/assets/img/vac-3.jpg" class="img-responsive img-semi-rec" alt="">
+                                            <img src="/assets/img/vac-3.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
                                             <div class="activity-content">
@@ -418,7 +418,7 @@
                                     </div>
                                     <div class="row rowbottom">
                                         <div class="col-md-3 col-sm-3 col-xs-3">
-                                            <img src="Vigor/public/assets/img/vac-4.jpg" class="img-responsive img-semi-rec" alt="">
+                                            <img src="/assets/img/vac-4.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
                                             <div class="activity-content">
