@@ -1,3 +1,4 @@
+$(function () {
     var chartJs = function() {
 
         var doughnutData = [{
@@ -36,6 +37,7 @@
         };
         var lineChartData = {
                 labels: ["January", "February", "March", "April", "May", "June", "July"],
+                // labels:["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72"],
                 datasets: [{
                     label: 'Network Usage',
                     fillColor: 'rgba(26,188,156,0.5)',
@@ -44,6 +46,7 @@
                     pointStrokeColor: '#fff',
                     pointHighlightFill: '#fff',
                     pointHighlightStroke: 'rgba(220,220,220,1)',
+                    // data:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72]
                     data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
                 }, {
                     label: 'CPU Load',
@@ -54,6 +57,8 @@
                     pointHighlightFill: '#fff',
                     pointHighlightStroke: 'rgba(151,187,205,1)',
                     data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                    // data:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72]
+
                 }]
 
             }
@@ -64,20 +69,20 @@
             return Math.round(Math.random() * 100)
         };
         var barChartData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"，"January", "February", "March", "April", "May", "June", "July"],
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [{
                 fillColor: 'rgba(26,188,156,0.5)',
                 strokeColor: 'rgba(255,255,255,0.8)',
                 highlightFill: 'rgba(26,188,156,1)',
                 highlightStroke: 'rgba(255,255,255,0.8)',
-                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()，randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
             }, {
                 label: 'CPU Load',
                 fillColor: 'rgba(31,123,182,0.5)',
                 strokeColor: 'rgba(255,255,255,0.8)',
                 highlightFill: 'rgba(31,123,182,1)',
                 highlightStroke: 'rgba(255,255,255,0.8)',
-                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()，randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
             }]
 
         }
@@ -106,7 +111,7 @@
 
 
         window.onload = function() {
-            var ctx1 = document.getElementById("line").getContext("2d");
+            var ctx1 = document.getElementById("canvas1").getContext("2d");
             window.myLine = new Chart(ctx1).Line(lineChartData, {
                 responsive: true
             });
@@ -128,5 +133,5 @@
 
         };
 
-    }();
-
+    };
+});

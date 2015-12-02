@@ -19,6 +19,8 @@
     <!-- 自创 -->
     <link rel="stylesheet" href="{{ asset('/assets/css/discover.css')}}">
     <link rel="stylesheet" href="{{ asset('/assets/css/activity.css')}}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/upload.css')}}">
+
     <!-- Fonts  -->
     <link rel="stylesheet" href="{{ asset('/assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/simple-line-icons.css') }}">
@@ -276,165 +278,133 @@
         <section id="main-content" class="animated fadeInUp">
             <div class="row">
                 <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Form Wizard</h3>
-                                <div class="actions pull-right">
-                                    <i class="fa fa-expand"></i>
-                                    <i class="fa fa-chevron-down"></i>
-                                    <i class="fa fa-times"></i>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                <section class="fuelux">
-                                    <div>
-                                        <ul class="nav nav-tabs">
-                                          <li role="presentation" class="active"><a href="#target" data-toggle="tab">Target</a></li>
-                                          <li role="presentation"><a href="#upload" data-toggle="tab">Upload</a></li>
-                                          <li role="presentation"><a href="#profile" data-toggle="tab">Profile</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- <div id="myTabContent" class="tab-content">
-                                       <div class="tab-pane fade in active" id="target">
-                                          <p>W3Cschoool菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
-                                       </div>
-                                       <div class="tab-pane fade" id="upload">
-                                          <p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
-                                          TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
-                                       </div>
-                                       <div class="tab-pane fade" id="profile">
-                                          <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
-                                       </div>
-                                    </div> -->
-                                    <!-- <div id="MyWizard" class="wizard">
-                                        <ul class="steps">
-                                            <li data-target="#step1" class="active"><span class="badge badge-info">1</span>Step 1<span class="chevron"></span>
-                                            </li>
-                                            <li data-target="#step2"><span class="badge">2</span>Step 2<span class="chevron"></span>
-                                            </li>
-                                            <li data-target="#step3"><span class="badge">3</span>Step 3<span class="chevron"></span>
-                                            </li>
-                                        </ul>
-                                        <div class="actions">
-                                            <button type="button" class="btn btn-default btn-mini btn-prev"> <i class="fa fa-chevron-left"></i> Prev</button>
-                                            <button type="button" class="btn btn-primary btn-mini btn-next" data-last="Finish">Next <i class="fa fa-chevron-right"></i>
-                                            </button>
-                                        </div>
-                                    </div> -->
-                                    <div class="step-content tab-content">
-                                        <div class="step-pane active" id="step1">
-                                            <form class="form-horizontal">
-                                                <div class="form-group">
-                                                    <div class="col-sm-3">
-                                                        <h2 class="title">User Info</h2>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">First Name</label>
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">Last Name</label>
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">Password</label>
-                                                    <div class="col-sm-6">
-                                                        <input type="password" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="step-pane" id="step2">
-                                            <form class="form-horizontal">
-                                                <div class="form-group">
-                                                    <div class="col-sm-3">
-                                                        <h2 class="title">User Address</h2>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">Address</label>
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">Country</label>
-                                                    <div class="col-sm-6">
-                                                        <select class="form-control">
-                                                            <option value="">Country</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">City</label>
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">State</label>
-                                                    <div class="col-sm-6">
-                                                        <select class="form-control">
-                                                            <option value="">State</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">Zip</label>
-                                                    <div class="col-sm-1">
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="step-pane" id="step3">
-                                            <form class="form-horizontal">
-                                                <div class="form-group">
-                                                    <div class="col-sm-3">
-                                                        <h2 class="title">Payment Info</h2>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">Card No</label>
-                                                    <div class="col-sm-6">
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">Expiration</label>
-                                                    <div class="col-sm-3">
-                                                        <select class="form-control">
-                                                            <option value="">Month</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <select class="form-control">
-                                                            <option value="">Year</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">CSV</label>
-                                                    <div class="col-sm-1">
-                                                        <input type="text" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </section>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Form Wizard</h3>
+                            <div class="actions pull-right">
+                                <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
                             </div>
                         </div>
+                        <div class="panel-body">
+                            <section class="fuelux">
+                                <div>
+                                    <ul class="nav nav-tabs">
+                                      <li role="presentation" class="active"><a href="#target" data-toggle="tab">Target</a></li>
+                                      <li role="presentation"><a href="#upload" data-toggle="tab">Upload</a></li>
+                                      <li role="presentation"><a href="#profile" data-toggle="tab">Profile</a></li>
+                                    </ul>
+                                </div>
+                                <div id="myTabContent" class="upload_form tab-content">
+                                   <div class="tab-pane fade in active" id="target">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-3">
+                                                    <h2 class="title">User Info</h2>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">First Name</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Last Name</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Password</label>
+                                                <div class="col-sm-6">
+                                                    <input type="password" class="form-control">
+                                                </div>
+                                            </div>
+                                        </form>
+                                   </div>
+                                   <div class="tab-pane fade" id="upload">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-3">
+                                                    <h2 class="title">User Address</h2>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Address</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Country</label>
+                                                <div class="col-sm-6">
+                                                    <select class="form-control">
+                                                        <option value="">Country</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">City</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">State</label>
+                                                <div class="col-sm-6">
+                                                    <select class="form-control">
+                                                        <option value="">State</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Zip</label>
+                                                <div class="col-sm-1">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </form>
+                                   </div>
+                                   <div class="tab-pane fade" id="profile">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-sm-3">
+                                                    <h2 class="title">Payment Info</h2>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Card No</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Expiration</label>
+                                                <div class="col-sm-3">
+                                                    <select class="form-control">
+                                                        <option value="">Month</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <select class="form-control">
+                                                        <option value="">Year</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">CSV</label>
+                                                <div class="col-sm-1">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </form>
+                                   </div>
+                                </div>
+                            </section>
+                        </div>
                     </div>
-                    
-
-                <div class="col-md-2">
-                    
                 </div>
             </div>
         </section>

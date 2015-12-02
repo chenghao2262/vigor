@@ -288,7 +288,7 @@
                         <div class="col-md-6">
                             <div class="panel  panel-solid-success widget-mini">
                                 <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">5600步</span>
+                                    <span class="total text-center">{{$sportRecord->steps}}步</span>
                                     <span class="title text-center">今日已走</span>
                                 </div>
                             </div>
@@ -296,7 +296,7 @@
                         <div class="col-md-6">
                             <div class="panel panel-solid-danger widget-mini">
                                 <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">10000步</span>
+                                    <span class="total text-center">{{Auth::user()->goal}}步</span>
                                     <span class="title text-center">目标步数</span>
                                 </div>
                             </div>
@@ -304,7 +304,7 @@
                         <div class="col-md-6">
                             <div class="panel panel-solid-success widget-mini">
                                 <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">6.8km</span>
+                                    <span class="total text-center">{{$sportRecord->distance}}km</span>
                                     <span class="title text-center">今日里程</span>
                                 </div>
                             </div>
@@ -312,7 +312,7 @@
                         <div class="col-md-6">
                             <div class="panel panel-solid-warning widget-mini">
                                 <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">3000cal</span>
+                                    <span class="total text-center">{{$sportRecord->calories}}cal</span>
                                     <span class="title text-center">今日燃烧</span>
                                 </div>
                             </div>
@@ -330,14 +330,14 @@
                             <canvas width="220" height="136" id="gauge" class=""></canvas>
                             <div class="goal-wrapper">
                                 <span class="gauge-value pull-left"></span>
-                                <span id="gauge-text" class="gauge-value pull-left">5600</span>
+                                <span id="gauge-text" class="gauge-value pull-left">{{$sportRecord->steps}}</span>
                                 <span id="goal-text" class="goal-value pull-right">2,0000</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
+          <!--   <div class="row">
                 <div class="col-md-12 col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -374,7 +374,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-default">
@@ -672,6 +672,8 @@
 <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- ChartJS  -->
 <script src="assets/plugins/chartjs/Chart.min.js"></script>
+<script src="assets/plugins/chartjs/chartjs-demo.js"></script>
+
 <!-- Morris  -->
 <script src="assets/plugins/morris/js/morris.min.js"></script>
 <script src="assets/plugins/morris/js/raphael.2.1.0.min.js"></script>
@@ -696,6 +698,7 @@
 <!--Load these page level functions-->
 <script>
     showSteps(20000,{{$sportRecord->steps}});
+    showDetail({{$sportRecord->steps_detail}});
     $(document).ready(function() {
         app.dateRangePicker();
         app.chartJs();

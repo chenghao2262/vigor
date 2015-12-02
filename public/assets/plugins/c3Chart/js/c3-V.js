@@ -1,13 +1,27 @@
-$(function () {
-      var chart = c3.generate({
-         bindto: '#zoom',
-        data: {
-          columns: [
-            ['sample', 30, 200, 100, 400, 150, 250, 150, 200, 170, 240, 350, 150, 100, 400, 150, 250, 150, 200, 170, 240, 100, 150, 250, 150, 200, 170, 240, 30, 200, 100, 400, 150, 250, 150, 200, 170, 240, 350, 150, 100, 400, 350, 220, 250, 300, 270, 140, 150, 90, 150, 50, 120, 70, 40]
-          ]
-        },
-        zoom: {
-          enabled: true
+
+function showDetail(target){
+    target.unshift('today\'s steps detail')
+    var chart = c3.generate({
+      bindto: '#zoom',
+      data: {
+        columns: [target]
+      },
+
+      axis:{
+        x:{
+            type:'category',
+            categories:['0','','','1','','','2','','','3','','','4','','','5','','','6','','','7','','','8','','','9','','','10','','','11','','','12','','','13','','','14','','','15','','','16','','','17','','','18','','','19','','','20','','','21','','','22','','','23','',''],
+            tick: {
+              multiline:false,
+              culling: {
+                  max: 96 // the number of tick texts will be adjusted to less than this value
+              }
+            }
         }
-      });
-});
+      },
+      zoom: {
+        enabled: true
+      }
+    });
+}
+
