@@ -21,7 +21,7 @@
 
     <!-- siimple style -->
     <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('/assets/css/sign.css') }}" rel="stylesheet">!
+    <link href="{{ asset('/assets/css/sign.css') }}" rel="stylesheet">
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -42,9 +42,10 @@
     </div>
 
 	@yield('content')
-	
+
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{{ asset('/assets/js/bootstrap.min.js') }}"></script>
+    @yield('scripts')
   </body>
 </html>

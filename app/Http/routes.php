@@ -13,6 +13,17 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
+
+Route::get('bcClient', function () {
+    return view("chatTest");
+});
+
+Route::get('bc', function () {
+    event(new App\Events\ChatEvent(10));
+    return "event fired";
+});
+
+
 Route::get('/test','TestController@index');
 Route::get('/testget/{suggestionId}','ExpertController@getSuggestionAt');
 
