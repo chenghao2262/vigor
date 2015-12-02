@@ -12,23 +12,25 @@
     <title>BodyBoard</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <!-- Favicon -->
+   <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('/assets/img/favicon.ico') }}" type="image/x-icon">
-    <!-- 自创 -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/discover.css') }}">
-
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+    <!-- 自创 -->
+    <link rel="stylesheet" href="{{ asset('/assets/css/discover.css')}}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/activity.css')}}">
     <!-- Fonts  -->
     <link rel="stylesheet" href="{{ asset('/assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/simple-line-icons.css') }}">
     <!-- CSS Animate -->
     <link rel="stylesheet" href="{{ asset('/assets/css/animate.css') }}">
+    <!-- C3 Chart-->
+    <link rel="stylesheet" href="{{ asset('/assets/plugins/c3Chart/css/c3.css') }}">
     <!-- Daterange Picker -->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/daterangepicker/daterangepicker-bs3.css') }}">
     <!-- Calendar demo -->
     <link rel="stylesheet" href="{{ asset('/assets/css/clndr.css') }}">
-    <!-- Drop Zone-->
+     <!-- Drop Zone-->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/dropzone.css') }}" >
     <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/basic.css') }}">
     <!-- Switchery -->
@@ -677,6 +679,7 @@
         </div>
     <!--main content end-->
     </section>
+</section>
 <!--sidebar right start-->
 <aside id="sidebar-right">
     <h4 class="sidebar-title">contact List</h4>
@@ -936,50 +939,38 @@
 </div>
 <!--/Config demo-->
 <!--Global JS-->
-<script src="assets/js/vendor/jquery-1.11.1.min.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/plugins/navgoco/jquery.navgoco.min.js"></script>
-<script src="assets/plugins/pace/pace.min.js"></script>
-<script src="assets/plugins/fullscreen/jquery.fullscreen-min.js"></script>
-<script src="assets/js/src/app.js"></script>
+<script src="{{ asset('/assets/js/vendor/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/navgoco/jquery.navgoco.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/pace/pace.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/fullscreen/jquery.fullscreen-min.js') }}"></script>
+<script src="{{ asset('/assets/js/src/app.js') }}"></script>
 <!--Page Level JS-->
-<script src="assets/plugins/countTo/jquery.countTo.js"></script>
-<script src="assets/plugins/weather/js/skycons.js"></script>
-<script src="assets/plugins/daterangepicker/moment.min.js"></script>
-<script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="{{ asset('/assets/plugins/countTo/jquery.countTo.js') }}"></script>
+<script src="{{ asset('/assets/plugins/weather/js/skycons.js') }}"></script>
+<script src="{{ asset('/assets/plugins/daterangepicker/moment.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
 <!-- ChartJS  -->
-<script src="assets/plugins/chartjs/Chart.min.js"></script>
+<script src="{{ asset('/assets/plugins/chartjs/Chart.min.js') }}"></script>
 <!-- Morris  -->
-<script src="assets/plugins/morris/js/morris.min.js"></script>
-<script src="assets/plugins/morris/js/raphael.2.1.0.min.js"></script>
+<script src="{{ asset('/assets/plugins/morris/js/morris.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/morris/js/raphael.2.1.0.min.js') }}"></script>
 <!-- Vector Map  -->
-<script src="assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js"></script>
+<script src="{{ asset('/assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js') }}"></script>
 <!-- Gauge  -->
-<script src="assets/plugins/gauge/gauge.min.js"></script>
-<script src="assets/plugins/gauge/gaugeV.js"></script>
+<script src="{{ asset('/assets/plugins/gauge/gauge.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/gauge/gaugeV.js') }}"></script>
 <!-- <script src="assets/plugins/gauge/gauge-demo.js"></script> -->
 <!-- Calendar  -->
-<script src="assets/plugins/calendar/clndr.js"></script>
-<script src="assets/plugins/calendar/clndr-demo.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+<script src="{{ asset('/assets/plugins/calendar/clndr.js') }}"></script>
+<script src="{{ asset('/assets/plugins/calendar/clndr-demo.js') }}"></script>
+<script src="{{ url('/http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js') }}"></script>
 <!-- Switch -->
-<script src="assets/plugins/switchery/switchery.min.js"></script>
-<script src="assets/plugins/dropzone/js/dropzone.min.js"></script>
+<script src="{{ asset('/assets/plugins/switchery/switchery.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/dropzone/js/dropzone.min.js') }}"></script>
  <!--Page Leve JS -->
 <!--Load these page level functions-->
-<script>
-    showSteps(20000,{{$sportRecord->steps}});
-    $(document).ready(function() {
-        app.dateRangePicker();
-        app.chartJs();
-        app.weather();
-        app.spinStart();
-        app.spinStop();
-    });
-</script>
-
-
 </body>
 
 </html>
