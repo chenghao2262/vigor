@@ -283,7 +283,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-5" >
+                <div class="col-sm-12 col-md-12 col-lg-5" >
                     <div class="row">
                         <div class="col-md-6">
                             <div class="panel  panel-solid-success widget-mini">

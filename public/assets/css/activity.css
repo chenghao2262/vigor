@@ -37,6 +37,15 @@
 	width:100%;
 	text-overflow:ellipsis;
 }
+.btn-modify-activity{
+	margin:0!important;
+	color: #fff;
+	background-color:#27b6af;
+	margin-top: 30%;
+	margin-bottom: 30%;
+	width:100%;
+	text-overflow:ellipsis;
+}
 
 .filled-color{
 	max-height: 120px;

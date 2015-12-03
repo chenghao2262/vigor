@@ -12,26 +12,29 @@
     <title>BodyBoard</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <!-- Favicon -->
+   <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('/assets/img/favicon.ico') }}" type="image/x-icon">
-    <!-- 自创 -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/discover.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/activity.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/suggestion.css') }}">
-
-
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+    <!-- Bootstrap datepicker CSS -->
+    <link rel="stylesheet" href="{{ asset('/assets/plugins/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css') }}">
+   
+    <!-- 自创 -->
+    <link rel="stylesheet" href="{{ asset('/assets/css/discover.css')}}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/activity.css')}}">
+
     <!-- Fonts  -->
     <link rel="stylesheet" href="{{ asset('/assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/simple-line-icons.css') }}">
     <!-- CSS Animate -->
     <link rel="stylesheet" href="{{ asset('/assets/css/animate.css') }}">
+    <!-- C3 Chart-->
+    <link rel="stylesheet" href="assets/plugins/c3Chart/css/c3.css">
     <!-- Daterange Picker -->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/daterangepicker/daterangepicker-bs3.css') }}">
     <!-- Calendar demo -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/clndr.css') }}">
-    <!-- Drop Zone-->
+    <link rel="stylesheet" href="{{asset('/assets/css/clndr.css')}}">
+     <!-- Drop Zone-->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/dropzone.css') }}" >
     <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/basic.css') }}">
     <!-- Switchery -->
@@ -48,7 +51,7 @@
 </head>
 
 <body>
-      <section id="main-wrapper" class="theme-default">
+   <section id="main-wrapper" class="theme-default">
         <header id="header">
             <!--logo start-->
             <div class="brand">
@@ -195,7 +198,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class=" nav-dropdown">
+                    <li class=" nav-dropdown open active">
                         <a href="/activity" title="活动管理">
                             <i class="fa fa-fw fa-flag"></i> 活动管理
                         </a>
@@ -223,15 +226,15 @@
                             <i class="fa fa-fw fa-shopping-cart"></i> 健货商城
                         </a>
                     </li>
-                    <li class="nav-dropdown  open active">
+                    <li class="nav-dropdown">
                         <a href="#" title="专业咨询" data-toggle="collapse">
                             <i class="fa fa-fw fa-comment"></i> 专业咨询
                         </a>
                         <ul class=" nav-sub">
                             <li>
-                                <a  href="/expert/index" title="运动管理" >医生私教</a>
+                                <a  href="/expert/index" title="医生私教" >医生私教</a>
                             </li>
-                             <li class="active">
+                             <li>
                                 <a  href="/expert/suggestion/index" title="建议管理">建议管理</a>
                             </li>
                         </ul>
@@ -261,206 +264,8 @@
             </div>
         </aside>
         <!--sidebar left end-->
+    @yield('content')
 
-        <!--main content start-->
-        <section class="main-content-wrapper">
-            <div class="pageheader">
-                <h1>建议</h1>
-                <p class="description">这里展示我的建议</p>
-                <div class="breadcrumb-wrapper hidden-xs">
-                    <span class="label">You are here:</span>
-                    <ol class="breadcrumb">
-                        <li class="active">Suggestion</li>
-                    </ol>
-                </div>
-            </div>
-
-
-            <section id="main-content" class="animated fadeInUp">
-                <div class="row">
-                    <div class="col-md-8 col-sm-12 col-lg-8">
-                        <ul class="suggestion-list">
-                            <li>
-                                <article class="suggestion">
-                                    <h1>
-                                        <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
-                                        只要你跑的够快 寂寞就追不上你
-                                        </a>
-                                    </h1>
-                                    <div class="suggestion-summary">
-                                        <p>
-                                              今天逛NBA中文网站，准备抄袭他们数据展示方式的时候，发现一个热区数据展示，挺不错的。
-                                              忽视右边数据里的一些bug，总的来说是非常炫酷的… 
-                                              而且实现起来貌似也很简单，对照这14个区域做14个按钮就好了….
-                                              因为一直用的Java中的Swing包做用户界面开发，但是无论是JButton还是JLabe
-                                        </p>
-                                    </div>
-                                    <div class="suggestion-info">
-                                        <i class="fa fa-calender"></i> 2015-05-13  105 人围观; 
-                                        <i class="fa fa-map-marker"></i>
-                                        <a href="#">蒙古医生</a>
-                                    </div>
-                                    <div class="suggestion-readmore">
-                                        <a href="#">+展开建议</a>
-                                    </div>    
-                                </article>
-                            </li>
-
-                            <li>
-                                <article class="suggestion">
-                                    <h1>
-                                        <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
-                                        只要你跑的够快 寂寞就追不上你
-                                        </a>
-                                    </h1>
-                                    <div class="suggestion-summary">
-                                        <p>
-                                              今天逛NBA中文网站，准备抄袭他们数据展示方式的时候，发现一个热区数据展示，挺不错的。
-                                              忽视右边数据里的一些bug，总的来说是非常炫酷的… 
-                                              而且实现起来貌似也很简单，对照这14个区域做14个按钮就好了….
-                                              因为一直用的Java中的Swing包做用户界面开发，但是无论是JButton还是JLabe
-                                        </p>
-                                    </div>
-                                    <div class="suggestion-info">
-                                        <i class="fa fa-calender"></i> 2015-05-13  105 人围观; 
-                                        <i class="fa fa-map-marker"></i>
-                                        <a href="#">蒙古医生</a>
-                                    </div>
-                                    <div class="suggestion-readmore">
-                                        <a href="#">+展开建议</a>
-                                    </div>    
-                                </article>
-                            </li>
-
-                            <li>
-                                <article class="suggestion">
-                                    <h1>
-                                        <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
-                                        只要你跑的够快 寂寞就追不上你
-                                        </a>
-                                    </h1>
-                                    <div class="suggestion-summary">
-                                        <p>
-                                              今天逛NBA中文网站，准备抄袭他们数据展示方式的时候，发现一个热区数据展示，挺不错的。
-                                              忽视右边数据里的一些bug，总的来说是非常炫酷的… 
-                                              而且实现起来貌似也很简单，对照这14个区域做14个按钮就好了….
-                                              因为一直用的Java中的Swing包做用户界面开发，但是无论是JButton还是JLabe
-                                        </p>
-                                    </div>
-                                    <div class="suggestion-info">
-                                        <i class="fa fa-calender"></i> 2015-05-13  105 人围观; 
-                                        <i class="fa fa-map-marker"></i>
-                                        <a href="#">蒙古医生</a>
-                                    </div>
-                                    <div class="suggestion-readmore">
-                                        <a href="#">+展开建议</a>
-                                    </div>    
-                                </article>
-                            </li>
-
-                            <li>
-                                <article class="suggestion">
-                                    <h1>
-                                        <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
-                                        只要你跑的够快 寂寞就追不上你
-                                        </a>
-                                    </h1>
-                                    <div class="suggestion-summary">
-                                        <p>
-                                              今天逛NBA中文网站，准备抄袭他们数据展示方式的时候，发现一个热区数据展示，挺不错的。
-                                              忽视右边数据里的一些bug，总的来说是非常炫酷的… 
-                                              而且实现起来貌似也很简单，对照这14个区域做14个按钮就好了….
-                                              因为一直用的Java中的Swing包做用户界面开发，但是无论是JButton还是JLabe
-                                        </p>
-                                    </div>
-                                    <div class="suggestion-info">
-                                        <i class="fa fa-calender"></i> 2015-05-13  105 人围观; 
-                                        <i class="fa fa-map-marker"></i>
-                                        <a href="#">蒙古医生</a>
-                                    </div>
-                                    <div class="suggestion-readmore">
-                                        <a href="#">+展开建议</a>
-                                    </div>    
-                                </article>
-                            </li>
-                        </ul>
-                    </div> 
-
-                    <div class="col-md-4 col-sm-12 col-lg-4">
-                             <section class="panel">
-                            <header class="panel-heading wht-bg">
-                                <h3 class="gen-case">猜你感兴趣</h4>
-                            </header>
-                            <div class="panel-body minimal">
-
-                                <div class="contact-list-wrapper">
-                                    <div id="contact-list">
-                                        <ul class="suggestion-ul">
-                                            <li class="suggestion-li">
-                                                 <div class="row">
-                                                    <div class="col-md-3 col-sm-3 pic-right">
-                                                        <span class="avatar">
-                                                            <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">
-                                                        </span>
-                                                    </div>
-                                                    <div class="col-md-9 col-sm-9 introduction">
-                                                        <div class="name">叶良辰
-                                                            <button type="button" class="btn-follow">
-                                                                <i class="icon-user-follow"></i>关注
-                                                            </button>
-                                                            <br>
-                                                            <small class="location text-muted">爱新觉罗·良辰·裂天·孤城·回春术(+7)·无嗔大师</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                             <li class="suggestion-li">
-                                                 <div class="row">
-                                                    <div class="col-md-3 col-sm-3 pic-right">
-                                                        <span class="avatar">
-                                                            <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">
-                                                        </span>
-                                                    </div>
-                                                    <div class="col-md-9 col-sm-9 introduction">
-                                                        <div class="name">叶良辰
-                                                            <button type="button" class="btn-follow">
-                                                                <i class="icon-user-follow"></i>关注
-                                                            </button>
-                                                            <br>
-                                                            <small class="location text-muted">爱新觉罗·良辰·裂天·孤城·回春术(+7)·无嗔大师</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                             <li class="suggestion-li">
-                                                 <div class="row">
-                                                    <div class="col-md-3 col-sm-3 pic-right">
-                                                        <span class="avatar">
-                                                            <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">
-                                                        </span>
-                                                    </div>
-                                                    <div class="col-md-9 col-sm-9 introduction">
-                                                        <div class="name">叶良辰
-                                                            <button type="button" class="btn-follow">
-                                                                <i class="icon-user-follow"></i>关注
-                                                            </button>
-                                                            <br>
-                                                            <small class="location text-muted">爱新觉罗·良辰·裂天·孤城·回春术(+7)·无嗔大师</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>    
-                            </div>
-                        </section>
-                    </div>        
-                </div>
-            </section>
-
-        <!--main content end-->
-        </section>
     </section>
 
 <!--sidebar right start-->
@@ -722,41 +527,51 @@
 </div>
 <!--/Config demo-->
 <!--Global JS-->
-<script src="{{ asset('/assets/js/vendor/jquery-1.11.1.min.js') }}"></script>
-<script src="{{ asset('/assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('/assets/plugins/navgoco/jquery.navgoco.min.js') }}"></script>
-<script src="{{ asset('/assets/plugins/pace/pace.min.js') }}"></script>
-<script src="{{ asset('/assets/plugins/fullscreen/jquery.fullscreen-min.js') }}"></script>
-<script src="{{ asset('/assets/js/src/app.js') }}"></script>
+<script src="assets/js/vendor/jquery-1.11.1.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="assets/plugins/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
+<script src="assets/plugins/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.fr.js"></script>
+
+<script src="assets/plugins/navgoco/jquery.navgoco.min.js"></script>
+<script src="assets/plugins/pace/pace.min.js"></script>
+<script src="assets/plugins/fullscreen/jquery.fullscreen-min.js"></script>
+<script src="assets/js/src/app.js"></script>
 <!--Page Level JS-->
-<script src="{{ asset('/assets/plugins/countTo/jquery.countTo.js') }}"></script>
-<script src="{{ asset('/assets/plugins/weather/js/skycons.js') }}"></script>
-<script src="{{ asset('/assets/plugins/daterangepicker/moment.min.js') }}"></script>
-<script src="{{ asset('/assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
+<script src="assets/plugins/countTo/jquery.countTo.js"></script>
+<script src="assets/plugins/weather/js/skycons.js"></script>
+<script src="assets/plugins/daterangepicker/moment.min.js"></script>
+<script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- ChartJS  -->
-<script src="{{ asset('/assets/plugins/chartjs/Chart.min.js') }}"></script>
+<script src="assets/plugins/chartjs/Chart.min.js"></script>
 <!-- Morris  -->
-<script src="{{ asset('/assets/plugins/morris/js/morris.min.js') }}"></script>
-<script src="{{ asset('/assets/plugins/morris/js/raphael.2.1.0.min.js') }}"></script>
+<script src="assets/plugins/morris/js/morris.min.js"></script>
+<script src="assets/plugins/morris/js/raphael.2.1.0.min.js"></script>
 <!-- Vector Map  -->
-<script src="{{ asset('/assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js') }}"></script>
-<script src="{{ asset('/assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js') }}"></script>
+<script src="assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js"></script>
 <!-- Gauge  -->
-<script src="{{ asset('/assets/plugins/gauge/gauge.min.js') }}"></script>
-<script src="{{ asset('/assets/plugins/gauge/gaugeV.js') }}"></script>
+<script src="assets/plugins/gauge/gauge.min.js"></script>
+<script src="assets/plugins/gauge/gaugeV.js"></script>
 <!-- <script src="assets/plugins/gauge/gauge-demo.js"></script> -->
 <!-- Calendar  -->
-<script src="{{ asset('/assets/plugins/calendar/clndr.js') }}"></script>
-<script src="{{ asset('/assets/plugins/calendar/clndr-demo.js') }}"></script>
-<script src="{{ url('/http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js') }}"></script>
+<script src="assets/plugins/calendar/clndr.js"></script>
+<script src="assets/plugins/calendar/clndr-demo.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 <!-- Switch -->
-<script src="{{ asset('/assets/plugins/switchery/switchery.min.js') }}"></script>
-<script src="{{ asset('/assets/plugins/dropzone/js/dropzone.min.js') }}"></script>
- <!--Page Leve JS -->
+<script src="assets/plugins/switchery/switchery.min.js"></script>
+<script src="assets/plugins/dropzone/js/dropzone.min.js"></script>
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: 'yyyy-mm-dd hh:ii',
+        autoclose: true,
+        todayBtn: true,
+        pickerPosition: "bottom-left"
+    });
+</script>
+<!--Page Leve JS -->
 <!--Load these page level functions-->
 
 </body>
 
 </html>
-
-
