@@ -25,6 +25,27 @@
     <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/css/sign.css') }}" rel="stylesheet">
 
+    {{--这里是为了聊天窗口临时加的静态文件--}}
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('/assets/img/favicon.ico') }}" type="image/x-icon">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ asset('/assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+    <!-- Fonts  -->
+    <link rel="stylesheet" href="{{ asset('/assets/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/simple-line-icons.css') }}">
+    <!-- CSS Animate -->
+    <link rel="stylesheet" href="{{ asset('/assets/css/animate.css') }}">
+    <!-- Daterange Picker -->
+    <link rel="stylesheet" href="{{ asset('/assets/plugins/daterangepicker/daterangepicker-bs3.css') }}">
+    <!-- Drop Zone-->
+    <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/dropzone.css') }}" >
+    <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/basic.css') }}">
+    <!-- Switchery -->
+    <link rel="stylesheet" href="{{ asset('/assets/plugins/switchery/switchery.min.css') }}">
+    <!-- Custom styles for this theme -->
+    <link rel="stylesheet" href="{{ asset('/assets/css/main.css') }}">
+
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -117,7 +138,7 @@
 
         {{--这是上传文件--}}
         {{--传文件需要注意: 需要加一个token 需要在meta里面加上csrf-token--}}
-        <form class="form-inline signup"  method="POST" action="{{ url('/sports/data') }}" enctype="multipart/form-data">
+        {{--<form class="form-inline signup"  method="POST" action="{{ url('/sports/data') }}" enctype="multipart/form-data">
 
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="file" name="data" accept="application/vnd.ms-excel" id="exampleInputFile">
@@ -125,10 +146,106 @@
 
             <button type="submit" class="btn btn-primary">Submit</button>
 
-        </form>
+        </form>--}}
+
+        {{--这里是聊天窗口--}}
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+            <div class="panel panel-default chat-widget">
+                <div class="panel-heading">
+                    <h3 class="panel-title">chat</h3>
+                    <div class="actions pull-right">
+                        <i class="fa fa-expand"></i>
+                        <i class="fa fa-chevron-down"></i>
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="panel-body" id="chatPanel">
+                    <div class="row wrapper animated fadeInRight">
+                        <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                        <span class="avatar">
+                                        <img src="assets/img/avatar3.png" class="img-circle" alt="">
+                                        <i class="on animated bounceIn"></i>
+                                    </span>
+                        </div>
+                        <div class="col-xs-10 col-sm-10 col-md-10">
+                            <div class="post default">
+                                <span class="arrow left"></span>
+                                <p>Hey Mike...Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibut</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wrapper animated fadeInLeft">
+                        <div class="col-xs-10 col-sm-10 col-md-10">
+                            <div class="post primary">
+                                <span class="arrow right"></span>
+                                <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et.</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">
+                                        <span class="avatar">
+                                        <img src='assets/img/profile.jpg' class="img-circle" alt="">
+                                        <i class="on animated bounceIn"></i>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <form method="POST" action="{{ url('/chat') }}" id="chatform">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Say something" name="content">
+                            <input type="hidden" name="toName" value="njusmx">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-primary" id="subm">SEND</button>
+                                         </span>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
     </div>
+
+
 
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="{{ asset('/assets/js/bootstrap.min.js') }}"></script>
+
+    <script src="{{ asset('assets/js/socket.io.js') }}"></script>
+
+    <script>
+        var socket = io('http://localhost:3000');
+        socket.on("test-channel:App\\Events\\ChatEvent", function(message){
+            var fromName =  message.data.fromName;
+            if(fromName=='YuanRui'){
+            $('#chatPanel').append("<div class='row wrapper animated fadeInLeft'>"+
+                                        "<div class='col-xs-10 col-sm-10 col-md-10'>"+
+                                            "<div class='post primary'>"+
+                                                "<span class='arrow right'></span>"+
+                                                "<p>"+message.data.content+"</p>"+
+                                            "</div>"+
+                                        "</div>"+
+                                        "<div class='col-xs-2 col-sm-2 col-md-2'>"+
+                                            "<span class='avatar'>"+
+                                            "<img src='assets/img/profile.jpg' class='img-circle' alt=''>"+
+                                            "<i class='on animated bounceIn'></i>"+
+                                            "</span>"+
+                                        "</div>"+
+                                    "</div>");
+            }
+        });
+
+        $('#subm').click(function () {
+            $.ajax({
+                url:"{{ url('/chat') }}",
+                data:$("#chatform").serialize(),
+                type:"post",
+            });
+            return false;
+        });
+
+    </script>
+
 </body>
 </html>

@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\ChatRecord;
+use App\Events\ChatEvent;
 class ChatController extends Controller
 {
 
@@ -16,12 +18,33 @@ class ChatController extends Controller
     public function postChat(Request $request)
     {
         $user = Auth::user();
-        $toId = $request->input('toId');
+        $toName = $request->input('toName');
         $content = $request->input('content');
 
-        DB::table('friends')->where('userName',$user->name);
+        $groupId = "";
+        //dd($toName,$content,$user->name);
+        if(strcasecmp($user->name,$toName)<0) {
+
+            $groupId =  DB::table('friends')->where('userName', $user->name)
+                                            ->where('friendName',$toName)
+                                            ->select('groupID')
+                                            ->first()->groupID;
+
+        }else{
+
+            $groupId =  DB::table('friends')->where('friendName', $user->name)
+                                            ->where('userName',$toName)
+                                            ->select('groupID')
+                                            ->first()->groupID;
+        }
 
 
+        $chatRecord = new ChatRecord();
+        $chatRecord->groupID = $groupId;
+        $chatRecord->fromName = $user->name;
+        $chatRecord->content = $content;
+        $chatRecord->save();
+        event(new ChatEvent($chatRecord));
 
     }
 

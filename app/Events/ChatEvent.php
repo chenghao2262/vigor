@@ -11,15 +11,16 @@ class ChatEvent extends Event implements ShouldBroadcast
     use SerializesModels;
 
     public $data;
+    private $channel;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($userNum)
+    public function __construct($chatRecord)
     {
-        $this->data = array('userNum'=>$userNum);
+        $this->data = $chatRecord;
     }
 
     /**
