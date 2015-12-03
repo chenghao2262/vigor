@@ -17,17 +17,61 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form role="form">
-                            <textarea class="form-control" placeholder="What's on your mind?"></textarea>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
-                                    <a class="btn btn-sm btn-default"><i class="fa fa-video-camera"></i></a>
-                                    <a class="btn btn-sm btn-default"><i class="fa fa-music"></i></a>
-                                    <a class="btn btn-sm btn-default"><i class="fa fa-map-marker"></i></a>
+                        <form class="form-horizontal" role="form">
+                        <!-- <form class="form-inline signup"  method="POST" action="{{ url('/sports/data') }}" enctype="multipart/form-data"> -->
+                                    
+                            <div class="col-md-offset-1 col-md-3"> 
+                                <div class="form-group">
+                                    <img src="/assets/img/vac-1.jpg" class="img-responsive img-semi-rec" alt="">
                                 </div>
-                                <div class="col-sm-6 text-right">
-                                    <button type="submit" class="btn btn-primary">Post</button>
+                                <div class="form-group">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="file" name="data" accept="application/vnd.ms-excel" id="exampleInputFile">
+                                </div>
+                            </div>
+
+                            <div class="col-md-offset-1 col-md-7">
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">活动名称</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" placeholder="Activity Name" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">活动地点</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" placeholder="Activity Position">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">活动描述</label>
+                                    <div class="col-sm-6">
+                                        <textarea class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputStart" class="col-sm-3 control-label">开始时间</label>
+
+                                    <div class="col-sm-6">
+                                        <input name="start" type="text" readonly class="form-control input-append date form_datetime"
+                                            id="inputStart" placeholder="" value="{{ old('start') }}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputStart" class="col-sm-3 control-label">结束时间</label>
+
+                                    <div class="col-sm-6">
+                                        <input name="start" type="text" readonly class="form-control input-append date form_datetime"
+                                            id="inputStart" placeholder="" value="{{ old('start') }}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-6 col-md-2 col-sm-offset-7 col-sm-10">
+                                        <button type="submit" class="btn btn-primary">提交发布</button>
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -198,6 +242,7 @@
                                                             <img src="/assets/img/vac-1.jpg" class="img-responsive img-semi-rec" alt="">
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7">
+                                                            <h4>NAME</h4>
                                                             <div class="activity-content">
                                                                 天天酷跑 只要你跑的够快，寂寞就追不上你
                                                             </div>
@@ -223,6 +268,7 @@
                                                             <img src="/assets/img/vac-2.jpg" class="img-responsive img-semi-rec" alt="">
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7">
+                                                            <h4>NAME</h4>
                                                             <div class="activity-content">
                                                                 天天酷跑 只要你跑的够快，寂寞就追不上你
                                                             </div>
@@ -248,6 +294,7 @@
                                                             <img src="/assets/img/vac-3.jpg" class="img-responsive img-semi-rec" alt="">
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7">
+                                                            <h4>NAME</h4>
                                                             <div class="activity-content">
                                                                 天天酷跑 只要你跑的够快，寂寞就追不上你
                                                             </div>
@@ -273,13 +320,14 @@
                                                             <img src="/assets/img/vac-4.jpg" class="img-responsive img-semi-rec" alt="">
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7">
+                                                            <h4>NAME</h4>
                                                             <div class="activity-content">
                                                                 天天酷跑 只要你跑的够快，寂寞就追不上你
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                             <button type="button" class="btn btn-modify-activity">修改</button>
-                                                            <button type="button" class="btn btn-participate-activity">删除</button>
+                                                            <button type="button" class="btn btn-participate-activity">删除</button><!-- delete -->
                                                         </div>
                                                     </div>
                                                 </li>

@@ -196,9 +196,17 @@
                         </ul>
                     </li>
                     <li class=" nav-dropdown">
-                        <a href="/activity" title="活动管理">
+                        <a href="#" title="活动管理">
                             <i class="fa fa-fw fa-flag"></i> 活动管理
                         </a>
+                        <ul class=" nav-sub">
+                            <li >
+                                <a  href="/activity" title="活动广场">活动广场</a>
+                            </li>
+                             <li >
+                                <a  href="/activity" title="我的活动">我的活动</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-dropdown">
                         <a href="#" title="兴趣组" data-toggle="collapse">
