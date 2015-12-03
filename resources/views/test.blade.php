@@ -141,7 +141,7 @@
         {{--<form class="form-inline signup"  method="POST" action="{{ url('/sports/data') }}" enctype="multipart/form-data">
 
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="file" name="data" accept="application/vnd.ms-excel" id="exampleInputFile">
+            <input type="file" name="data" accept="application/vnd.ms-excel" id="exampleInputFile" >
             <p class="help-block">这里放一些提示性的文字.</p>
 
             <button type="submit" class="btn btn-primary">Submit</button>

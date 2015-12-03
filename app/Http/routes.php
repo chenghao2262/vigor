@@ -78,9 +78,9 @@ Route::post('/group', 'GroupController@postGroup');
 Route::get ('/group/{id}/news', 'GroupController@getNews');
 Route::post('/group/news', 'GroupController@postNews');
 
-Route::get ('/users', 'GroupController@index');
-Route::get ('/users/permission', 'GroupController@getPermission');
-Route::post('/users/permission', 'GroupController@postPermission');
+Route::get ('/users', 'UserController@index');
+Route::get ('/users/permission', 'UserController@getPermission');
+Route::post('/users/permission', 'UserController@postPermission');
 
 Route::get ('/personal', 'PersonalController@index');
 Route::post('/personal', 'PersonalController@postReset');
