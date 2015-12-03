@@ -74,4 +74,36 @@ class ActivityController extends Controller
         return redirect('/activity');
     }
 
+
+    public function myActivity(){
+        $user = Auth::user();
+
+        //用户参与的活动
+        $activity = $user->activitiesHasJoined()->get()->toArray();
+        //dd($activity);
+
+        //得到最新活动
+        $latestActivities = Activity::latest()->take(5)->get()->toArray();
+        return view('backend.myActivity',compact('latestActivities'));
+    }
+
+    public function modifyActivity(Request $request){
+
+        $id = $request->input('activityID');
+        $activity = Activity::find($id);
+        $activity->name=$request->input('name');
+        $activity->describe=$request->input('describe');
+        $activity->location=$request->input('location');
+        $activity->founderName=$request->input('founderName');
+        $activity->start=$request->input('start');
+        $activity->save();
+        return redirect('/activity');
+    }
+
+    public function deleteActivity(Request $request){
+        $id = $request->input('activityID');
+        $activity = Activity::find($id);
+        $activity->delete();
+        return redirect('/activity');
+    }
 }
