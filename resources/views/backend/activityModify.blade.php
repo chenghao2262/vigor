@@ -24,7 +24,8 @@
                             </div>
 
                             <div class=" col-md-9 col-lg-9">
-                                <form class="form-horizontal" role="form">
+                                <form class="form-horizontal" role="form" method="PUT" action="{{ url('/activity') }}" id="chatform">
+                                <!-- <form class="form-horizontal" role="form"> -->
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">活动名称</label>
                                         <div class="col-sm-6">
@@ -61,6 +62,8 @@
 
                                     <div class="form-group">
                                         <div class="col-sm-offset-2 col-sm-10">
+                                            <input type="hidden" name="toName" value="njusmx">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <button type="submit" class="btn btn-primary">修改</button>
                                         </div>
                                     </div>

@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{asset('assets/plugins/icheck/css/all.css')}}">
 
     <!-- Custom styles for this theme -->
-    <link rel="stylesheet" href="{{ asset('assets/css/main-min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 
 
 </head>

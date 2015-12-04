@@ -19,6 +19,7 @@
      <!-- 自创 -->
     <link rel="stylesheet" href="{{ asset('/assets/css/doctor.css')}}">
     <link rel="stylesheet" href="{{ asset('/assets/css/appointmentTable.css')}}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/suggestion.css')}}">
 
     <!-- Fonts  -->
     <link rel="stylesheet" href="{{ asset('/assets/css/font-awesome.min.css') }}">
@@ -283,25 +284,121 @@
             </div>
         </div>
         <section id="main-content" class="animated fadeInUp">
-            <div class="row">
-                <div class="col-md-12 col-lg-9" >                        
-                    <input type="text" class="search" placeholder="Search expert...">
-                    <button type="submit" class="btn btn-sm doctor-search"><i class="fa fa-search"></i></button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Doctors</h3>
-                            <div class="actions pull-right">
-                            <i class="fa fa-expand"></i>
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-times"></i>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="tab-wrapper tab-primary">
+             <div class="row">
+                    <div class="col-md-8 col-sm-12 col-lg-8">
+                        <ul class="suggestion-list">
+                            <li>
+                                <article class="suggestion">
+                                    <h1>
+                                        <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
+                                        只要你跑的够快 寂寞就追不上你
+                                        </a>
+                                    </h1>
+                                    <div class="suggestion-summary">
+                                        <p>
+                                              今天逛NBA中文网站，准备抄袭他们数据展示方式的时候，发现一个热区数据展示，挺不错的。
+                                              忽视右边数据里的一些bug，总的来说是非常炫酷的… 
+                                              而且实现起来貌似也很简单，对照这14个区域做14个按钮就好了….
+                                              因为一直用的Java中的Swing包做用户界面开发，但是无论是JButton还是JLabe
+                                        </p>
+                                    </div>
+                                    <div class="suggestion-info">
+                                        <i class="fa fa-calender"></i> 2015-05-13  105 人围观; 
+                                        <i class="fa fa-map-marker"></i>
+                                        <a href="#">蒙古医生</a>
+                                    </div>
+                                    <div class="suggestion-readmore">
+                                        <a href="#">+展开建议</a>
+                                    </div>    
+                                </article>
+                            </li>
+
+                            <li>
+                                <article class="suggestion">
+                                    <h1>
+                                        <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
+                                        只要你跑的够快 寂寞就追不上你
+                                        </a>
+                                    </h1>
+                                    <div class="suggestion-summary">
+                                        <p>
+                                              今天逛NBA中文网站，准备抄袭他们数据展示方式的时候，发现一个热区数据展示，挺不错的。
+                                              忽视右边数据里的一些bug，总的来说是非常炫酷的… 
+                                              而且实现起来貌似也很简单，对照这14个区域做14个按钮就好了….
+                                              因为一直用的Java中的Swing包做用户界面开发，但是无论是JButton还是JLabe
+                                        </p>
+                                    </div>
+                                    <div class="suggestion-info">
+                                        <i class="fa fa-calender"></i> 2015-05-13  105 人围观; 
+                                        <i class="fa fa-map-marker"></i>
+                                        <a href="#">蒙古医生</a>
+                                    </div>
+                                    <div class="suggestion-readmore">
+                                        <a href="#">+展开建议</a>
+                                    </div>    
+                                </article>
+                            </li>
+
+                            <li>
+                                <article class="suggestion">
+                                    <h1>
+                                        <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
+                                        只要你跑的够快 寂寞就追不上你
+                                        </a>
+                                    </h1>
+                                    <div class="suggestion-summary">
+                                        <p>
+                                              今天逛NBA中文网站，准备抄袭他们数据展示方式的时候，发现一个热区数据展示，挺不错的。
+                                              忽视右边数据里的一些bug，总的来说是非常炫酷的… 
+                                              而且实现起来貌似也很简单，对照这14个区域做14个按钮就好了….
+                                              因为一直用的Java中的Swing包做用户界面开发，但是无论是JButton还是JLabe
+                                        </p>
+                                    </div>
+                                    <div class="suggestion-info">
+                                        <i class="fa fa-calender"></i> 2015-05-13  105 人围观; 
+                                        <i class="fa fa-map-marker"></i>
+                                        <a href="#">蒙古医生</a>
+                                    </div>
+                                    <div class="suggestion-readmore">
+                                        <a href="#">+展开建议</a>
+                                    </div>    
+                                </article>
+                            </li>
+
+                            <li>
+                                <article class="suggestion">
+                                    <h1>
+                                        <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
+                                        只要你跑的够快 寂寞就追不上你
+                                        </a>
+                                    </h1>
+                                    <div class="suggestion-summary">
+                                        <p>
+                                              今天逛NBA中文网站，准备抄袭他们数据展示方式的时候，发现一个热区数据展示，挺不错的。
+                                              忽视右边数据里的一些bug，总的来说是非常炫酷的… 
+                                              而且实现起来貌似也很简单，对照这14个区域做14个按钮就好了….
+                                              因为一直用的Java中的Swing包做用户界面开发，但是无论是JButton还是JLabe
+                                        </p>
+                                    </div>
+                                    <div class="suggestion-info">
+                                        <i class="fa fa-calender"></i> 2015-05-13  105 人围观; 
+                                        <i class="fa fa-map-marker"></i>
+                                        <a href="#">蒙古医生</a>
+                                    </div>
+                                    <div class="suggestion-readmore">
+                                        <a href="#">+展开建议</a>
+                                    </div>    
+                                </article>
+                            </li>
+                        </ul>
+                    </div> 
+
+                    <div class="col-md-4 col-sm-12 col-lg-4">
+                             <section class="panel">
+                            <header class="panel-heading wht-bg">
+                                <h3 class="gen-case">医生履历</h4>
+                            </header>
+                            <div class="panel-body minimal">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="date">
@@ -322,253 +419,11 @@
                                             <p>MAILBOX</p>
                                         </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-4">
-                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
-                                    </div>
-                                </div>
+                                </div>   
                             </div>
-                        </div>
-                    </div>
+                        </section>
+                    </div>        
                 </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Doctors</h3>
-                            <div class="actions pull-right">
-                                <i class="fa fa-expand"></i>
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-times"></i>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="tab-wrapper tab-primary">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="date">
-                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="row">   
-                                            <p>NAME</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>ORGANIZATION</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>POSITION</p>
-                                        </div>
-                                        <div class="row">
-                                            <p>MAILBOX</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-4">
-                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Doctors</h3>
-                            <div class="actions pull-right">
-                            <i class="fa fa-expand"></i>
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-times"></i>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="tab-wrapper tab-primary">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="date">
-                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="row">   
-                                            <p>NAME</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>ORGANIZATION</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>POSITION</p>
-                                        </div>
-                                        <div class="row">
-                                            <p>MAILBOX</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-4">
-                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Doctors</h3>
-                            <div class="actions pull-right">
-                            <i class="fa fa-expand"></i>
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-times"></i>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="tab-wrapper tab-primary">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="date">
-                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="row">   
-                                            <p>NAME</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>ORGANIZATION</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>POSITION</p>
-                                        </div>
-                                        <div class="row">
-                                            <p>MAILBOX</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-4">
-                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Doctors</h3>
-                            <div class="actions pull-right">
-                                <i class="fa fa-expand"></i>
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-times"></i>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="tab-wrapper tab-primary">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="date">
-                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="row">   
-                                            <p>NAME</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>ORGANIZATION</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>POSITION</p>
-                                        </div>
-                                        <div class="row">
-                                            <p>MAILBOX</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-4">
-                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Doctors</h3>
-                            <div class="actions pull-right">
-                            <i class="fa fa-expand"></i>
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-times"></i>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="tab-wrapper tab-primary">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="date">
-                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="row">   
-                                            <p>NAME</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>ORGANIZATION</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>POSITION</p>
-                                        </div>
-                                        <div class="row">
-                                            <p>MAILBOX</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-4">
-                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              
-            </div>
-               
         </section>
 
     </section>
@@ -731,293 +586,6 @@
     </div>
 </aside>
 <!--/sidebar right end-->
-
-<div class="col-md-4">
-    <h4>Modal Form</h4>
-    <!-- Button trigger modal -->
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formModal">
-        Launch form modal
-    </button>
-</div>
-<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">预约挂号</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-offset-1 col-md-2">
-                        <div class="date">
-                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="row">   
-                            <p>NAME</p>
-                        </div>
-                        <div class="row">   
-                            <p>ORGANIZATION</p>
-                        </div>
-                        <div class="row">   
-                            <p>POSITION</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-offset-1 col-md-2 appointment_cell">
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Today</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">10:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">11:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <button type="button" class="btn btn-primary">12:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                 <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-2 appointment_cell">
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Today</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">10:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">11:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <button type="button" class="btn btn-primary">12:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                 <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-2 appointment_cell">
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Today</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">10:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">11:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <button type="button" class="btn btn-primary">12:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                 <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-2 appointment_cell">
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Today</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">10:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">11:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <button type="button" class="btn btn-primary">12:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                 <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-2 appointment_cell">
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Today</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">10:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">11:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <button type="button" class="btn btn-primary">12:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                 <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Sign in</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <!--Config demo-->
 <div id="config" class="config hidden-xs">
     <h4>Settings<a href="javascript:void(0)" class="config-link closed"><i class="icon-settings"></i></a></h4>
