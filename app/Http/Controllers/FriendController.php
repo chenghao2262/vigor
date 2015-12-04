@@ -53,7 +53,7 @@ class FriendController extends Controller
         $blog->content = $content;
         $blog->save();
 
-        return redirect('/friends/news');
+        return redirect('/friends/index');
 
     }
 
