@@ -345,7 +345,11 @@
                             <h2>最新活动</h2>
                         </div>
                         <div class="panel-body">
-                            
+
+                            <?php
+                            // var_dump($latestActivities)
+                            ?>
+
                             <ul id="activityul">
                                 <li>
                                     <div class="row">
@@ -384,8 +388,8 @@
                                     <div class="row">
                                         <div class="activity-header">
                                             <p style="text-align:center;">
-                                                <i class="fa fa-calendar"></i>{{$latestActivities[0]['start']}} &nbsp;50人参与
-                                                <i class="fa fa-map-marker"></i> {{$latestActivities[0]['location']}}
+                                                <i class="fa fa-calendar"></i>{{$latestActivities[1]['start']}} &nbsp;50人参与
+                                                <i class="fa fa-map-marker"></i> {{$latestActivities[1]['location']}}
                                             </p>
                                         </div>
                                     </div>
@@ -394,9 +398,9 @@
                                             <img src="/assets/img/vac-2.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                            <h4>{{$latestActivities[0]['name']}}</h4>
+                                            <h4>{{$latestActivities[1]['name']}}</h4>
                                             <div class="activity-content">
-                                                 {{$latestActivities[0]['describe']}}
+                                                 {{$latestActivities[1]['describe']}}
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-sm-2 col-xs-2">
@@ -411,8 +415,8 @@
                                     <div class="row">
                                         <div class="activity-header">
                                             <p style="text-align:center;">
-                                                <i class="fa fa-calendar"></i>{{$latestActivities[0]['start']}}  &nbsp;50人参与
-                                                <i class="fa fa-map-marker"></i>{{$latestActivities[0]['location']}}
+                                                <i class="fa fa-calendar"></i>{{$latestActivities[2]['start']}}  &nbsp;50人参与
+                                                <i class="fa fa-map-marker"></i>{{$latestActivities[2]['location']}}
                                             </p>
                                         </div>
                                     </div>
@@ -421,9 +425,9 @@
                                             <img src="/assets/img/vac-3.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                            <h4>{{$latestActivities[0]['name']}}</h4>
+                                            <h4>{{$latestActivities[2]['name']}}</h4>
                                             <div class="activity-content">
-                                                 {{$latestActivities[0]['describe']}}
+                                                 {{$latestActivities[2]['describe']}}
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-sm-2 col-xs-2">
@@ -438,8 +442,8 @@
                                     <div class="row">
                                         <div class="activity-header">
                                             <p style="text-align:center;">
-                                                <i class="fa fa-calendar"></i>{{$latestActivities[0]['start']}} &nbsp;50人参与
-                                                <i class="fa fa-map-marker"></i>{{$latestActivities[0]['location']}}
+                                                <i class="fa fa-calendar"></i>{{$latestActivities[3]['start']}} &nbsp;50人参与
+                                                <i class="fa fa-map-marker"></i>{{$latestActivities[3]['location']}}
                                             </p>
                                         </div>
                                     </div>
@@ -448,13 +452,14 @@
                                             <img src="/assets/img/vac-4.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                            <h4>{{$latestActivities[0]['name']}}</h4>
+                                            <h4>{{$latestActivities[3]['name']}}</h4>
                                             <div class="activity-content">
-                                                {{$latestActivities[0]['describe']}}
+                                                {{$latestActivities[3]['describe']}}
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-sm-2 col-xs-2">
-                                            <p class="filled-color">
+                                            <!-- <p class="filled-color"> -->
+                                            <p>
                                                 <button type="button" class="btn btn-participate-activity"  onclick="showSuccessAndDisable('参与成功!',this);">立即参与</button>
                                            
                                             </p>

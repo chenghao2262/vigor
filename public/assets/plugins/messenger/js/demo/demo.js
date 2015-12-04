@@ -1,5 +1,5 @@
 $(function(){
-  Messenger().post("Thanks for checking out NeuBoard!");
+  // Messenger().post("Thanks for checking out NeuBoard!");
 
   var loc = ['top', 'right'];
   var style = 'flat';

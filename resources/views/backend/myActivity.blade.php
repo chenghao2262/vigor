@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <form class="form-horizontal" role="form">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/activity')}}">
                         <!-- <form class="form-inline signup"  method="POST" action="{{ url('/sports/data') }}" enctype="multipart/form-data"> -->
                                     
                             <div class="col-md-offset-1 col-md-3"> 
