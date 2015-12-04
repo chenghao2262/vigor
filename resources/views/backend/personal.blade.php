@@ -283,149 +283,100 @@
             </div>
         </div>
         <section id="main-content" class="animated fadeInUp">
-            <section class="panel  timeline-post">
-                <div class="panel-body">
-                    <ul>
-                        <li>
-                            <div class="date">
-                                <span>23</span>
-                                <span class="small">Feb</span>
-                            </div>
-                            <h4>Lorem ipsum dolor sit</h4>
-                            <p>
-                                Tortor metus suscipit lectus lacinia mi. Duis quis ullamcorper, felis consequat ut felis sit, pellentesque sit nunc, porttitor a, neque enim metus sed dictum scelerisque. Ante ornare, ante nunc ac, et feugiat justo urna, pharetra velit convallis, sit magna odio in nunc sit.
-                            </p>
-                        </li>
-                        <li>
-                            <div class="date">
-                                <span>14</span>
-                                <span class="small">Feb</span>
-                            </div>
-                            <h4>Something good can work.</h4>
-                            <p>
-
-                                <div class='embed-container'>
-                                    <iframe src='//player.vimeo.com/video/16566326?title=0&amp;byline=0&amp;portrait=0"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                                </div>
-                            </p>
-                        </li>
-                        <li>
-                            <div class="date">
-                                <span>12</span>
-                                <span class="small">Jan</span>
-                            </div>
-                            <h4>Lorem ipsum dolor!</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                            </p>
-
-                        </li>
-                        <li>
-                            <div class="date">
-                                <span>01</span>
-                                <span class="small">Jan</span>
-                            </div>
-                            <h4>Vacation photos</h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img src="assets/img/vac-1.jpg" alt="" />
-                                </div>
-                                <div class="col-md-6">
-                                    <img src="assets/img/vac-2.jpg" alt="" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img src="assets/img/vac-3.jpg" alt="" />
-                                </div>
-                                <div class="col-md-6">
-                                    <img src="assets/img/vac-4.jpg" alt="" />
-                                </div>
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="date">
-                                <span>23</span>
-                                <span class="small">Dec</span>
-                            </div>
-                            <h4>Lorem ipsum dolor!</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default">
+           <div class="row">
+               <div class="col-md-6">
+                   <div class="panel panel-primary">
+                        <!-- Default panel contents -->
                         <div class="panel-heading">
-                            <h3 class="panel-title">Doctors</h3>
+                            <b>当前情况</b>
                             <div class="actions pull-right">
-                            <i class="fa fa-expand"></i>
+                                <i class="fa fa-expand"></i>
                                 <i class="fa fa-chevron-down"></i>
                                 <i class="fa fa-times"></i>
                             </div>
                         </div>
                         <div class="panel-body">
-                            <div class="tab-wrapper tab-primary">
-                                <div class="row">
-                                    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td>运动距离</td>
-                                                <td>运动步数</td>
-                                                <td>燃烧热量</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span class="fbig">0</span>公里</td>
-                                                <td><span class="fbig">0</span>步</td>
-                                                <td><span class="fbig">0</span>大卡</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="rl">
-                                    <form action="" class="fnormal">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="row">
-                                                            <label class="col-sm-3 control-label">身高</label>
-                                                            <div class="col-sm-6">
-                                                                <input type="text" class="form-control">
-                                                            </div>
-                                                            <label class="col-sm-3 control-label">厘米</label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="row">
-                                                            <label class="col-sm-3 control-label">走路步长</label>
-                                                            <div class="col-sm-6">
-                                                                <input type="text" class="form-control">
-                                                            </div>
-                                                            <label class="col-sm-3 control-label">厘米</label>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><label>体重<input class="form-control" id="my_step" name="my_step" type="number" value="">公斤</label></td>
-                                                    <td><label>跑步步长<input class="form-control" id="my_run" name="my_run" type="number" value="">厘米</label></td>
-                                                    <td><input type="button" class="button small" value="保存" onclick=""></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </form>
-                                    <h4>你的理想体重<span class="fbig" id="opti_weight">58.5</span>公斤，还需要摄入热量<span class="fbig" id="wanted_calories">13355</span>大卡，注意加强营养，合理搭配膳食！</h4>
-                                </div>
-                                    
-                            </div>
+                            <p>当前身高：cm</p>
+                            <p>当前体重：kg</p>
+                            <p>目标身高：cm</p>
+                            <p>目标体重：kg</p>
                         </div>
                     </div>
+               </div>
+               <div class="col-md-6">
+                   <div class="panel panel-primary">
+                <!-- Default panel contents -->
+                        <div class="panel-heading">
+                            <b>目标设置</b> <a href="javascript:form.submit();" type="button"
+                                class="btn btn-default btn-xs btn-success pull-right"> <span
+                                class="glyphicon glyphicon-star" aria-hidden="true"></span> 保存
+                            </a>
+                        </div>
+
+                        <div class="panel-body">
+                            <form name="form" class="form-horizontal" method="POST" action="">
+
+                                <div class="form-group">
+                                    <label for="inputHeight" class="col-sm-3 control-label">身高</label>
+
+                                    <div class="col-sm-8 col-md-6 col-lg-8">
+                                        <div class="input-group">
+                                            <input name="height" type="text" class="form-control"
+                                                id="inputHeight" placeholder="请输入目标身高"
+                                                aria-label="Amount (to the nearest dollar)"><span
+                                                class="input-group-addon">cm</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputWeight" class="col-sm-3 control-label">体重</label>
+
+                                    <div class="col-sm-8 col-md-6 col-lg-8">
+                                        <div class="input-group">
+                                            <input name="weight" type="text" class="form-control"
+                                                id="inputWeight" placeholder="请输入目标体重"
+                                                aria-label="Amount (to the nearest dollar)"> <span
+                                                class="input-group-addon">kg</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+               </div>
+           </div>
+            
+            <div class="panel panel-primary">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <b>身高体重变化</b>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Interaction Zoom</h3>
+                                    <div class="actions pull-right">
+                                        <i class="fa fa-expand"></i>
+                                        <i class="fa fa-chevron-down"></i>
+                                        <i class="fa fa-times"></i>
+                                    </div>
+                                </div>
+                                <div class="panel-body text-center">
+                                    <div class="chart">
+                                        <div id="zoom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
                 </div>
             </div>
+
+
+            
         </section>
 
     </section>

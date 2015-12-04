@@ -384,8 +384,8 @@
                                     <div class="row">
                                         <div class="activity-header">
                                             <p style="text-align:center;">
-                                                <i class="fa fa-calendar"></i>2015-09-26 &nbsp;50人参与
-                                                <i class="fa fa-map-marker"></i> 杭州
+                                                <i class="fa fa-calendar"></i>{{$latestActivities[0]['start']}} &nbsp;50人参与
+                                                <i class="fa fa-map-marker"></i> {{$latestActivities[0]['location']}}
                                             </p>
                                         </div>
                                     </div>
@@ -394,9 +394,9 @@
                                             <img src="/assets/img/vac-2.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                            <h4>NAME</h4>
+                                            <h4>{{$latestActivities[0]['name']}}</h4>
                                             <div class="activity-content">
-                                                天天酷跑 只要你跑的够快，寂寞就追不上你
+                                                 {{$latestActivities[0]['describe']}}
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-sm-2 col-xs-2">
@@ -411,8 +411,8 @@
                                     <div class="row">
                                         <div class="activity-header">
                                             <p style="text-align:center;">
-                                                <i class="fa fa-calendar"></i>2015-09-26 &nbsp;50人参与
-                                                <i class="fa fa-map-marker"></i> 杭州
+                                                <i class="fa fa-calendar"></i>{{$latestActivities[0]['start']}}  &nbsp;50人参与
+                                                <i class="fa fa-map-marker"></i>{{$latestActivities[0]['location']}}
                                             </p>
                                         </div>
                                     </div>
@@ -421,9 +421,9 @@
                                             <img src="/assets/img/vac-3.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                            <h4>NAME</h4>
+                                            <h4>{{$latestActivities[0]['name']}}</h4>
                                             <div class="activity-content">
-                                                天天酷跑 只要你跑的够快，寂寞就追不上你
+                                                 {{$latestActivities[0]['describe']}}
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-sm-2 col-xs-2">
@@ -438,8 +438,8 @@
                                     <div class="row">
                                         <div class="activity-header">
                                             <p style="text-align:center;">
-                                                <i class="fa fa-calendar"></i>2015-09-26 &nbsp;50人参与
-                                                <i class="fa fa-map-marker"></i> 杭州
+                                                <i class="fa fa-calendar"></i>{{$latestActivities[0]['start']}} &nbsp;50人参与
+                                                <i class="fa fa-map-marker"></i>{{$latestActivities[0]['location']}}
                                             </p>
                                         </div>
                                     </div>
@@ -448,9 +448,9 @@
                                             <img src="/assets/img/vac-4.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                            <h4>NAME</h4>
+                                            <h4>{{$latestActivities[0]['name']}}</h4>
                                             <div class="activity-content">
-                                                天天酷跑 只要你跑的够快，寂寞就追不上你
+                                                {{$latestActivities[0]['describe']}}
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-sm-2 col-xs-2">

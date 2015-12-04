@@ -283,10 +283,10 @@
         </div>
         <div class="row">
             <div class="col-md-8 col-sm-12">
-                
                 <section class="panel  timeline-post-to">
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" method="POST" action="{{ url('/friends/news')}}" >
+                            <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
                             <textarea class="form-control" placeholder="What's on your mind?"></textarea>
                             <div class="row">
                                 <div class="col-sm-6">
@@ -306,6 +306,99 @@
                 <section class="panel  timeline-post">
                     <div class="panel-body">
                         <ul>
+
+                            <?php
+                                // var_dump($news);
+                            ?>
+                            @foreach($news as $item)
+                                <li>
+                                    <div class="date">
+                                        <?php
+                                        $random=rand(1,6);
+                                        ?>
+                                        @if($random==1)
+                                        <img src="/assets/img/avatar3.png" alt="" class="img-circle" width="50" height="50">
+                                        @endif
+                                        @if($random==2)
+                                        <img src="/assets/img/profile.jpg" alt="" class="img-circle" width="50" height="50">
+                                        @endif
+                                        @if($random==3)
+                                        <img src="/assets/img/avatar8.png" alt="" class="img-circle" width="50" height="50">
+                                        @endif
+                                        @if($random==4)
+                                        <img src="/assets/img/avatar4.jpg" alt="" class="img-circle" width="50" height="50">
+                                        @endif
+                                        @if($random==5)
+                                        <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
+                                        @endif
+                                        @if($random==6)
+                                        <img src="/assets/img/avatar7.png" alt="" class="img-circle" width="50" height="50">
+                                        @endif
+
+                                    </div>
+                                    <h4>{{$item->userName}}</h4>
+                                    <p>
+                                        <p>{{$item->content}}</p>
+                                    
+                                    <?php
+                                    $random_pic=rand(1,6);
+                                    ?>
+
+                                    @if(($random_pic)<2)
+                                        <!-- {{$random}} -->
+                                        <div class='embed-container'>
+                                            <iframe src='//player.vimeo.com/video/16566326?title=0&amp;byline=0&amp;portrait=0"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                                        </div>
+                                    </p>
+                                    @endif
+
+                                    @if(($random_pic)>7)
+                                        <!-- {{$random}} -->
+                                         <div class="row">
+                                            <div class="col-md-6">
+                                                <img src="/assets/img/vac-1.jpg" alt="" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <img src="/assets/img/vac-2.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <img src="/assets/img/vac-3.jpg" alt="" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <img src="/assets/img/vac-4.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                    </p>
+                                    @endif
+                                    <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
+                                    <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
+                                    <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
+                                    <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
+                                </li>
+                            @endforeach
+<!-- 
+                            <li>
+                                <div class="date">
+                                    <img src="/assets/img/avatar3.png" alt="" class="img-circle" width="50" height="50">
+                                </div>
+                                <h4>小刚:</h4>
+                                <p>
+                                    <p>
+                                     楼上傻逼<br>
+                                     找到一个挺不错的视频，可以看看。
+                                </p>
+                                    <div class='embed-container'>
+                                        <iframe src='//player.vimeo.com/video/16566326?title=0&amp;byline=0&amp;portrait=0"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                                    </div>
+                                </p>
+                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
+                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
+                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
+                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
+                            </li>
+
                             <li>
                                 <div class="date">
                                     <img class="img-circle profile-image" src="/assets/img/profile.jpg" alt="profile">
@@ -415,7 +508,7 @@
                                 <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
                                 <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
                                 <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                            </li>
+                            </li> -->
                         </ul>
 
                     </div>
@@ -453,7 +546,7 @@
                 <section class="panel" style="min-width:380px;max-width:400px;">
                     <h4 class="rankingtitle">Ranking</h4>
                     <div class="panel-body">
-                        <div class="mail-option">
+                        <!-- <div class="mail-option">
                             <div class="row">
                                 <div class="btn-group col-md-2">
                                     <a data-original-title="Refresh" data-placement="top" data-toggle="tooltip" href="#" class="btn btn-default btn-sm tooltips">
@@ -463,8 +556,7 @@
                                 
                                 <div class="col-md-10">
                                     <ul class="inbox-pag pull-right">
-                                        <li><span>1-50 of 83</span>
-                                        </li>
+                                        
                                         <li>
                                             <a class="btn btn-default btn-sm" href="#"><i class="fa fa-angle-left  pag-left"></i></a>
                                         </li>
@@ -474,7 +566,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         
                         <div id="contact-list-wrapper">
                             <div id="contact-list">
