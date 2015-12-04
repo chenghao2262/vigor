@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <input type="file" name="data" accept="application/vnd.ms-excel" id="exampleInputFile">
+                                    <!-- <input type="file" name="data" accept="application/vnd.ms-excel" id="exampleInputFile"> -->
                                 </div>
                             </div>
 
@@ -55,7 +55,7 @@
 
                                     <div class="col-sm-6">
                                         <input name="start" type="text" readonly class="form-control input-append date form_datetime"
-                                            id="inputStart" placeholder="" value="{{ old('start') }}">
+                                            id="inputStart" placeholder="start">
                                     </div>
                                 </div>
 
@@ -64,7 +64,7 @@
 
                                     <div class="col-sm-6">
                                         <input name="start" type="text" readonly class="form-control input-append date form_datetime"
-                                            id="inputStart" placeholder="" value="{{ old('start') }}">
+                                            id="inputStart" placeholder="end">
                                     </div>
                                 </div>
 
