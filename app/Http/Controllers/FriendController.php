@@ -20,8 +20,9 @@ class FriendController extends Controller
     public function index(){
         $user = Auth::user();
         $friends = $user->friends()->get();
+        $news = $user->friendsNews();
         $sportRecord = $user->getTodaySportRecords();
-        return view('backend.friendcircle',compact('friends','sportRecord'));
+        return view('backend.friendcircle',compact('friends','$news'));
 
     }
 
