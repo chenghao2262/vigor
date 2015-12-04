@@ -24,16 +24,41 @@ class ExpertController extends Controller
 
         $user = Auth::user();
         $hotExperts = $this->getHotExperts();
-        $hotArticles = $this->getHotArticles();
-        $expertsList = $user->getExperts()->get()->toArray();
+      //  dd($hotExperts);
 
-        return view('backend.experts',compact('hotExperts','hotArticles','expertsList'));
+        for($k=0;$k<count($hotExperts);$k++){
+            $expert = $hotExperts[$k];
+            $time =  array();
+            for($m=0;$m<5;$m++){
+                $tmp = array();
+                for($n=0;$n<10;$n++){
+                    $tmp[$n]=0;
+                }
+                $time[$m]=$tmp;
+            }
+
+            for($i=0;$i<5;$i++){
+                $date = '2015-12-'.($i<3?'0':'').($i+7);
+
+                $times=Expert::find($expert['name'])->availableTime()->where('date','=',$date)->get()->toarray();
+
+                foreach($times as $each){
+                    $time[$i][intval($each['segment'])]=1;
+                }
+            }
+
+            $expert['time']=$time;
+            $hotExperts[$k] = $expert;
+        }
+
+
+        return view('backend.experts',compact('hotExperts'));
 
     }
 
     public function getHotExperts()
     {
-        return Expert::latest()->take(10)->get()->toArray();
+        return Expert::latest()->take(6)->get()->toArray();
     }
 
     public function getHotArticles()
@@ -75,20 +100,16 @@ class ExpertController extends Controller
         $expertName = $request->input('expertName');
         $date =       $request->input('date');
         $segments =   $request ->input('segment');
-        $payment = $request ->input('payment');
 
         $userName = Auth::user()->name;
-
 
 
         $order = new Order();
         $order->watcherName = $userName;
         $order->expertName = $expertName;
         $order->startSegment = $segments[0];
-        $order->payment = $payment;
         $order->endSegment = $segments[count($segments)-1];
         $order->status=0;
-
         $order->save();
 
         $affectedRows = AvailableTime::where('date',$date) ->whereIn('segment',$segments)

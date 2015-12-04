@@ -29,7 +29,7 @@ class ActivityController extends Controller
 
         //得到最新活动
         $latestActivities = Activity::latest()->take(5)->get()->toArray();
-        //dd($latestActivities);
+        //dd($latestActivities[0]['start']);
 
         return view('backend.activitymanage',compact('latestActivities'));
     }
