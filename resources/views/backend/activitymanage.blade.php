@@ -43,6 +43,10 @@
     <link rel="stylesheet" href="{{ asset('/assets/css/main.css') }}">
     <!-- Feature detection -->
     <script src="{{ asset('/assets/js/vendor/modernizr-2.6.2.min.js') }}"></script>
+
+    <link rel="stylesheet" href="assets/plugins/messenger/css/messenger.css">
+    <link rel="stylesheet" href="assets/plugins/messenger/css/messenger-theme-flat.css">
+    <link rel="stylesheet" href="assets/plugins/messenger/css/location-sel.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="{{ asset('/assets/js/vendor/html5shiv.js') }}"></script>
@@ -335,6 +339,7 @@
                             <button type="button" class="btn btn-danger">More...</button>
                         </div>
                     </section>
+                    <!-- $latestActivities -->
                     <section class="panel">
                         <div class="panel-heading">
                             <h2>最新活动</h2>
@@ -346,8 +351,8 @@
                                     <div class="row">
                                         <div class="activity-header">
                                             <p style="text-align:center;">
-                                                <i class="fa fa-calendar"></i>2015-09-26 &nbsp;50人参与
-                                                <i class="fa fa-map-marker"></i> 杭州
+                                                <i class="fa fa-calendar"></i>{{$latestActivities[0]['start']}} &nbsp;50人参与
+                                                <i class="fa fa-map-marker"></i>{{$latestActivities[0]['location']}}
                                             </p>
                                         </div>
                                     </div>
@@ -356,15 +361,21 @@
                                             <img src="/assets/img/vac-1.jpg" class="img-responsive img-semi-rec" alt="">
                                         </div>
                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                            <h4>NAME</h4>
+                                            <h4>{{$latestActivities[0]['name']}}</h4>
+                                           
                                             <div class="activity-content">
-                                                天天酷跑 只要你跑的够快，寂寞就追不上你
+                                                {{$latestActivities[0]['describe']}}
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-sm-2 col-xs-2">
-                                            <p class="filled-color">
-                                                <button type="button" class="btn btn-participate-activity">立即参与</button>
-                                            </p>
+
+                                                                                        
+                                            <p  id="ac1">
+                                                                                    <!-- location.href='/activity/6/participation     function () { submit(); };             -->
+                                                <button type="button" class="btn btn-participate-activity" id="particpant1"  onclick="showSuccessAndDisable('参与成功!',this);">立即参与</button>
+                                                
+                                            </p>  
+                                                          
                                         </div>
                                     </div>
                                 </li>
@@ -389,8 +400,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-sm-2 col-xs-2">
-                                            <p class="filled-color">
-                                                <button type="button" class="btn btn-participate-activity">立即参与</button>
+                                            <p >
+                                                <button type="button" class="btn btn-participate-activity"  onclick="showSuccessAndDisable('参与成功!',this);">立即参与</button>
                                             </p>
                                         </div>
                                     </div>
@@ -416,8 +427,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-2 col-sm-2 col-xs-2">
-                                            <p class="filled-color">
-                                                <button type="button" class="btn btn-participate-activity">立即参与</button>
+                                            <p >
+                                                <button type="button" class="btn btn-participate-activity"  onclick="showSuccessAndDisable('参与成功!',this);">立即参与</button>
                                             </p>
                                         </div>
                                     </div>
@@ -444,7 +455,8 @@
                                         </div>
                                         <div class="col-md-2 col-sm-2 col-xs-2">
                                             <p class="filled-color">
-                                                <button type="button" class="btn btn-participate-activity">立即参与</button>
+                                                <button type="button" class="btn btn-participate-activity"  onclick="showSuccessAndDisable('参与成功!',this);">立即参与</button>
+                                           
                                             </p>
                                         </div>
                                     </div>
@@ -734,11 +746,20 @@
 <script src="{{ asset('/assets/plugins/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js') }}"></script>
 <script src="{{ asset('/assets/plugins/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.fr.js') }}"></script>
 
+<script src="{{ asset('/assets/plugins/messenger/js/messenger.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/messenger/js/messenger-theme-future.js') }}"></script>
+<!--Page Level JS for Demo-->
+<script src="{{ asset('/assets/plugins/messenger/js/demo/location-sel.js') }}"></script>
+<script src="{{ asset('/assets/plugins/messenger/js/demo/theme-sel.js') }}"></script>
+<script src="{{ asset('/assets/plugins/messenger/js/demo/demo.js') }}"></script>
+<script src="{{ asset('/assets/plugins/messenger/js/demo/demo-messages.js') }}"></script>
 
 <script src="{{ asset('/assets/plugins/navgoco/jquery.navgoco.min.js') }}"></script>
 <script src="{{ asset('/assets/plugins/pace/pace.min.js') }}"></script>
 <script src="{{ asset('/assets/plugins/fullscreen/jquery.fullscreen-min.js') }}"></script>
 <script src="{{ asset('/assets/js/src/app.js') }}"></script>
+<script src="{{ asset('/assets/js/src/setting.js') }}"></script>
+
 <!--Page Level JS-->
 <script src="{{ asset('/assets/plugins/countTo/jquery.countTo.js') }}"></script>
 <script src="{{ asset('/assets/plugins/weather/js/skycons.js') }}"></script>
@@ -762,7 +783,11 @@
 <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script> -->
 <script src="{{ asset('/assets/js/underscore.min.js') }}"></script>
 
-<!--Page Leve JS -->
+<script src="assets/plugins/switchery/switchery.min.js"></script>
+<script src="assets/plugins/dropzone/js/dropzone.min.js"></script>
+
+<!--Page Level JS -->
+
 <!--Load these page level functions-->
 
 </body>
