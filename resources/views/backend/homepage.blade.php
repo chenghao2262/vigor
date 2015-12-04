@@ -16,6 +16,10 @@
     <link rel="shortcut icon" href="{{ asset('/assets/img/favicon.ico') }}" type="image/x-icon">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+     <!-- 自创 -->
+    <link rel="stylesheet" href="{{ asset('/assets/css/doctor.css')}}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/appointmentTable.css')}}">
+
     <!-- Fonts  -->
     <link rel="stylesheet" href="{{ asset('/assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/simple-line-icons.css') }}">
@@ -178,16 +182,16 @@
         <nav>
             <h5 class="sidebar-header">Navigation</h5>
             <ul class="nav nav-pills nav-stacked">
-                <li class=" nav-dropdown open active">
+                <li class=" nav-dropdown ">
                     <a href="#" title="健康管理" >
                         <i class="fa  fa-fw fa-tachometer"></i> 健康管理
                     </a>
                     <ul class=" nav-sub">
                         <li class="active">
-                            <a  href="#" title="运动管理">运动管理</a>
+                            <a  href="/body/index" title="运动管理">运动管理</a>
                         </li>
                          <li >
-                            <a  href="#" title="健康履历">健康履历</a>
+                            <a  href="/personal" title="健康履历">健康履历</a>
                         </li>
                     </ul>
                 </li>
@@ -209,7 +213,7 @@
                         <i class="fa fa-fw fa-paper-plane-o"></i> 兴趣组
                     </a>
                     <ul class="nav-sub">
-                        <li class=>
+                        <li>
                             <a  href="/group" title="我的兴趣组">我的兴趣组</a>
                         </li>
                          <li>
@@ -227,13 +231,13 @@
                         <i class="fa fa-fw fa-shopping-cart"></i> 健货商城
                     </a>
                 </li>
-                <li class="nav-dropdown">
-                    <a href="#" title="专业咨询" data-toggle="collapse">
+                <li class="nav-dropdown open active">
+                    <a href="#" title="健货商城" data-toggle="collapse">
                         <i class="fa fa-fw fa-comment"></i> 专业咨询
                     </a>
-                    <ul class=" nav-sub">
-                            <li>
-                                <a  href="/expert/index" title="医生私教" >医生私教</a>
+                    <ul class="nav-sub ">
+                            <li class="active">
+                                <a  href="/expert/index" title="运动管理" >医生私教</a>
                             </li>
                              <li>
                                 <a  href="/expert/suggestion/index" title="建议管理">建议管理</a>
@@ -269,8 +273,8 @@
     <!--main content start-->
     <section class="main-content-wrapper">
         <div class="pageheader">
-            <h1>运动管理</h1>
-            <p class="description">这里展示每日运动数据 </p>
+            <h1>医生私教</h1>
+            <p class="description">这里展示医生私教列表</p>
             <div class="breadcrumb-wrapper hidden-xs">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
@@ -280,128 +284,291 @@
         </div>
         <section id="main-content" class="animated fadeInUp">
             <div class="row">
-                <div class="hidden-xs col-sm-12 col-md-6 col-lg-3">
-                    <div class="panel">
-                        <div class="panel-body">
-                            <div class="calendar-block ">
-                                <div class="cal1">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-5" >
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="panel  panel-solid-success widget-mini">
-                                <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">{{$sportRecord->steps}}步</span>
-                                    <span class="title text-center">今日已走</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="panel panel-solid-danger widget-mini">
-                                <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">{{Auth::user()->goal}}步</span>
-                                    <span class="title text-center">目标步数</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="panel panel-solid-success widget-mini">
-                                <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">{{$sportRecord->distance}}km</span>
-                                    <span class="title text-center">今日里程</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="panel panel-solid-warning widget-mini">
-                                <div class="panel-body" style="font-size: 130%">
-                                    <span class="total text-center">{{$sportRecord->calories}}cal</span>
-                                    <span class="title text-center">今日燃烧</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title" style="font-size: 130%">今日进度</h3>
-
-                        </div>
-                        <div class="panel-body widget-gauge">
-                            <canvas width="220" height="136" id="gauge" class=""></canvas>
-                            <div class="goal-wrapper">
-                                <span class="gauge-value pull-left"></span>
-                                <span id="gauge-text" class="gauge-value pull-left">{{$sportRecord->steps}}</span>
-                                <span id="goal-text" class="goal-value pull-right">2,0000</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-12 col-lg-9" >                        
+                    <input type="text" class="search" placeholder="Search expert...">
+                    <button type="submit" class="btn btn-sm doctor-search"><i class="fa fa-search"></i></button>
                 </div>
             </div>
-          <!--   <div class="row">
-                <div class="col-md-12 col-lg-12">
+            <div class="row">
+                <div class="col-md-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title" style="font-size: 130%">运动统计</h3>
-                            <div class="reportdate actions">
-                                <i class="fa fa-calendar-o"></i>
-                                <span>Jan 1 - June 30</span>
-                                <b class="caret"></b>
+                            <h3 class="panel-title">Doctors</h3>
+                            <div class="actions pull-right">
+                            <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
                             </div>
                         </div>
-                        <div class="panel-body server-chart">
-                            <div class="row">
-
-                                <div class="col-md-12 col-lg-12">
-                                    <div class="row">
-                                        <div class="col-md-12 col-lg-4">
-                                            <div class="line-chart">
-                                                <canvas id="canvas1" height="100"></canvas>
-                                            </div>
+                        <div class="panel-body">
+                            <div class="tab-wrapper tab-primary">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="date">
+                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
                                         </div>
-                                        <div class="col-md-12 col-lg-4">
-                                            <div class="line-chart">
-                                                <canvas id="canvas2" height="100"></canvas>
-                                            </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row">   
+                                            <p>NAME</p>
                                         </div>
-                                        <div class="col-md-12 col-lg-4">
-                                            <div class="bar-chart">
-                                                <canvas id="doughnut-chart-area" height="100"></canvas>
-                                            </div>
+                                        <div class="row">   
+                                            <p>ORGANIZATION</p>
                                         </div>
+                                        <div class="row">   
+                                            <p>POSITION</p>
+                                        </div>
+                                        <div class="row">
+                                            <p>MAILBOX</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-4">
+                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> -->
-            <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Interaction Zoom</h3>
+                            <h3 class="panel-title">Doctors</h3>
                             <div class="actions pull-right">
                                 <i class="fa fa-expand"></i>
                                 <i class="fa fa-chevron-down"></i>
                                 <i class="fa fa-times"></i>
                             </div>
                         </div>
-                        <div class="panel-body text-center">
-                            <div class="chart">
-                                <div id="zoom"></div>
+                        <div class="panel-body">
+                            <div class="tab-wrapper tab-primary">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="date">
+                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row">   
+                                            <p>NAME</p>
+                                        </div>
+                                        <div class="row">   
+                                            <p>ORGANIZATION</p>
+                                        </div>
+                                        <div class="row">   
+                                            <p>POSITION</p>
+                                        </div>
+                                        <div class="row">
+                                            <p>MAILBOX</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-4">
+                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>    
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Doctors</h3>
+                            <div class="actions pull-right">
+                            <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tab-wrapper tab-primary">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="date">
+                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row">   
+                                            <p>NAME</p>
+                                        </div>
+                                        <div class="row">   
+                                            <p>ORGANIZATION</p>
+                                        </div>
+                                        <div class="row">   
+                                            <p>POSITION</p>
+                                        </div>
+                                        <div class="row">
+                                            <p>MAILBOX</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-4">
+                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Doctors</h3>
+                            <div class="actions pull-right">
+                            <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tab-wrapper tab-primary">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="date">
+                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row">   
+                                            <p>NAME</p>
+                                        </div>
+                                        <div class="row">   
+                                            <p>ORGANIZATION</p>
+                                        </div>
+                                        <div class="row">   
+                                            <p>POSITION</p>
+                                        </div>
+                                        <div class="row">
+                                            <p>MAILBOX</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-4">
+                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Doctors</h3>
+                            <div class="actions pull-right">
+                                <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tab-wrapper tab-primary">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="date">
+                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row">   
+                                            <p>NAME</p>
+                                        </div>
+                                        <div class="row">   
+                                            <p>ORGANIZATION</p>
+                                        </div>
+                                        <div class="row">   
+                                            <p>POSITION</p>
+                                        </div>
+                                        <div class="row">
+                                            <p>MAILBOX</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-4">
+                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Doctors</h3>
+                            <div class="actions pull-right">
+                            <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tab-wrapper tab-primary">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="date">
+                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row">   
+                                            <p>NAME</p>
+                                        </div>
+                                        <div class="row">   
+                                            <p>ORGANIZATION</p>
+                                        </div>
+                                        <div class="row">   
+                                            <p>POSITION</p>
+                                        </div>
+                                        <div class="row">
+                                            <p>MAILBOX</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-4">
+                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+               
         </section>
 
     </section>
@@ -564,6 +731,293 @@
     </div>
 </aside>
 <!--/sidebar right end-->
+
+<div class="col-md-4">
+    <h4>Modal Form</h4>
+    <!-- Button trigger modal -->
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formModal">
+        Launch form modal
+    </button>
+</div>
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">预约挂号</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-2">
+                        <div class="date">
+                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">   
+                            <p>NAME</p>
+                        </div>
+                        <div class="row">   
+                            <p>ORGANIZATION</p>
+                        </div>
+                        <div class="row">   
+                            <p>POSITION</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-2 appointment_cell">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Today</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">10:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">11:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <button type="button" class="btn btn-primary">12:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                 <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-2 appointment_cell">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Today</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">10:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">11:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <button type="button" class="btn btn-primary">12:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                 <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-2 appointment_cell">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Today</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">10:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">11:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <button type="button" class="btn btn-primary">12:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                 <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-2 appointment_cell">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Today</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">10:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">11:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <button type="button" class="btn btn-primary">12:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                 <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-2 appointment_cell">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Today</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">10:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">11:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <button type="button" class="btn btn-primary">12:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                 <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Sign in</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!--Config demo-->
 <div id="config" class="config hidden-xs">
     <h4>Settings<a href="javascript:void(0)" class="config-link closed"><i class="icon-settings"></i></a></h4>
@@ -667,55 +1121,39 @@
 </div>
 <!--/Config demo-->
 <!--Global JS-->
-<script src="assets/js/vendor/jquery-1.11.1.min.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/plugins/navgoco/jquery.navgoco.min.js"></script>
-<script src="assets/plugins/pace/pace.min.js"></script>
-<script src="assets/plugins/fullscreen/jquery.fullscreen-min.js"></script>
-<script src="assets/js/src/app.js"></script>
-<!--Page Level JS-->
-<script src="assets/plugins/countTo/jquery.countTo.js"></script>
-<script src="assets/plugins/weather/js/skycons.js"></script>
-<script src="assets/plugins/daterangepicker/moment.min.js"></script>
-<script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- ChartJS  -->
-<script src="assets/plugins/chartjs/Chart.min.js"></script>
-<script src="assets/plugins/chartjs/chartjs-demo.js"></script>
+<script src="{{ asset('/assets/js/vendor/jquery-1.11.1.min.js') }}"></script>
+<!-- <script src="{{ asset('/assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script> -->
+<script src="{{ asset('/assets/js/bootstrap-modal.js') }}"></script>
 
+<script src="{{ asset('/assets/plugins/navgoco/jquery.navgoco.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/pace/pace.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/fullscreen/jquery.fullscreen-min.js') }}"></script>
+<script src="{{ asset('/assets/js/src/app.js') }}"></script>
+<!--Page Level JS-->
+<script src="{{ asset('/assets/plugins/countTo/jquery.countTo.js') }}"></script>
+<script src="{{ asset('/assets/plugins/weather/js/skycons.js') }}"></script>
+<script src="{{ asset('/assets/plugins/daterangepicker/moment.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
+<!-- ChartJS  -->
+<script src="{{ asset('/assets/plugins/chartjs/Chart.min.js') }}"></script>
 <!-- Morris  -->
-<script src="assets/plugins/morris/js/morris.min.js"></script>
-<script src="assets/plugins/morris/js/raphael.2.1.0.min.js"></script>
+<script src="{{ asset('/assets/plugins/morris/js/morris.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/morris/js/raphael.2.1.0.min.js') }}"></script>
 <!-- Vector Map  -->
-<script src="assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js"></script>
+<script src="{{ asset('/assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js') }}"></script>
 <!-- Gauge  -->
-<script src="assets/plugins/gauge/gauge.min.js"></script>
-<script src="assets/plugins/gauge/gaugeV.js"></script>
+<script src="{{ asset('/assets/plugins/gauge/gauge.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/gauge/gaugeV.js') }}"></script>
 <!-- <script src="assets/plugins/gauge/gauge-demo.js"></script> -->
 <!-- Calendar  -->
-<script src="assets/plugins/calendar/clndr.js"></script>
-<script src="assets/plugins/calendar/clndr-demo.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+<script src="{{ asset('/assets/plugins/calendar/clndr.js') }}"></script>
+<script src="{{ asset('/assets/plugins/calendar/clndr-demo.js') }}"></script>
+<script src="{{ url('/http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js') }}"></script>
 <!-- Switch -->
-<script src="assets/plugins/switchery/switchery.min.js"></script>
-<script src="assets/plugins/dropzone/js/dropzone.min.js"></script>
- <!--Page Leve JS -->
-<script src="assets/plugins/c3Chart/js/d3.v3.min.js"></script>
-<script src="assets/plugins/c3Chart/js/c3.js"></script>
-<script src="assets/plugins/c3Chart/js/c3-V.js"></script>
+<script src="{{ asset('/assets/plugins/switchery/switchery.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/dropzone/js/dropzone.min.js') }}"></script>
 <!--Load these page level functions-->
-<script>
-    showSteps(20000,{{$sportRecord->steps}});
-    showDetail({{$sportRecord->steps_detail}});
-    $(document).ready(function() {
-        app.dateRangePicker();
-        app.chartJs();
-        app.weather();
-        app.spinStart();
-        app.spinStop();
-    });
-</script>
-
 
 </body>
 

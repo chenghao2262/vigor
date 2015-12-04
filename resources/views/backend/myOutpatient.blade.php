@@ -19,8 +19,9 @@
      <!-- 自创 -->
     <link rel="stylesheet" href="{{ asset('/assets/css/doctor.css')}}">
     <link rel="stylesheet" href="{{ asset('/assets/css/appointmentTable.css')}}">
+
     <!-- Editor-->
-    <link rel="stylesheet" href="assets/plugins/bootstrap-wysihtml5/css/bootstrap-wysihtml5.css">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap-wysihtml5/css/bootstrap-wysihtml5.css')}}">
     <!-- Fonts  -->
     <link rel="stylesheet" href="{{ asset('/assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/simple-line-icons.css') }}">
@@ -203,7 +204,7 @@
                             <a  href="/activity" title="活动广场">活动广场</a>
                         </li>
                          <li >
-                            <a  href="/activity" title="我的活动">我的活动</a>
+                            <a  href="/activity/mine" title="我的活动">我的活动</a>
                         </li>
                     </ul>
                 </li>
@@ -375,9 +376,37 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 >设置可预约时间</h2>
+                            <div class="actions pull-right">
+                                <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
+                            </div>                                               
+                        </div>
+                        <div class="panel-body">
+                            <br>
+                            <div class="calendar-block ">
+                                <div class="cal1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                        <!-- Button trigger modal -->
+                            <div class="row">
+                                <div class="col-md-offset-4 col-md-4">
+                                    <button class="btn btn-primary btn-trans" data-toggle="modal" data-target="#formModal">
+                                    Setting
+                                    </button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
                     <div class="panel panel-default">  
                         <div class="panel-heading">
-                            <h2>Patient In Line</h4>
+                            <h2>Patient In Line</h2>
                         </div>
                         <div class="panel-body">
                             <div id="contact-list-wrapper">
@@ -436,12 +465,291 @@
                     </div>
                 </div>    
             </div>
+
         </section>
-
     </section>
-
     <!--main content end-->
 </section>
+
+
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">预约挂号</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-2">
+                        <div class="date">
+                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">   
+                            <p>NAME</p>
+                        </div>
+                        <div class="row">   
+                            <p>ORGANIZATION</p>
+                        </div>
+                        <div class="row">   
+                            <p>POSITION</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-2 appointment_cell">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Today</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">10:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">11:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <button type="button" class="btn btn-primary">12:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                 <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-2 appointment_cell">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Today</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">10:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">11:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <button type="button" class="btn btn-primary">12:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                 <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-2 appointment_cell">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Today</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">10:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">11:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <button type="button" class="btn btn-primary">12:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                 <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-2 appointment_cell">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Today</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">10:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">11:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <button type="button" class="btn btn-primary">12:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                 <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-2 appointment_cell">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Today</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">10:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">11:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <button type="button" class="btn btn-primary">12:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                 <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Sign in</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--sidebar right start-->
 <aside id="sidebar-right">
     <h4 class="sidebar-title">contact List</h4>
@@ -598,6 +906,9 @@
     </div>
 </aside>
 <!--/sidebar right end-->
+
+             
+
 <!--Config demo-->
 <div id="config" class="config hidden-xs">
     <h4>Settings<a href="javascript:void(0)" class="config-link closed"><i class="icon-settings"></i></a></h4>
@@ -702,10 +1013,11 @@
 <!--/Config demo-->
 <!--Global JS-->
 <script src="{{ asset('/assets/js/vendor/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js') }}"></script>
+<script src="{{ asset('assets/plugins/bootstrap-wysihtml5/js/bootstrap3-wysihtml5.js') }}"></script>
+<script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
 <!-- <script src="{{ asset('/assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script> -->
 <script src="{{ asset('/assets/js/bootstrap-modal.js') }}"></script>
-<script src="{{ asset('/assets/js/underscore.min.js') }}"></script>
-
 
 <script src="{{ asset('/assets/plugins/navgoco/jquery.navgoco.min.js') }}"></script>
 <script src="{{ asset('/assets/plugins/pace/pace.min.js') }}"></script>
@@ -732,20 +1044,21 @@
 <script src="{{ asset('/assets/plugins/calendar/clndr.js') }}"></script>
 <script src="{{ asset('/assets/plugins/calendar/clndr-demo.js') }}"></script>
 <!-- <script src="{{ url('/http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js') }}"></script> -->
+<script src="{{ asset('/assets/js/underscore.min.js') }}"></script>
+
 <!-- Switch -->
 <script src="{{ asset('/assets/plugins/switchery/switchery.min.js') }}"></script>
 <script src="{{ asset('/assets/plugins/dropzone/js/dropzone.min.js') }}"></script>
 <!--Load these page level functions-->
-<script src="{{ asset('assets/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js') }}"></script>
-<script src="{{ asset('assets/plugins/bootstrap-wysihtml5/js/bootstrap3-wysihtml5.js') }}"></script>
-<script src="{{ asset('assets/plugins/ckeditor/ckeditor.js') }}"></script>
+
 <script>
     $(document).ready(function() {
         $('.textarea').wysihtml5();
 
         CKEDITOR.replace('editor1');
     });
-    </script>
+    disableMyButton();
+</script>
 </body>
 
 

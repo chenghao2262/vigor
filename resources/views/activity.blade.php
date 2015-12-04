@@ -207,7 +207,7 @@
                                 <a  href="/activity" title="活动广场">活动广场</a>
                             </li>
                              <li class="active">
-                                <a  href="/activity" title="我的活动">我的活动</a>
+                                <a  href="/activity/mine" title="我的活动">我的活动</a>
                             </li>
                         </ul>
                     </li>

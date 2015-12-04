@@ -196,7 +196,7 @@
                             <a  href="/activity" title="活动广场">活动广场</a>
                         </li>
                          <li >
-                            <a  href="/activity" title="我的活动">我的活动</a>
+                            <a  href="/activity/mine" title="我的活动">我的活动</a>
                         </li>
                     </ul>
                 </li>
@@ -749,7 +749,9 @@
 <!-- Calendar  -->
 <script src="assets/plugins/calendar/clndr.js"></script>
 <script src="assets/plugins/calendar/clndr-demo.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script> -->
+<script src="{{ asset('/assets/js/underscore.min.js') }}"></script>
+
 <!-- Switch -->
 <script src="assets/plugins/switchery/switchery.min.js"></script>
 <script src="assets/plugins/dropzone/js/dropzone.min.js"></script>

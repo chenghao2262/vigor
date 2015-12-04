@@ -12,24 +12,25 @@
     <title>BodyBoard</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-   <!-- Favicon -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('/assets/img/favicon.ico') }}" type="image/x-icon">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/bootstrap/css/bootstrap.min.css') }}">
     <!-- 自创 -->
     <link rel="stylesheet" href="{{ asset('/assets/css/discover.css')}}">
     <link rel="stylesheet" href="{{ asset('/assets/css/activity.css')}}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/upload.css')}}">
     <!-- Fonts  -->
     <link rel="stylesheet" href="{{ asset('/assets/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/simple-line-icons.css') }}">
     <!-- CSS Animate -->
     <link rel="stylesheet" href="{{ asset('/assets/css/animate.css') }}">
     <!-- C3 Chart-->
-    <link rel="stylesheet" href="{{ asset('/assets/plugins/c3Chart/css/c3.css') }}">
+    <link rel="stylesheet" href="assets/plugins/c3Chart/css/c3.css">
     <!-- Daterange Picker -->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/daterangepicker/daterangepicker-bs3.css') }}">
     <!-- Calendar demo -->
-    <link rel="stylesheet" href="{{ asset('/assets/css/clndr.css') }}">
+    <link rel="stylesheet" href="{{asset('/assets/css/clndr.css')}}">
      <!-- Drop Zone-->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/dropzone.css') }}" >
     <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/basic.css') }}">
@@ -181,7 +182,7 @@
         <nav>
             <h5 class="sidebar-header">Navigation</h5>
             <ul class="nav nav-pills nav-stacked">
-                <li class=" nav-dropdown">
+                <li class=" nav-dropdown  open active">
                     <a href="#" title="健康管理" >
                         <i class="fa  fa-fw fa-tachometer"></i> 健康管理
                     </a>
@@ -189,7 +190,7 @@
                         <li>
                             <a  href="/body/index" title="运动管理">运动管理</a>
                         </li>
-                         <li>
+                         <li class="active">
                             <a  href="/personal" title="健康履历">健康履历</a>
                         </li>
                     </ul>
@@ -212,7 +213,7 @@
                         <i class="fa fa-fw fa-paper-plane-o"></i> 兴趣组
                     </a>
                     <ul class="nav-sub">
-                        <li class=>
+                        <li>
                             <a  href="/group" title="我的兴趣组">我的兴趣组</a>
                         </li>
                          <li>
@@ -220,8 +221,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-dropdown open active">
-                    <a href="/friends/news" title="朋友圈">
+                <li class=" nav-dropdown">
+                    <a href="/friends/index" title="朋友圈">
                         <i class="fa fa-user fa-fw"></i> 朋友圈
                     </a>
                 </li>
@@ -231,12 +232,12 @@
                     </a>
                 </li>
                 <li class="nav-dropdown">
-                    <a href="#" title="专业咨询" data-toggle="collapse">
+                    <a href="#" title="健货商城" data-toggle="collapse">
                         <i class="fa fa-fw fa-comment"></i> 专业咨询
                     </a>
                     <ul class=" nav-sub">
                         <li>
-                            <a  href="/expert/index" title="医生私教" >医生私教</a>
+                            <a  href="/expert/index" title="运动管理" >医生私教</a>
                         </li>
                          <li>
                             <a  href="/expert/suggestion/index" title="建议管理">建议管理</a>
@@ -272,421 +273,164 @@
     <!--main content start-->
     <section class="main-content-wrapper">
         <div class="pageheader">
-            <h1>发现</h1>
-            <p class="description">这里展示每日新鲜事</p>
+            <h1>健康履历</h1>
+            <p class="description">这里展示我的健康履历 </p>
             <div class="breadcrumb-wrapper hidden-xs">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
-                    <li class="active">Discover</li>
+                    <li class="active">My profile</li>
                 </ol>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-8 col-sm-12">
-                
-                <section class="panel  timeline-post-to">
-                    <div class="panel-body">
-                        <form role="form">
-                            <textarea class="form-control" placeholder="What's on your mind?"></textarea>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
-                                    <a class="btn btn-sm btn-default"><i class="fa fa-video-camera"></i></a>
-                                    <a class="btn btn-sm btn-default"><i class="fa fa-music"></i></a>
-                                    <a class="btn btn-sm btn-default"><i class="fa fa-map-marker"></i></a>
+        <section id="main-content" class="animated fadeInUp">
+            <section class="panel  timeline-post">
+                <div class="panel-body">
+                    <ul>
+                        <li>
+                            <div class="date">
+                                <span>23</span>
+                                <span class="small">Feb</span>
+                            </div>
+                            <h4>Lorem ipsum dolor sit</h4>
+                            <p>
+                                Tortor metus suscipit lectus lacinia mi. Duis quis ullamcorper, felis consequat ut felis sit, pellentesque sit nunc, porttitor a, neque enim metus sed dictum scelerisque. Ante ornare, ante nunc ac, et feugiat justo urna, pharetra velit convallis, sit magna odio in nunc sit.
+                            </p>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>14</span>
+                                <span class="small">Feb</span>
+                            </div>
+                            <h4>Something good can work.</h4>
+                            <p>
+
+                                <div class='embed-container'>
+                                    <iframe src='//player.vimeo.com/video/16566326?title=0&amp;byline=0&amp;portrait=0"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                                 </div>
-                                <div class="col-sm-6 text-right">
-                                    <button type="submit" class="btn btn-primary">Post</button>
+                            </p>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>12</span>
+                                <span class="small">Jan</span>
+                            </div>
+                            <h4>Lorem ipsum dolor!</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            </p>
+
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>01</span>
+                                <span class="small">Jan</span>
+                            </div>
+                            <h4>Vacation photos</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="assets/img/vac-1.jpg" alt="" />
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="assets/img/vac-2.jpg" alt="" />
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                </section>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="assets/img/vac-3.jpg" alt="" />
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="assets/img/vac-4.jpg" alt="" />
+                                </div>
+                            </div>
 
-                <section class="panel  timeline-post">
-                    <div class="panel-body">
-                        <ul>
-                            <li>
-                                <div class="date">
-                                    <img class="img-circle profile-image" src="/assets/img/profile.jpg" alt="profile">
-                                </div>
-                                <h4 class="user">袁睿:</h4>
-                                <p>
-                                    我的书包被猫毁了<br>
-                                    但是我的新包还挺好看的。
-                                </p>
-                                <h5 class="date-time">今天 19:00<br></h5>
-                                
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                                
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <img src="/assets/img/avatar3.png" alt="" class="img-circle" width="50" height="50">
-                                </div>
-                                <h4>小刚:</h4>
-                                <p>
-                                    <p>
-                                     楼上傻逼<br>
-                                     找到一个挺不错的视频，可以看看。
-                                </p>
-                                    <div class='embed-container'>
-                                        <iframe src='//player.vimeo.com/video/16566326?title=0&amp;byline=0&amp;portrait=0"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                                    </div>
-                                </p>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                                </div>
-                                <h4>小红:</h4>
-                                <p>
-                                   注意缓存的释放。<br>
-                                   注意缓存的释放。<br>
-                                   注意缓存的释放。<br>
-                                   重要的事情说三遍
-                                </p>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <img src="/assets/img/avatar4.jpg" alt="" class="img-circle" width="50" height="50">
-                                </div>
-                                <h4>孙梦曦:</h4>
-                                <p>
-                                   看看第二张像不像我。
-                                </p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="/assets/img/vac-1.jpg" alt="" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="/assets/img/vac-2.jpg" alt="" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="/assets/img/vac-3.jpg" alt="" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="/assets/img/vac-4.jpg" alt="" />
-                                    </div>
-                                </div>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <img src="/assets/img/avatar8.png" alt="" class="img-circle" width="50" height="50">
-                                </div>
-                                <h4>小狗:</h4>
-                                <p>
-                                    汪汪汪！<br>
-                                    汪汪汪！<br>
-                                    汪汪汪！
-                                    
-                                </p>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <img src="/assets/img/avatar7.png" alt="" class="img-circle" width="50" height="50">
-                                </div>
-                                <h4>Boss:</h4>
-                                <p>
-                                    晚上开会，楼上明天别来上班了。
-                                </p>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                            </li>
-                        </ul>
-
-                    </div>
-                </section>
-            </div>
-
-            <div class="col-md-4 col-sm-12" id="inbox-wrapper">
-                <div class="panel">
-                    <aside class="panel-body">
-                        <a href="＃" class="btn btn-primary btn-block">与我相关</a>
-                        <ul class="nav nav-pills nav-stacked compose-nav">
-                            <li class="active">
-                                <a href="#"> <i class="fa fa-inbox"></i> Inbox
-                                    <span class="label label-primary label-circle pull-right inbox-notification">8</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-star-o"></i> Starred<span class="label label-warning label-circle pull-right inbox-notification">6</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-bookmark-o"></i> Important</a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-pencil-square-o"></i> Drafts <span class="label label-info label-circle pull-right inbox-notification">1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"> <i class="fa fa-trash-o"></i> Trash</a>
-                            </li>
-                        </ul>
-                    </aside>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <span>23</span>
+                                <span class="small">Dec</span>
+                            </div>
+                            <h4>Lorem ipsum dolor!</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            </p>
+                        </li>
+                    </ul>
                 </div>
-
-                <section class="panel" style="min-width:380px;max-width:400px;">
-                    <h4 class="rankingtitle">Ranking</h4>
-                    <div class="panel-body">
-                        <div class="mail-option">
-                            <div class="row">
-                                <div class="btn-group col-md-2">
-                                    <a data-original-title="Refresh" data-placement="top" data-toggle="tooltip" href="#" class="btn btn-default btn-sm tooltips">
-                                        <i class=" fa fa-refresh"></i>
-                                    </a>
-                                </div>
-                                
-                                <div class="col-md-10">
-                                    <ul class="inbox-pag pull-right">
-                                        <li><span>1-50 of 83</span>
-                                        </li>
-                                        <li>
-                                            <a class="btn btn-default btn-sm" href="#"><i class="fa fa-angle-left  pag-left"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="btn btn-default btn-sm" href="#"><i class="fa fa-angle-right pag-right"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
+            </section>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Doctors</h3>
+                            <div class="actions pull-right">
+                            <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
                             </div>
                         </div>
-                        
-                        <div id="contact-list-wrapper">
-                            <div id="contact-list">
-                                <ul>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-1">
-                                                <h1>1</h1>
-                                            </div>
-                                            <div class="col-md-2">
-
-                                                <span class="avatar">
-                                                    <img src="/assets/img/avatar3.png" class="img-circle" alt="">
-                                                 </span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="name">Ashley Bell </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Sarasota, FL</small>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-1">
-                                                <h1>2</h1>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <span class="avatar">
-                                                    <img src="/assets/img/avatar1.png" class="img-circle" alt="">                                                 </span>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="name">Brian Johnson </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> San Francisco, CA</small>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">10</i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-1">
-                                                <h1>3</h1>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <span class="avatar">
-                                                    <img src="/assets/img/avatar2.png" class="img-circle" alt="">                                                 </span>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="name">Chris Jones </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Brooklyn, NY</small>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">9</i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                         <div class="row">
-                                            <div class="col-md-1">
-                                                <h1>4</h1>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <span class="avatar">
-                                                    <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">                                                 </span>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="name">Erica Hill </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Palo Alto, Ca</small>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">9</i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-1">
-                                                <h1>5</h1>
-                                            </div>
-                                            <div class="col-md-2">
-
-                                                <span class="avatar">
-                                                    <img src="/assets/img/avatar5.png" class="img-circle" alt="">
-                                                 </span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="name">Greg Smith </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> London, UK</small>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-1">
-                                                <h1>6</h1>
-                                            </div>
-                                            <div class="col-md-2">
-
-                                                <span class="avatar">
-                                                    <img src="/assets/img/avatar6.png" class="img-circle" alt="">
-                                                 </span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="name">Jason Kendall </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> New York, NY </small>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-1">
-                                                <h1>7</h1>
-                                            </div>
-                                            <div class="col-md-2">
-
-                                                <span class="avatar">
-                                                    <img src="/assets/img/avatar7.png" class="img-circle" alt="">
-                                                 </span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="name">Kristen Davis </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Greenville, SC </small>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-
-                                        <div class="row">
-                                            <div class="col-md-1">
-                                                <h1>8</h1>
-                                            </div>
-                                            <div class="col-md-2">
-
-                                                <span class="avatar">
-                                                    <img src="/assets/img/avatar8.png" class="img-circle" alt="">
-                                                 </span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="name">Michael Shepard </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Vancouver, BC </small>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-1">
-                                                <h1>9</h1>
-                                            </div>
-                                            <div class="col-md-2">
-
-                                                <span class="avatar">
-                                                    <img src="/assets/img/avatar9.png" class="img-circle" alt="">
-                                                 </span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="name">Paul Allen </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Savannah, GA </small>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-1">
-                                                <h1>10</h1>
-                                            </div>
-                                            <div class="col-md-2">
-
-                                                <span class="avatar">
-                                                    <img src="/assets/img/avatar9.png" class="img-circle" alt="">
-                                                 </span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="name">Paul Allen </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Savannah, GA </small>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                        <div class="panel-body">
+                            <div class="tab-wrapper tab-primary">
+                                <div class="row">
+                                    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td>运动距离</td>
+                                                <td>运动步数</td>
+                                                <td>燃烧热量</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="fbig">0</span>公里</td>
+                                                <td><span class="fbig">0</span>步</td>
+                                                <td><span class="fbig">0</span>大卡</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="rl">
+                                    <form action="" class="fnormal">
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="row">
+                                                            <label class="col-sm-3 control-label">身高</label>
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <label class="col-sm-3 control-label">厘米</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="row">
+                                                            <label class="col-sm-3 control-label">走路步长</label>
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <label class="col-sm-3 control-label">厘米</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label>体重<input class="form-control" id="my_step" name="my_step" type="number" value="">公斤</label></td>
+                                                    <td><label>跑步步长<input class="form-control" id="my_run" name="my_run" type="number" value="">厘米</label></td>
+                                                    <td><input type="button" class="button small" value="保存" onclick=""></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </form>
+                                    <h4>你的理想体重<span class="fbig" id="opti_weight">58.5</span>公斤，还需要摄入热量<span class="fbig" id="wanted_calories">13355</span>大卡，注意加强营养，合理搭配膳食！</h4>
+                                </div>
+                                    
                             </div>
                         </div>
                     </div>
-                </section>
-
+                </div>
             </div>
-        </div>
-    <!--main content end-->
+        </section>
+
     </section>
+
+    <!--main content end-->
 </section>
 <!--sidebar right start-->
 <aside id="sidebar-right">
@@ -979,8 +723,8 @@
 <!-- Switch -->
 <script src="{{ asset('/assets/plugins/switchery/switchery.min.js') }}"></script>
 <script src="{{ asset('/assets/plugins/dropzone/js/dropzone.min.js') }}"></script>
- <!--Page Leve JS -->
 <!--Load these page level functions-->
+
 </body>
 
 </html>
