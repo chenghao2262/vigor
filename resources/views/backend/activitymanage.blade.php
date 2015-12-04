@@ -783,8 +783,8 @@
 <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script> -->
 <script src="{{ asset('/assets/js/underscore.min.js') }}"></script>
 
-<script src="assets/plugins/switchery/switchery.min.js"></script>
-<script src="assets/plugins/dropzone/js/dropzone.min.js"></script>
+<script src="{{ asset('/assets/plugins/switchery/switchery.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/dropzone/js/dropzone.min.js') }}"></script>
 
 <!--Page Level JS -->
 
