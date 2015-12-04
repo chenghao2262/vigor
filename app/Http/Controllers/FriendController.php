@@ -22,7 +22,7 @@ class FriendController extends Controller
         $friends = $user->friends()->get();
         $news = $user->friendsNews();
         $sportRecord = $user->getTodaySportRecords();
-        return view('backend.friendcircle',compact('friends','$news'));
+        return view('backend.friendcircle',compact('friends','news'));
 
     }
 
