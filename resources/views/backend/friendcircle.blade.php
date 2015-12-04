@@ -286,8 +286,8 @@
                 <section class="panel  timeline-post-to">
                     <div class="panel-body">
                         <form role="form" method="POST" action="{{ url('/friends/news')}}" >
-                            <!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
-                            <textarea class="form-control" placeholder="What's on your mind?"></textarea>
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <textarea class="form-control" placeholder="What's on your mind?" name="content"></textarea>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
