@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\ChatRecord;
 use App\Events\ChatEvent;
+
 class ChatController extends Controller
 {
 

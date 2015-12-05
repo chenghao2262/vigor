@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Blog;
+use Illuminate\Support\Facades\Cache;
 
 class FriendController extends Controller
 {
@@ -22,7 +23,8 @@ class FriendController extends Controller
         $friends = $user->friends()->get();
         $news = $user->friendsNews();
         $sportRecord = $user->getTodaySportRecords();
-        return view('backend.friendcircle',compact('friends','news'));
+        $haveClinic=Cache::get('haveClinic');
+        return view('backend.friendcircle',compact('friends','news','haveClinic'));
 
     }
 

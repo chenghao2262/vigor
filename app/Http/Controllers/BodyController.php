@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+
 class BodyController extends Controller
 {
 
@@ -21,8 +23,9 @@ class BodyController extends Controller
         $user = Auth::user();
         $bodyRecord = $user->bodyRecords()->take(5)->get()->toArray();
         $sportRecord = $user->getTodaySportRecords();
+        $haveClinic=Cache::get('haveClinic');
         // return view('test',compact('sportRecord'));
-        return view('backend.stat',compact('bodyRecord'));
+        return view('backend.stat',compact('bodyRecord','haveClinic'));
     }
 
     public function getStatOn($date){

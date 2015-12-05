@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Activity;
+use Illuminate\Support\Facades\Cache;
 
 class ActivityController extends Controller
 {
@@ -23,6 +24,7 @@ class ActivityController extends Controller
     {
         $user = Auth::user();
 
+        $haveClinic=Cache::get('haveClinic');
         //用户参与的活动
         $activity = $user->activitiesHasJoined()->get()->toArray();
         //dd($activity);
@@ -31,7 +33,7 @@ class ActivityController extends Controller
         $latestActivities = Activity::latest()->take(5)->get()->toArray();
         //dd($latestActivities[0]['start']);
 
-        return view('backend.activitymanage',compact('latestActivities'));
+        return view('backend.activitymanage',compact('latestActivities','haveClinic'));
     }
 
     public function newActivity(Request $request)
@@ -62,9 +64,10 @@ class ActivityController extends Controller
     public function getActivity($id)
     {
         $activity =  Activity::find($id)->toArray();
+        $haveClinic=Cache::get('haveClinic');
         //$participants = $activity->participants()->get()->toArray();
         //dd($participants);
-        return view('backend.activityModify',compact('activity'));
+        return view('backend.activityModify',compact('activity','haveClinic'));
     }
 
     public function joinActivity($id)
@@ -81,10 +84,10 @@ class ActivityController extends Controller
         //用户参与的活动
         $activity = $user->activitiesHasJoined()->get()->toArray();
         //dd($activity);
-
+        $haveClinic=Cache::get('haveClinic');
         //得到最新活动
         $latestActivities = Activity::latest()->take(5)->get()->toArray();
-        return view('backend.myActivity',compact('latestActivities'));
+        return view('backend.myActivity',compact('latestActivities','haveClinic'));
     }
 
     public function modifyActivity(Request $request){

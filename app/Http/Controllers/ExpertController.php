@@ -11,6 +11,7 @@ use App\Expert;
 use App\Article;
 use App\Order;
 use App\Suggestion;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
 class ExpertController extends Controller
@@ -51,8 +52,8 @@ class ExpertController extends Controller
             $expert['time']=$time;
             $hotExperts[$k] = $expert;
         }
-
-        return view('backend.dotor',compact('hotExperts'));
+        $haveClinic=Cache::get('haveClinic');
+        return view('backend.dotor',compact('hotExperts','haveClinic'));
 
 
     }
@@ -76,7 +77,8 @@ class ExpertController extends Controller
     {
         $expert = Expert::find($expertId);
         $articles = $expert->articles()->get();
-        return view('backend.doc_article',compact('articles'));
+        $haveClinic=Cache::get('haveClinic');
+        return view('backend.doc_article',compact('articles','haveClinic'));
 
     }
 
@@ -170,7 +172,8 @@ class ExpertController extends Controller
     public function suggestionIndex(){
         $user = Auth::user();
         $suggestions = $user->getSuggestions()->get();
-        return view('backend.suggestion',compact('suggestions'));
+        $haveClinic=Cache::get('haveClinic');
+        return view('backend.suggestion',compact('suggestions','haveClinic'));
 
     }
 
@@ -213,7 +216,7 @@ class ExpertController extends Controller
             }
         }
         $expert['time']=$time;
-
-        return view('backend.myOutpatient',compact('orders','expert'));
+        $haveClinic=Cache::get('haveClinic');
+        return view('backend.myOutpatient',compact('orders','expert','haveClinic'));
     }
 }

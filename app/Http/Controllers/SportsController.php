@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\SportRecord;
+use Illuminate\Support\Facades\Cache;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 
@@ -33,7 +34,8 @@ class SportsController extends Controller
         $user = Auth::user();
         $sportRecord = $user->getTodaySportRecords();
         // return view('test',compact('sportRecord'));
-        return view('backend.homepage',compact('sportRecord'));
+        $haveClinic=Cache::get('haveClinic');
+        return view('backend.homepage',compact('sportRecord','haveClinic'));
     }
 
     public function postExcel(Request $request){

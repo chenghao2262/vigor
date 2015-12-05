@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Auth;
 use App\SportRecord;
+use App\Role;
+use Illuminate\Support\Facades\Cache;
+
 class HomeController extends Controller {
 
 	/*
@@ -34,9 +37,20 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$user = Auth::user();
-		 $sportRecord = $user->getTodaySportRecords();
-		// return view('test',compact('sportRecord'));
-		return view('backend.homepage',compact('sportRecord'));
+		$sportRecord = $user->getTodaySportRecords();
+		$haveClinic = false;
+
+		foreach (Role::find($user->type)->permissions()->get() as $each)
+		{
+
+			if($each->id==9){
+				$haveClinic = true;
+			}
+		}
+		$expiresAt = \Carbon\Carbon::now()->addMinutes(1000);
+		Cache::put('haveClinic',$haveClinic, $expiresAt);
+		$haveClinic=Cache::get('haveClinic');
+		return view('backend.homepage',compact('sportRecord','haveClinic'));
 	}
 
 }

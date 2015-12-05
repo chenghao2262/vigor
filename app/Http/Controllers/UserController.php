@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Role;
+use Illuminate\Support\Facades\Cache;
 
 class UserController extends Controller
 {
@@ -48,17 +49,27 @@ class UserController extends Controller
 
         for($i = 1;$i<5;$i++){
             $role = Role::find($i);
+            $perms = array();
             for($j = 1;$j<16;$j++){
                 $name = $i.$j;
+
                 if($request->input($name)=="on") {
-                    $role->permissions()->detach($j);
-                    $role->permissions()->attach($j);
+
+                    $perms[]=$j;
+                    if($i==4&&$j==9){
+                        $expiresAt = \Carbon\Carbon::now()->addMinutes(1000);
+                        Cache::put('haveClinic',true, $expiresAt);
+                    }
                 }else{
-                    $role->permissions()->detach($j);
+                    if($i==4&&$j==9){
+                        $expiresAt = \Carbon\Carbon::now()->addMinutes(1000);
+                        Cache::put('haveClinic',false, $expiresAt);
+                    }
                 }
             }
-        }
 
+            $role->permissions()->sync($perms);
+        }
 
         return redirect('/users/permission');
     }
