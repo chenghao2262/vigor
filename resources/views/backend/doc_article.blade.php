@@ -287,7 +287,37 @@
              <div class="row">
                     <div class="col-md-8 col-sm-12 col-lg-8">
                         <ul class="suggestion-list">
+                        <?php
+                        // dd($articles);
+                        ?>
+                        @foreach($articles as $article)
+                            <?php
+                            $attr = $article['attributes'];
+                            ?>
                             <li>
+                                <article class="suggestion">
+                                    <h1>
+                                        <a href="#" title="{{$attr['title']}}" alt="{{$attr['title']}}">
+                                        {{$attr['title']}}
+                                        </a>
+                                    </h1>
+                                    <div class="suggestion-summary">
+                                        <p>
+                                            {{$attr['content']}}
+                                        </p>
+                                    </div>
+                                    <div class="suggestion-info">
+                                        <i class="fa fa-calender"></i> {{$attr['created_at']}} 
+                                        <i class="fa fa-map-marker"></i>
+                                        <a href="#">{{$attr['expertName']}}</a>
+                                    </div>
+                                    <div class="suggestion-readmore">
+                                        <a href="#">Created By {{$attr['expertName']}}</a>
+                                    </div>    
+                                </article>
+                            </li>
+                        @endforeach
+                           <!--  <li>
                                 <article class="suggestion">
                                     <h1>
                                         <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
@@ -389,7 +419,7 @@
                                         <a href="#">+展开建议</a>
                                     </div>    
                                 </article>
-                            </li>
+                            </li> -->
                         </ul>
                     </div> 
 
