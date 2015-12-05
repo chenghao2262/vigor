@@ -14,3 +14,11 @@ function changeButtonStatusAndInputValue(obj1,message){//button,input
 		tmp.value = 0;
 	}
 } 
+
+function changeButtonStatus(obj){//button,input
+	if(obj.className=="btn btn-warning"){
+		obj.className = "btn btn-default";
+	}else{
+		obj.className ="btn btn-warning";
+	}
+} 

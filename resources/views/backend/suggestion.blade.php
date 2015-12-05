@@ -166,7 +166,7 @@
                                     </span>Messages</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">
+                            <a href="/personal">
                                     <span class="icon"><i class="fa fa-cog"></i>
                                     </span>Settings</a>
                         </li>
@@ -320,45 +320,84 @@
                                 </li>
                             @endforeach
 
-                            <!-- <li>
-                                <article class="suggestion">
-                                    <h1>
-                                        <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
-                                        只要你跑的够快 寂寞就追不上你
-                                        </a>
-                                    </h1>
-                                    <div class="suggestion-summary">
-                                        <p>
-                                              今天逛NBA中文网站，准备抄袭他们数据展示方式的时候，发现一个热区数据展示，挺不错的。
-                                              忽视右边数据里的一些bug，总的来说是非常炫酷的… 
-                                              而且实现起来貌似也很简单，对照这14个区域做14个按钮就好了….
-                                              因为一直用的Java中的Swing包做用户界面开发，但是无论是JButton还是JLabe
-                                        </p>
-                                    </div>
-                                    <div class="suggestion-info">
-                                        <i class="fa fa-calender"></i> 2015-05-13  105 人围观; 
-                                        <i class="fa fa-map-marker"></i>
-                                        <a href="#">蒙古医生</a>
-                                    </div>
-                                    <div class="suggestion-readmore">
-                                        <a href="#">+展开建议</a>
-                                    </div>    
-                                </article>
-                            </li> -->
                         </ul>
                     </div> 
 
                     <div class="col-md-4 col-sm-12 col-lg-4">
-                             <section class="panel">
+                        <section class="panel">
+                            <header class="panel-heading wht-bg">
+                                <h3 class="gen-case">我的预约</h4>
+                            </header>
+                            <div class="panel-body minimal">
+                                <div id="contact-list-wrapper">
+                                    <div id="contact-list">
+                                        <?php
+                                        // dd($orders);
+                                        $table = array(
+                                            0 => "09:00",
+                                            1 => "09:30",
+                                            2 => "10:00",
+                                            3 => "10:30",
+                                            4 => "11:00",
+                                            5 => "02:00",
+                                            6 => "02:30",
+                                            7 => "03:00",
+                                            8 => "03:30",
+                                            9 => "04:00",
+                                        );
+
+                                        $pics = array(
+                                            0 => "/assets/img/avatar1.png",
+                                            1 => "/assets/img/avatar2.png",
+                                            2 => "/assets/img/avatar3.png",
+                                            3 => "/assets/img/avatar4.jpg",
+                                            4 => "/assets/img/avatar5.png",
+                                            5 => "/assets/img/avatar6.png",
+                                            6 => "/assets/img/avatar7.png",
+                                            7 => "/assets/img/avatar8.png",
+                                            8 => "/assets/img/avatar9.png",
+                                            9 => "/assets/img/profile.jpg",
+
+                                        );
+                                        $index = 0;
+
+                                        ?>
+                                        <ul>
+                                            @foreach($orders as $order)
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <span class="avatar">
+                                                            <img src="{{$pics[$index]}}" class="img-circle" alt="">
+                                                         </span>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <p>{{$order['watcherName']}}</p>
+                                                        <small class="location text-muted">{{$order['date']}}</small>
+                                                        <small class="location text-muted">{{$table[$order['startSegment']]}}</small>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <button class="btn btn-primary" data-toggle="modal" data-target="#chatModal">开始会话
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <?php
+                                            $index = $index + 1;
+                                            ?>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>    
+                            </div>
+                        </section>
+                        <section class="panel">
                             <header class="panel-heading wht-bg">
                                 <h3 class="gen-case">猜你感兴趣</h4>
                             </header>
                             <div class="panel-body minimal">
                                 <div id="contact-list-wrapper">
                                     <div id="contact-list">
-                                    
-
-                                   
                                         <ul>
                                             <li>
                                                 <div class="row">
@@ -369,10 +408,10 @@
                                                     </div>
                                                     <div class="col-md-5">
                                                         <p>Ashley Bell</p>
-                                                        <small class="location text-muted">爱新觉罗·良辰·裂天·孤城·回春术(+7)·无嗔大师</small>
+                                                        <small class="location text-muted">爱新觉罗·良辰</small>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <button type="button" class="btn btn-warning"><i class="icon-user-follow"></i>关注</button>
+                                                        <button type="button" class="btn btn-warning" onclick="changeButtonStatus(this);"><i class="icon-user-follow"></i>关注</button>
                                                     </div>
                                                 </div>
                                             </li>
@@ -385,10 +424,10 @@
                                                     </div>
                                                     <div class="col-md-5">
                                                         <p>Ashley Bell</p>
-                                                        <small class="location text-muted">爱新觉罗·良辰·裂天·孤城·回春术(+7)·无嗔大师</small>
+                                                        <small class="location text-muted">裂天·孤城</small>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <button type="button" class="btn btn-warning"><i class="icon-user-follow"></i>关注</button>
+                                                        <button type="button" class="btn btn-warning" onclick="changeButtonStatus(this);"><i class="icon-user-follow"></i>关注</button>
 
                                                     </div>
                                                 </div>
@@ -402,185 +441,262 @@
                                                     </div>
                                                     <div class="col-md-5">
                                                         <p>Ashley Bell</p>
-                                                        <small class="location text-muted">爱新觉罗·良辰·裂天·孤城·回春术(+7)·无嗔大师</small>
+                                                        <small class="location text-muted">回春术(+7)·无嗔大师</small>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <button type="button" class="btn btn-warning"><i class="icon-user-follow"></i>关注</button>
+                                                        <button type="button" class="btn btn-warning" onclick="changeButtonStatus(this);"><i class="icon-user-follow"></i>关注</button>
                                                     </div>
                                                 </div>
                                             </li>
-                                 
                                         </ul>
                                     </div>
-                                </div>
-
-                               
+                                </div>    
                             </div>
                         </section>
+
                     </div>        
                 </div>
             </section>
-
         <!--main content end-->
         </section>
     </section>
+<?php
+    $addr = array(
+    0 => "asset('/assets/img/avatar1.png')",
+    1 => "{{ asset('/assets/img/avatar2.png') }}",
+    2 => "{{ asset('/assets/img/avatar3.png') }}",
+    3 => "{{ asset('/assets/img/avatar4.jpg') }}",
+    4 => "{{ asset('/assets/img/avatar5.png') }}",
+    5 => "{{ asset('/assets/img/avatar6.png') }}",
+    6 => "{{ asset('/assets/img/avatar7.png') }}",
+    7 => "{{ asset('/assets/img/avatar8.png') }}",
+    8 => "{{ asset('/assets/img/avatar9.png') }}",
+    9 => "{{ asset('/assets/img/profile.jpg') }}",
+    );
+    $luk = 0;
+?>
+@foreach($orders as $item)
+    <?php
+        $luk = rand(0,9);
+    ?>
+<div class="modal fade" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <!-- huge form -->
+            <div class="panel panel-default chat-widget">
+                <div class="panel-heading">
+                    <h3 class="panel-title">chat</h3>
+                    <div class="actions pull-right">
+                        <i class="fa fa-expand"></i>
+                        <i class="fa fa-chevron-down"></i>
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="panel-body" id="chatPanel">
+                    <div class="row wrapper animated fadeInRight">
+                        <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                        <span class="avatar">
+                                        <img src="{{ asset('/assets/img/avatar1.png') }}" class="img-circle" alt="">
+                                        <i class="on animated bounceIn"></i>
+                                    </span>
+                        </div>
+                        <div class="col-xs-10 col-sm-10 col-md-10">
+                            <div class="post default">
+                                <span class="arrow left"></span>
+                                <p>Hey Mike...Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibut</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wrapper animated fadeInLeft">
+                        <div class="col-xs-10 col-sm-10 col-md-10">
+                            <div class="post primary">
+                                <span class="arrow right"></span>
+                                <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et.</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">
+                                        <span class="avatar">
+                                        <img src="{{ asset('/assets/img/avatar7.png') }}"class="img-circle" alt="">
+                                        <i class="on animated bounceIn"></i>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <form method="POST" action="{{ url('/chat') }}" id="chatform">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Say something" name="content">
+                            <input type="hidden" name="toName" value="njusmx">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-primary" id="subm">SEND</button>
+                                         </span>
+                        </div>
+                    </form>
 
-<!--sidebar right start-->
-    <aside id="sidebar-right">
-        <h4 class="sidebar-title">contact List</h4>
-        <div id="contact-list-wrapper">
-            <div class="heading">
-                <ul>
-                    <li class="new-contact"><a href="javascript:void(0)"><i class="fa fa-plus"></i></a>
-                    </li>
-                    <li>
-                        <input type="text" class="search" placeholder="Search">
-                        <button type="submit" class="btn btn-sm btn-search"><i class="fa fa-search"></i>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-            <div id="contact-list">
-                <ul>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-3">
-                                    <span class="avatar">
-                            <img src="/assets/img/avatar3.png" class="img-circle" alt="">
-                              <i class="on animated bounceIn"></i>
-                            </span>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="name">Ashley Bell </div>
-                                <small class="location text-muted"><i class="icon-pointer"></i> Sarasota, FL</small>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-3">
-                                    <span class="avatar">
-                            <img src="/assets/img/avatar1.png" class="img-circle" alt="">
-                              <i class="on animated bounceIn"></i>
-                            </span>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="name">Brian Johnson </div>
-                                <small class="location text-muted"><i class="icon-pointer"></i> San Francisco, CA</small>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-3">
-                                    <span class="avatar">
-                            <img src="/assets/img/avatar2.png" class="img-circle" alt="">
-                              <i class="on animated bounceIn"></i>
-                            </span>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="name">Chris Jones </div>
-                                <small class="location text-muted"><i class="icon-pointer"></i> Brooklyn, NY</small>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-3">
-                                    <span class="avatar">
-                            <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">
-                              <i class="on animated bounceIn"></i>
-                            </span>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="name">Erica Hill </div>
-                                <small class="location text-muted"><i class="icon-pointer"></i> Palo Alto, Ca</small>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-3">
-                                    <span class="avatar">
-                            <img src="/assets/img/avatar5.png" class="img-circle" alt="">
-                              <i class="away animated bounceIn"></i>
-                            </span>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="name">Greg Smith </div>
-                                <small class="location text-muted"><i class="icon-pointer"></i> London, UK</small>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-3">
-                                    <span class="avatar">
-                            <img src="/assets/img/avatar6.png" class="img-circle" alt="">
-                              <i class="on animated bounceIn"></i>
-                            </span>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="name">Jason Kendall</div>
-                                <small class="location text-muted"><i class="icon-pointer"></i> New York, NY </small>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-3">
-                                    <span class="avatar">
-                            <img src="/assets/img/avatar7.png" class="img-circle" alt="">
-                              <i class="on animated bounceIn"></i>
-                            </span>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="name">Kristen Davis </div>
-                                <small class="location text-muted"><i class="icon-pointer"></i> Greenville, SC</small>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-3">
-                                    <span class="avatar">
-                            <img src="/assets/img/avatar8.png" class="img-circle off" alt="">
-                              <i class="off animated bounceIn"></i>
-                            </span>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="name">Michael Shepard </div>
-                                <small class="location text-muted"><i class="icon-pointer"></i> Vancouver, BC</small>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="col-md-3">
-                                    <span class="avatar">
-                            <img src="/assets/img/avatar9.png" class="img-circle off" alt="">
-                              <i class="off animated bounceIn"></i>
-                            </span>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="name">Paul Allen</div>
-                                <small class="location text-muted"><i class="icon-pointer"></i> Savannah, GA</small>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div id="contact-user">
-                <div class="chat-user active"><span><i class="icon-bubble"></i></span>
-                </div>
-                <div class="email-user"><span><i class="icon-envelope-open"></i></span>
-                </div>
-                <div class="call-user"><span><i class="icon-call-out"></i></span>
                 </div>
             </div>
         </div>
-    </aside>
+    </div>
+@endforeach
+
+
+<!--sidebar right start-->
+<aside id="sidebar-right">
+    <h4 class="sidebar-title">contact List</h4>
+    <div id="contact-list-wrapper">
+        <div class="heading">
+            <ul>
+                <li class="new-contact"><a href="javascript:void(0)"><i class="fa fa-plus"></i></a>
+                </li>
+                <li>
+                    <input type="text" class="search" placeholder="Search">
+                    <button type="submit" class="btn btn-sm btn-search"><i class="fa fa-search"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div id="contact-list">
+            <ul>
+                <li>
+                    <div class="row">
+                        <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="/assets/img/avatar3.png" class="img-circle" alt="">
+                          <i class="on animated bounceIn"></i>
+                        </span>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Ashley Bell </div>
+                            <small class="location text-muted"><i class="icon-pointer"></i> Sarasota, FL</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="/assets/img/avatar1.png" class="img-circle" alt="">
+                          <i class="on animated bounceIn"></i>
+                        </span>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Brian Johnson </div>
+                            <small class="location text-muted"><i class="icon-pointer"></i> San Francisco, CA</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="/assets/img/avatar2.png" class="img-circle" alt="">
+                          <i class="on animated bounceIn"></i>
+                        </span>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Chris Jones </div>
+                            <small class="location text-muted"><i class="icon-pointer"></i> Brooklyn, NY</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">
+                          <i class="on animated bounceIn"></i>
+                        </span>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Erica Hill </div>
+                            <small class="location text-muted"><i class="icon-pointer"></i> Palo Alto, Ca</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="/assets/img/avatar5.png" class="img-circle" alt="">
+                          <i class="away animated bounceIn"></i>
+                        </span>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Greg Smith </div>
+                            <small class="location text-muted"><i class="icon-pointer"></i> London, UK</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="/assets/img/avatar6.png" class="img-circle" alt="">
+                          <i class="on animated bounceIn"></i>
+                        </span>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Jason Kendall</div>
+                            <small class="location text-muted"><i class="icon-pointer"></i> New York, NY </small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="/assets/img/avatar7.png" class="img-circle" alt="">
+                          <i class="on animated bounceIn"></i>
+                        </span>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Kristen Davis </div>
+                            <small class="location text-muted"><i class="icon-pointer"></i> Greenville, SC</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="/assets/img/avatar8.png" class="img-circle off" alt="">
+                          <i class="off animated bounceIn"></i>
+                        </span>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Michael Shepard </div>
+                            <small class="location text-muted"><i class="icon-pointer"></i> Vancouver, BC</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="col-md-3">
+                                <span class="avatar">
+                        <img src="/assets/img/avatar9.png" class="img-circle off" alt="">
+                          <i class="off animated bounceIn"></i>
+                        </span>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="name">Paul Allen</div>
+                            <small class="location text-muted"><i class="icon-pointer"></i> Savannah, GA</small>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="contact-user">
+            <div class="chat-user active"><span><i class="icon-bubble"></i></span>
+            </div>
+            <div class="email-user"><span><i class="icon-envelope-open"></i></span>
+            </div>
+            <div class="call-user"><span><i class="icon-call-out"></i></span>
+            </div>
+        </div>
+    </div>
+</aside>
 <!--/sidebar right end-->
+
 <!--Config demo-->
 <div id="config" class="config hidden-xs">
     <h4>Settings<a href="javascript:void(0)" class="config-link closed"><i class="icon-settings"></i></a></h4>
@@ -685,11 +801,15 @@
 <!--/Config demo-->
 <!--Global JS-->
 <script src="{{ asset('/assets/js/vendor/jquery-1.11.1.min.js') }}"></script>
-<script src="{{ asset('/assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/assets/js/bootstrap-modal.js') }}"></script>
+
+<!-- <script src="{{ asset('/assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script> -->
 <script src="{{ asset('/assets/plugins/navgoco/jquery.navgoco.min.js') }}"></script>
 <script src="{{ asset('/assets/plugins/pace/pace.min.js') }}"></script>
 <script src="{{ asset('/assets/plugins/fullscreen/jquery.fullscreen-min.js') }}"></script>
 <script src="{{ asset('/assets/js/src/app.js') }}"></script>
+<script src="{{ asset('/assets/js/src/doc.js') }}"></script>
+
 <!--Page Level JS-->
 <script src="{{ asset('/assets/plugins/countTo/jquery.countTo.js') }}"></script>
 <script src="{{ asset('/assets/plugins/weather/js/skycons.js') }}"></script>
@@ -718,6 +838,40 @@
 <script src="{{ asset('/assets/plugins/dropzone/js/dropzone.min.js') }}"></script>
  <!--Page Leve JS -->
 <!--Load these page level functions-->
+<script src="{{ asset('assets/js/socket.io.js') }}"></script>
+
+    <script>
+        var socket = io('http://localhost:3000');
+        socket.on("test-channel:App\\Events\\ChatEvent", function(message){
+            var fromName =  message.data.fromName;
+            if(fromName=='YuanRui'){
+            $('#chatPanel').append("<div class='row wrapper animated fadeInLeft'>"+
+                                        "<div class='col-xs-10 col-sm-10 col-md-10'>"+
+                                            "<div class='post primary'>"+
+                                                "<span class='arrow right'></span>"+
+                                                "<p>"+message.data.content+"</p>"+
+                                            "</div>"+
+                                        "</div>"+
+                                        "<div class='col-xs-2 col-sm-2 col-md-2'>"+
+                                            "<span class='avatar'>"+
+                                            "<img src='assets/img/profile.jpg' class='img-circle' alt=''>"+
+                                            "<i class='on animated bounceIn'></i>"+
+                                            "</span>"+
+                                        "</div>"+
+                                    "</div>");
+            }
+        });
+
+        $('#subm').click(function () {
+            $.ajax({
+                url:"{{ url('/chat') }}",
+                data:$("#chatform").serialize(),
+                type:"post",
+            });
+            return false;
+        });
+
+    </script>
 
 </body>
 
