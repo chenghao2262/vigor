@@ -182,4 +182,8 @@ class User extends Model implements AuthenticatableContract,
     public function getSuggestions(){
         return $this->hasMany('App\Suggestion','watcherName','name');
     }
+
+    public function orders(){
+        return $this->hasMany('App\Order','watcherName','name');
+    }
 }

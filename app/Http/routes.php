@@ -25,6 +25,7 @@ Route::get('bc', function () {
 
 
 Route::get('/test','TestController@index');
+Route::post('/test','TestController@test');
 Route::get('/testget/{suggestionId}','ExpertController@getSuggestionAt');
 
 Route::get ('/sports/index', 'SportsController@index');
@@ -48,6 +49,7 @@ Route::post('/expert/article', 'ExpertController@publishArticle');
 Route::get ('/expert/{expertId}/availableTime', 'ExpertController@getAvailableTime');
 Route::post('/expert/order', 'ExpertController@postOrder');
 Route::get ('/expert/clinic','ExpertController@myclinic');
+Route::post('/expert/schedule', 'ExpertController@postSchedule');
 
 Route::post('/expert/order/chat', 'ExpertController@postChat');
 Route::post('/expert/order/grade', 'ExpertController@postGrade');

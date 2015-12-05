@@ -171,9 +171,10 @@ class ExpertController extends Controller
 
     public function suggestionIndex(){
         $user = Auth::user();
+        $orders = $user->orders()->orderby('date')->orderby('startSegment')->get()->toArray();
         $suggestions = $user->getSuggestions()->get();
         $haveClinic=Cache::get('haveClinic');
-        return view('backend.suggestion',compact('suggestions','haveClinic'));
+        return view('backend.suggestion',compact('suggestions','haveClinic','orders'));
 
     }
 
@@ -207,9 +208,9 @@ class ExpertController extends Controller
         }
 
         for($i=0;$i<5;$i++){
-            $date = '2015-12-'.($i<3?'0':'').($i+7);
+            $date = '2015-12-'.'0'.($i+6);
 
-            $times=Expert::find($expert['name'])->availableTime()->where('date','=',$date)->get()->toarray();
+            $times=$expert->availableTime()->where('date','=',$date)->get()->toarray();
 
             foreach($times as $each){
                 $time[$i][intval($each['segment'])]=1;
@@ -218,5 +219,59 @@ class ExpertController extends Controller
         $expert['time']=$time;
         $haveClinic=Cache::get('haveClinic');
         return view('backend.myOutpatient',compact('orders','expert','haveClinic'));
+    }
+
+    public function postSchedule(Request $request){
+        $name = Auth::user()->name;
+        $table = array(
+            0 => "09:00",
+            1 => "09:30",
+            2 => "10:00",
+            3 => "10:30",
+            4 => "11:00",
+            5 => "02:00",
+            6 => "02:30",
+            7 => "03:00",
+            8 => "03:30",
+            9 => "04:00",
+        );
+
+        $insert =  array();
+        for($i=0;$i<5;$i++) {
+            $date = '12-' . 0 . ($i + 6);
+
+            for($j=0;$j<10;$j++){
+                $datetime = $date.$table[$j];
+
+
+                if($request->input($datetime)=="1"){
+                    $insert[] = ['expertName'=>$name,
+                                'date'=>'2015-'.$date,
+                                'segment'=>$j,
+                                'created_at'=>\Carbon\Carbon::now(),
+                                'updated_at'=>\Carbon\Carbon::now()];
+                    /*AvailableTime::firstOrCreate(array(
+                        'expertName'=>$name,
+                        'date'=>'2015-'.$date,
+                        'segment'=>$j
+                    ));*/
+                }else{
+                    /*$delete[] = ['expertName'=>$name,
+                        'date'=>'2015-'.$date,
+                        'segment'=>$j];*/
+                    /*AvailableTime::firstOrCreate(array(
+                        'expertName'=>$name,
+                        'date'=>'2015-'.$date,
+                        'segment'=>$j
+                    ))->delete();*/
+                }
+            }
+        }
+        DB::table('availableTime')->where('expertName',$name)->delete();
+        DB::table('availableTime')->insert($insert);
+
+
+        return redirect('/expert/clinic');
+
     }
 }

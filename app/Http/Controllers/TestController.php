@@ -25,9 +25,9 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function test(Request $request)
     {
-        //
+        dd($request->input('dd'));
     }
 
     /**

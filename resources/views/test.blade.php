@@ -206,10 +206,12 @@
         </div>
 
     </div>--}}
-        <div>
-            <button class="btn btn-primary" id="subm" onclick="location.href='<?php echo url('/activity').'/'.$latestActivities[0]['activityID']?>'">SEND</button>
-        </div>
-
+        <form action="/test" method="POST">
+            <input type="button" value="1235456" name="dd" />
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="submit" value="提交" />
+        </form>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

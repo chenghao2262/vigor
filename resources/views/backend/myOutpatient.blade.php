@@ -476,7 +476,7 @@
 <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <!-- huge form -->
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/expert/order') }}" id="chatform">
+        <form class="form-horizontal" role="form" method="POST" action="{{ url('/expert/schedule') }}" id="chatform">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             
             <div class="modal-content">
@@ -538,15 +538,17 @@
                             <div class=" col-md-2 appointment_cell">
                                 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
+
+
                                         <tr>
                                             <th>
                                                 @if($day)
                                                     <?php
-                                                    // echo '12-0'.strval(intval(date("d"))+$day);
+                                                     echo '12-0'.strval(intval(date("d"))+$day);
                                                     ?>
                                                 @else
                                                     <?php
-                                                    // echo date("m-d");
+                                                     echo date("m-d");
                                                     ?>
                                                 @endif
                                             </th>
@@ -604,7 +606,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">提交日程</button>
+                    <button type="submit" class="btn btn-primary">提交日程</button>
                 </div>
             </div>
         </form>
