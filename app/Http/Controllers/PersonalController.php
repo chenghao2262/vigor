@@ -90,7 +90,6 @@ class PersonalController extends Controller
                             $savecount=0;
                             DB::table('sportRecords')->insert($insert);
                             $insert=array();
-                            echo "Asdasd";
                         }
 
                     }
