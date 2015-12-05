@@ -20,9 +20,9 @@ class BodyController extends Controller
     {
         $user = Auth::user();
         $bodyRecord = $user->bodyRecords()->take(5)->get()->toArray();
-        dd($bodyRecord);
+        $sportRecord = $user->getTodaySportRecords();
         // return view('test',compact('sportRecord'));
-        return view('backend.body',compact('bodyRecord'));
+        return view('backend.stat',compact('bodyRecord'));
     }
 
     public function getStatOn($date){

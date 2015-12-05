@@ -22,7 +22,7 @@
     <!-- CSS Animate -->
     <link rel="stylesheet" href="{{ asset('/assets/css/animate.css') }}">
     <!-- C3 Chart-->
-    <link rel="stylesheet" href="assets/plugins/c3Chart/css/c3.css">
+    <link rel="stylesheet" href="{{ asset('/assets/plugins/c3Chart/css/c3.css') }}">
     <!-- Daterange Picker -->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/daterangepicker/daterangepicker-bs3.css') }}">
     <!-- Calendar demo -->
@@ -667,42 +667,42 @@
 </div>
 <!--/Config demo-->
 <!--Global JS-->
-<script src="assets/js/vendor/jquery-1.11.1.min.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/plugins/navgoco/jquery.navgoco.min.js"></script>
-<script src="assets/plugins/pace/pace.min.js"></script>
-<script src="assets/plugins/fullscreen/jquery.fullscreen-min.js"></script>
-<script src="assets/js/src/app.js"></script>
+<script src="{{ asset('assets/js/vendor/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/navgoco/jquery.navgoco.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/pace/pace.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/fullscreen/jquery.fullscreen-min.js') }}"></script>
+<script src="{{ asset('assets/js/src/app.js') }}"></script>
 <!--Page Level JS-->
-<script src="assets/plugins/countTo/jquery.countTo.js"></script>
-<script src="assets/plugins/weather/js/skycons.js"></script>
-<script src="assets/plugins/daterangepicker/moment.min.js"></script>
-<script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="{{ asset('assets/plugins/countTo/jquery.countTo.js') }}"></script>
+<script src="{{ asset('assets/plugins/weather/js/skycons.js') }}"></script>
+<script src="{{ asset('assets/plugins/daterangepicker/moment.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
 <!-- ChartJS  -->
-<script src="assets/plugins/chartjs/Chart.min.js"></script>
-<script src="assets/plugins/chartjs/chartjs-demo.js"></script>
+<script src="{{ asset('assets/plugins/chartjs/Chart.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/chartjs/chartjs-demo.js') }}"></script>
 
 <!-- Morris  -->
-<script src="assets/plugins/morris/js/morris.min.js"></script>
-<script src="assets/plugins/morris/js/raphael.2.1.0.min.js"></script>
+<script src="{{ asset('assets/plugins/morris/js/morris.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/morris/js/raphael.2.1.0.min.js') }}"></script>
 <!-- Vector Map  -->
-<script src="assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js"></script>
+<script src="{{ asset('assets/plugins/jvectormap/js/jquery-jvectormap-1.2.2.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/jvectormap/js/jquery-jvectormap-world-mill-en.js') }}"></script>
 <!-- Gauge  -->
-<script src="assets/plugins/gauge/gauge.min.js"></script>
-<script src="assets/plugins/gauge/gaugeV.js"></script>
-<!-- <script src="assets/plugins/gauge/gauge-demo.js"></script> -->
+<script src="{{ asset('assets/plugins/gauge/gauge.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/gauge/gaugeV.js') }}"></script>
+<!-- <script src="{{ asset('assets/plugins/gauge/gauge-demo.js') }}"></script> -->
 <!-- Calendar  -->
-<script src="assets/plugins/calendar/clndr.js"></script>
-<script src="assets/plugins/calendar/clndr-demo.js"></script>
+<script src="{{ asset('assets/plugins/calendar/clndr.js') }}"></script>
+<script src="{{ asset('assets/plugins/calendar/clndr-demo.js') }}"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 <!-- Switch -->
-<script src="assets/plugins/switchery/switchery.min.js"></script>
-<script src="assets/plugins/dropzone/js/dropzone.min.js"></script>
+<script src="{{ asset('assets/plugins/switchery/switchery.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/dropzone/js/dropzone.min.js') }}"></script>
  <!--Page Leve JS -->
-<script src="assets/plugins/c3Chart/js/d3.v3.min.js"></script>
-<script src="assets/plugins/c3Chart/js/c3.js"></script>
-<script src="assets/plugins/c3Chart/js/c3-V.js"></script>
+<script src="{{ asset('assets/plugins/c3Chart/js/d3.v3.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/c3Chart/js/c3.js') }}"></script>
+<script src="{{ asset('assets/plugins/c3Chart/js/c3-V.js') }}"></script>
 <!--Load these page level functions-->
 <script>
     showSteps(20000,{{$sportRecord->steps}});
