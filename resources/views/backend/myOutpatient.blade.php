@@ -347,9 +347,8 @@
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <div>
-                                                                            <textarea name="suggestion_content" id="editor1" rows="10" cols="80">
+                                                                        <textarea class="textarea form-control" name = "publish_suggestion" rows="10" cols="80" placeholder="Enter text ..." style="width: 100%; height: 200px"></textarea>
 
-                                                                            </textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group">
@@ -419,6 +418,7 @@
                             8 => "03:30",
                             9 => "04:00",
                         );
+
                         ?>
                         <div class="panel-body">
                             <div id="contact-list-wrapper">
@@ -429,6 +429,7 @@
                                                 <div class="row">
                                                     <div class="col-md-3">
                                                         <span class="avatar">
+                                                       
                                                             <img src="/assets/img/avatar3.png" class="img-circle" alt="">
                                                          </span>
                                                     </div>
