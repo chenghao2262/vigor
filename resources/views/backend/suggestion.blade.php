@@ -400,67 +400,67 @@
                                 <h3 class="gen-case">猜你感兴趣</h4>
                             </header>
                             <div class="panel-body minimal">
-
-                                <div class="contact-list-wrapper">
+                                <div id="contact-list-wrapper">
                                     <div id="contact-list">
-                                        <ul class="suggestion-ul">
-                                            <li class="suggestion-li">
-                                                 <div class="row">
-                                                    <div class="col-md-3 col-sm-3 pic-right">
+                                    
+
+                                   
+                                        <ul>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-3">
                                                         <span class="avatar">
-                                                            <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">
-                                                        </span>
+                                                            <img src="/assets/img/avatar3.png" class="img-circle" alt="">
+                                                         </span>
                                                     </div>
-                                                    <div class="col-md-9 col-sm-9 introduction">
-                                                        <div class="name">叶良辰
-                                                            <button type="button" class="btn-follow">
-                                                                <i class="icon-user-follow"></i>关注
-                                                            </button>
-                                                            <br>
-                                                            <small class="location text-muted">爱新觉罗·良辰·裂天·孤城·回春术(+7)·无嗔大师</small>
-                                                        </div>
+                                                    <div class="col-md-5">
+                                                        <p>Ashley Bell</p>
+                                                        <small class="location text-muted">爱新觉罗·良辰·裂天·孤城·回春术(+7)·无嗔大师</small>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <button type="button" class="btn btn-warning"><i class="icon-user-follow"></i>关注</button>
                                                     </div>
                                                 </div>
                                             </li>
-                                             <li class="suggestion-li">
-                                                 <div class="row">
-                                                    <div class="col-md-3 col-sm-3 pic-right">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-3">
                                                         <span class="avatar">
-                                                            <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">
-                                                        </span>
+                                                            <img src="/assets/img/avatar1.png" class="img-circle" alt="">
+                                                         </span>
                                                     </div>
-                                                    <div class="col-md-9 col-sm-9 introduction">
-                                                        <div class="name">叶良辰
-                                                            <button type="button" class="btn-follow">
-                                                                <i class="icon-user-follow"></i>关注
-                                                            </button>
-                                                            <br>
-                                                            <small class="location text-muted">爱新觉罗·良辰·裂天·孤城·回春术(+7)·无嗔大师</small>
-                                                        </div>
+                                                    <div class="col-md-5">
+                                                        <p>Ashley Bell</p>
+                                                        <small class="location text-muted">爱新觉罗·良辰·裂天·孤城·回春术(+7)·无嗔大师</small>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <button type="button" class="btn btn-warning"><i class="icon-user-follow"></i>关注</button>
+
                                                     </div>
                                                 </div>
                                             </li>
-                                             <li class="suggestion-li">
-                                                 <div class="row">
-                                                    <div class="col-md-3 col-sm-3 pic-right">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-3">
                                                         <span class="avatar">
-                                                            <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">
-                                                        </span>
+                                                            <img src="/assets/img/avatar8.png" class="img-circle" alt="">
+                                                         </span>
                                                     </div>
-                                                    <div class="col-md-9 col-sm-9 introduction">
-                                                        <div class="name">叶良辰
-                                                            <button type="button" class="btn-follow">
-                                                                <i class="icon-user-follow"></i>关注
-                                                            </button>
-                                                            <br>
-                                                            <small class="location text-muted">爱新觉罗·良辰·裂天·孤城·回春术(+7)·无嗔大师</small>
-                                                        </div>
+                                                    <div class="col-md-5">
+                                                        <p>Ashley Bell</p>
+                                                        <small class="location text-muted">爱新觉罗·良辰·裂天·孤城·回春术(+7)·无嗔大师</small>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <button type="button" class="btn btn-warning"><i class="icon-user-follow"></i>关注</button>
                                                     </div>
                                                 </div>
                                             </li>
+                                 
                                         </ul>
                                     </div>
-                                </div>    
+                                </div>
+
+                               
                             </div>
                         </section>
                     </div>        
