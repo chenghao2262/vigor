@@ -50,9 +50,9 @@ class ExpertController extends Controller
             $expert['time']=$time;
             $hotExperts[$k] = $expert;
         }
+        dd($hotExperts);
 
-
-        return view('backend.experts',compact('hotExperts'));
+        return view('backend.doctor',compact('hotExperts'));
 
     }
 
@@ -172,6 +172,7 @@ class ExpertController extends Controller
     public function suggestionIndex(){
         $user = Auth::user();
         $suggestions = $user->getSuggestions()->get();
+        dd($suggestions);
         return view('backend.suggestion');
 
     }
