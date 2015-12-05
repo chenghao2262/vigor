@@ -332,52 +332,9 @@
                                             </div>
                                         </form>
                                    </div>
+                                   
                                    <div class="tab-pane fade" id="upload">
-                                        <form class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <h2 class="title">User Address</h2>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Address</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Country</label>
-                                                <div class="col-sm-6">
-                                                    <select class="form-control">
-                                                        <option value="">Country</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">City</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">State</label>
-                                                <div class="col-sm-6">
-                                                    <select class="form-control">
-                                                        <option value="">State</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Zip</label>
-                                                <div class="col-sm-1">
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </form>
-
-
-                                        
-                                         <form class="form-inline signup"  method="POST" action="{{ url('/sports/data') }}" enctype="multipart/form-data">
+                                         <form class="form-inline signup"  method="POST" action="{{ url('/device') }}" enctype="multipart/form-data">
 
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="file" name="data" accept="application/vnd.ms-excel" id="exampleInputFile">
@@ -387,6 +344,7 @@
 
                                         </form>
                                    </div>
+
                                    <div class="tab-pane fade" id="profile">
                                         <form class="form-horizontal">
                                             <div class="form-group">
@@ -458,10 +416,10 @@
                         </div>
 
                         <div class="panel-body">
-                            <form name="form" class="form-horizontal" method="POST" action="">
+                            <form name="form" class="form-horizontal" method="POST" action="{{url('/personal')}}">
 
                                 <div class="form-group">
-                                    <label for="inputHeight" class="col-sm-3 control-label">身高</label>
+                                    <label for="inputHeight" class="col-sm-3 control-label">目标步数</label>
 
                                     <div class="col-sm-8 col-md-6 col-lg-8">
                                         <div class="input-group">
@@ -470,19 +428,6 @@
                                                 aria-label="Amount (to the nearest dollar)"><span
                                                 class="input-group-addon">cm</span>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputWeight" class="col-sm-3 control-label">体重</label>
-
-                                    <div class="col-sm-8 col-md-6 col-lg-8">
-                                        <div class="input-group">
-                                            <input name="weight" type="text" class="form-control"
-                                                id="inputWeight" placeholder="请输入目标体重"
-                                                aria-label="Amount (to the nearest dollar)"> <span
-                                                class="input-group-addon">kg</span>
-                                        </div>
-
                                     </div>
                                 </div>
                             </form>
