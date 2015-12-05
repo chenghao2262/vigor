@@ -304,7 +304,6 @@
                                                             
                                                             <div class="panel-body">
 
-                                                                <!-- <form class="form-inline signup" role="form" method="POST" action="{{ url('/expert/suggestion') }}"> -->
                                                                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/expert/article') }}">
 
                                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -337,14 +336,12 @@
                                                         <div class="panel panel-default">
                                                             
                                                             <div class="panel-body">
-                                                                <!-- <form class="form-inline signup" role="form" method="POST" action="{{ url('/auth/register') }}"> -->
                                                                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/expert/suggestion') }}">
 
                                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                                     <div class="form-group">
                                                                         <label class="col-sm-3 control-label">TO YOUR PATIENT</label>
                                                                         <div class="col-sm-6">
-                                                                            <!-- <input type="text" class="form-control" name="patientName" value="{{ old('name') }}" placeholder="Enter your patient"> -->
                                                                             <input type="text" class="form-control" name="patientName" placeholder="Enter your patient">
                                                                         </div>
                                                                     </div>
@@ -408,6 +405,7 @@
                         <div class="panel-heading">
                             <h2>Patient In Line</h2>
                         </div>
+                        
                         <div class="panel-body">
                             <div id="contact-list-wrapper">
                                 <div id="contact-list">
