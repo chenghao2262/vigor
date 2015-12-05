@@ -26,11 +26,11 @@
     <!-- CSS Animate -->
     <link rel="stylesheet" href="{{ asset('/assets/css/animate.css') }}">
     <!-- C3 Chart-->
-    <link rel="stylesheet" href="assets/plugins/c3Chart/css/c3.css">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/c3Chart/css/c3.css') }}">
     <!-- Daterange Picker -->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/daterangepicker/daterangepicker-bs3.css') }}">
     <!-- Calendar demo -->
-    <link rel="stylesheet" href="{{asset('/assets/css/clndr.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('/assets/css/clndr.css')}}"> -->
      <!-- Drop Zone-->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/dropzone.css') }}" >
     <link rel="stylesheet" href="{{ asset('/assets/plugins/dropzone/css/basic.css') }}">
@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="{{ asset('/assets/plugins/switchery/switchery.min.css') }}">
     <!-- Custom styles for this theme -->
     <link rel="stylesheet" href="{{ asset('/assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/sprite.css') }}">
     <!-- Feature detection -->
     <script src="{{ asset('/assets/js/vendor/modernizr-2.6.2.min.js') }}"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -283,7 +284,73 @@
             </div>
         </div>
         <section id="main-content" class="animated fadeInUp">
-           
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel  panel-solid-success widget-mini">
+                        <div class="panel-body" style="font-size: 130%">
+                            <span class="total text-center">32679步</span>
+                            <span class="title text-center">本月已走</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-solid-danger widget-mini">
+                        <div class="panel-body" style="font-size: 130%">
+                            <span class="total text-center">9843cal</span>
+                            <span class="title text-center">本月燃烧</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 >身高体重变化历程</h2>
+                            <div class="actions pull-right">
+                                <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="panel-body text-center">
+                            <div class="chart">
+                                <div id="height_weight"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-md-3" >
+                    <div class="panel panel-default">
+                       <div class="panel-body" id="label1">
+                        100
+                         </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="label2">
+                        100
+                         </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="label3">
+                        100
+                         </div>
+                    </div>    
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body" id="label4">
+                        100
+                         </div>
+                    </div>    
+                </div>
+            </div>
 
 
             
@@ -584,8 +651,14 @@
 <!-- Switch -->
 <script src="{{ asset('/assets/plugins/switchery/switchery.min.js') }}"></script>
 <script src="{{ asset('/assets/plugins/dropzone/js/dropzone.min.js') }}"></script>
+ <!--Page Leve JS -->
+<script src="{{ asset('/assets/plugins/c3Chart/js/d3.v3.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/c3Chart/js/c3.js') }}"></script>
+<script src="{{ asset('/assets/plugins/c3Chart/js/c3-V.js') }}"></script>
 <!--Load these page level functions-->
-
+<script>
+    height_weight_history();
+</script>
 </body>
 
 </html>

@@ -188,10 +188,10 @@
                     </a>
                     <ul class=" nav-sub">
                         <li class="active">
-                            <a  href="/body/index" title="运动管理">运动管理</a>
+                            <a  href="/sports/index" title="运动管理">运动管理</a>
                         </li>
                          <li >
-                            <a  href="/personal" title="健康履历">健康履历</a>
+                            <a  href="/body/index" title="健康履历">健康履历</a>
                         </li>
                     </ul>
                 </li>

@@ -248,8 +248,13 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
-                                                            <button type="button" class="btn btn-modify-activity">修改</button>
-                                                            <button type="button" class="btn btn-participate-activity">删除</button>
+                                                            <!-- <button type="button" href="/activity/{{$activity->id}}" class="btn btn-modify-activity">修改</button> -->
+                                                            <!-- <button type="submit" href="/activity/<?php 
+                                                            // echo Auth::user()->id 
+                                                            ?>" class="btn btn-modify-activity">修改</button> -->
+                                                            <button type="submit"  class="btn btn-modify-activity">修改</button>
+                                                          
+                                                            <button type="submit" class="btn btn-participate-activity">删除</button>
                                                         </div>
                                                     </div>
                                                 </li>

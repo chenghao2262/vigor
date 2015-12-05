@@ -189,10 +189,10 @@
                     </a>
                     <ul class=" nav-sub">
                         <li>
-                            <a  href="/body/index" title="运动管理">运动管理</a>
+                            <a  href="/sports/index" title="运动管理">运动管理</a>
                         </li>
                          <li class="active">
-                            <a  href="/personal" title="健康履历">健康履历</a>
+                            <a  href="/body/index" title="健康履历">健康履历</a>
                         </li>
                     </ul>
                 </li>
@@ -425,6 +425,97 @@
                             </section>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+                   <div class="panel panel-primary">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">
+                            <b>当前情况</b>
+                            <div class="actions pull-right">
+                                <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <p>当前身高：cm</p>
+                            <p>当前体重：kg</p>
+                            <p>目标身高：cm</p>
+                            <p>目标体重：kg</p>
+                        </div>
+                    </div>
+               </div>
+               <div class="col-md-6">
+                   <div class="panel panel-primary">
+                <!-- Default panel contents -->
+                        <div class="panel-heading">
+                            <b>目标设置</b> <a href="javascript:form.submit();" type="button"
+                                class="btn btn-default btn-xs btn-success pull-right"> <span
+                                class="glyphicon glyphicon-star" aria-hidden="true"></span> 保存
+                            </a>
+                        </div>
+
+                        <div class="panel-body">
+                            <form name="form" class="form-horizontal" method="POST" action="">
+
+                                <div class="form-group">
+                                    <label for="inputHeight" class="col-sm-3 control-label">身高</label>
+
+                                    <div class="col-sm-8 col-md-6 col-lg-8">
+                                        <div class="input-group">
+                                            <input name="height" type="text" class="form-control"
+                                                id="inputHeight" placeholder="请输入目标身高"
+                                                aria-label="Amount (to the nearest dollar)"><span
+                                                class="input-group-addon">cm</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputWeight" class="col-sm-3 control-label">体重</label>
+
+                                    <div class="col-sm-8 col-md-6 col-lg-8">
+                                        <div class="input-group">
+                                            <input name="weight" type="text" class="form-control"
+                                                id="inputWeight" placeholder="请输入目标体重"
+                                                aria-label="Amount (to the nearest dollar)"> <span
+                                                class="input-group-addon">kg</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+               </div>
+           </div>
+            
+            <div class="panel panel-primary">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <b>身高体重变化</b>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Interaction Zoom</h3>
+                                    <div class="actions pull-right">
+                                        <i class="fa fa-expand"></i>
+                                        <i class="fa fa-chevron-down"></i>
+                                        <i class="fa fa-times"></i>
+                                    </div>
+                                </div>
+                                <div class="panel-body text-center">
+                                    <div class="chart">
+                                        <div id="zoom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
                 </div>
             </div>
         </section>
