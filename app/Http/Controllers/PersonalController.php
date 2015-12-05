@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Maatwebsite\Excel\Facades\Excel;
 use App\SportRecord;
+use Illuminate\Support\Facades\DB;
 
 class PersonalController extends Controller
 {
@@ -53,9 +54,24 @@ class PersonalController extends Controller
                     $reader = $reader->getSheet(0);
                     //获取表中的数据
                     $results = $reader->toArray();
-
+                    $insert = array();
+                    $savecount = 0;
                     for ($x = 1; $x < count($results); $x++) {
-                        $tmpRecord = new SportRecord();
+                        $savecount++;
+                        $insert[] = ['userName'=>$results[$x][0],
+                            'date'=>$results[$x][1],
+                            'steps_detail'=>$results[$x][2],
+                            'distance_detail'=>$results[$x][3],
+                            'floorLevels_detail'=>$results[$x][4],
+                            'calories_detail'=>$results[$x][5],
+                            'steps'=>$results[$x][6],
+                            'distance'=>$results[$x][7],
+                            'floorLevels'=>$results[$x][8],
+                            'calories'=>$results[$x][0],
+                            'created_at'=>\Carbon\Carbon::now(),
+                            'updated_at'=>\Carbon\Carbon::now()
+                        ];
+                       /* $tmpRecord = new SportRecord();
                         $tmpRecord->userName = $results[$x][0];
                         $tmpRecord->date = $results[$x][1];
                         $tmpRecord->steps_detail = $results[$x][2];
@@ -65,11 +81,21 @@ class PersonalController extends Controller
                         $tmpRecord->steps = (int)$results[$x][6];
                         $tmpRecord->distance = (int)$results[$x][7];
                         $tmpRecord->floorLevels = (int)$results[$x][8];
-                        $tmpRecord->calories = (int)$results[$x][9];
+                        $tmpRecord->calories = (int)$results[$x][9];*/
+
 
                         //dd($tmpRecord);
-                        $tmpRecord->save();
+//                        $tmpRecord->save();
+                        if($savecount==20) {
+                            $savecount=0;
+                            DB::table('sportRecords')->insert($insert);
+                            $insert=array();
+                            echo "Asdasd";
+                        }
+
                     }
+                    DB::table('sportRecords')->insert($insert);
+
 
                 });
             }
