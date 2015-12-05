@@ -305,13 +305,13 @@
                                                             <div class="panel-body">
 
                                                                 <!-- <form class="form-inline signup" role="form" method="POST" action="{{ url('/expert/suggestion') }}"> -->
-                                                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/expert/suggestion') }}">
+                                                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/expert/article') }}">
 
                                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                                     
                                                                     <div class="form-group">
                                                                         <div>
-                                                                            <textarea class="textarea form-control" rows="10" cols="80" placeholder="Enter text ..." style="width: 100%; height: 200px"></textarea>
+                                                                            <textarea class="textarea form-control" name = "publish_article" rows="10" cols="80" placeholder="Enter text ..." style="width: 100%; height: 200px"></textarea>
 
                                                                         </div>
                                                                     </div>
@@ -338,7 +338,7 @@
                                                             
                                                             <div class="panel-body">
                                                                 <!-- <form class="form-inline signup" role="form" method="POST" action="{{ url('/auth/register') }}"> -->
-                                                                <form class="form-horizontal" role="form" method="POST">
+                                                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/expert/suggestion') }}">
 
                                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                                     <div class="form-group">
@@ -350,7 +350,7 @@
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <div>
-                                                                            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                                                                            <textarea name="editor1" name="suggestion_content" id="editor1" rows="10" cols="80">
 
                                                                             </textarea>
                                                                         </div>

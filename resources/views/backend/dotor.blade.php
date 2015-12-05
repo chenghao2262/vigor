@@ -333,7 +333,7 @@
                                         <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#{{$exp['name']}}">预约挂号</button>
                                     </div>
                                     <div class="col-md-4">
-                                        <button class="btn btn-primary" id="subm" onclick="location.href='<?php echo url('/expert').'/'.$exp['name'].'/'.'availableTime'?>'">查看文章</button>
+                                        <button class="btn btn-primary" id="subm" onclick="location.href='<?php echo url('/expert').'/'.$exp['name'].'/'.'articles'?>'">查看文章</button>
                                     </div>
                                 </div>
                             </div>
