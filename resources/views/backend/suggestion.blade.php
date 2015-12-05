@@ -288,33 +288,39 @@
                 <div class="row">
                     <div class="col-md-8 col-sm-12 col-lg-8">
                         <ul class="suggestion-list">
-                            <li>
-                                <article class="suggestion">
-                                    <h1>
-                                        <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
-                                        只要你跑的够快 寂寞就追不上你
-                                        </a>
-                                    </h1>
-                                    <div class="suggestion-summary">
-                                        <p>
-                                              今天逛NBA中文网站，准备抄袭他们数据展示方式的时候，发现一个热区数据展示，挺不错的。
-                                              忽视右边数据里的一些bug，总的来说是非常炫酷的… 
-                                              而且实现起来貌似也很简单，对照这14个区域做14个按钮就好了….
-                                              因为一直用的Java中的Swing包做用户界面开发，但是无论是JButton还是JLabe
-                                        </p>
-                                    </div>
-                                    <div class="suggestion-info">
-                                        <i class="fa fa-calender"></i> 2015-05-13  105 人围观; 
-                                        <i class="fa fa-map-marker"></i>
-                                        <a href="#">蒙古医生</a>
-                                    </div>
-                                    <div class="suggestion-readmore">
-                                        <a href="#">+展开建议</a>
-                                    </div>    
-                                </article>
-                            </li>
+                            <?php
+                            // var_dump($suggestions[0]['attributes']);
+                            ?>
+                        
+                           @foreach($suggestions as $suggest)
+                                <?php
+                                $attr = $suggest['attributes'];
+                                ?>
+                                <li>
+                                    <article class="suggestion">
+                                        <h1>
+                                            <a href="#" title="{{$attr['titile']}}" alt="{{$attr['titile']}}">
+                                                {{$attr['titile']}}
+                                            </a>
+                                        </h1>
+                                        <div class="suggestion-summary">
+                                            <p>
+                                                {{$attr['content']}}
+                                            </p>
+                                        </div>
+                                        <div class="suggestion-info">
+                                            <i class="fa fa-calender"></i> {{$attr['created_at']}} 
+                                            <i class="fa fa-map-marker"></i>
+                                            <a href="#">{{$attr['expertName']}}</a>
+                                        </div>
+                                        <div class="suggestion-readmore">
+                                            <a href="#">Created By {{$attr['expertName']}}</a>
+                                        </div>    
+                                    </article>
+                                </li>
+                            @endforeach
 
-                            <li>
+                            <!-- <li>
                                 <article class="suggestion">
                                     <h1>
                                         <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
@@ -338,59 +344,7 @@
                                         <a href="#">+展开建议</a>
                                     </div>    
                                 </article>
-                            </li>
-
-                            <li>
-                                <article class="suggestion">
-                                    <h1>
-                                        <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
-                                        只要你跑的够快 寂寞就追不上你
-                                        </a>
-                                    </h1>
-                                    <div class="suggestion-summary">
-                                        <p>
-                                              今天逛NBA中文网站，准备抄袭他们数据展示方式的时候，发现一个热区数据展示，挺不错的。
-                                              忽视右边数据里的一些bug，总的来说是非常炫酷的… 
-                                              而且实现起来貌似也很简单，对照这14个区域做14个按钮就好了….
-                                              因为一直用的Java中的Swing包做用户界面开发，但是无论是JButton还是JLabe
-                                        </p>
-                                    </div>
-                                    <div class="suggestion-info">
-                                        <i class="fa fa-calender"></i> 2015-05-13  105 人围观; 
-                                        <i class="fa fa-map-marker"></i>
-                                        <a href="#">蒙古医生</a>
-                                    </div>
-                                    <div class="suggestion-readmore">
-                                        <a href="#">+展开建议</a>
-                                    </div>    
-                                </article>
-                            </li>
-
-                            <li>
-                                <article class="suggestion">
-                                    <h1>
-                                        <a href="#" title="只要你跑的够快 寂寞就追不上你" alt="只要你跑的够快 寂寞就追不上你">
-                                        只要你跑的够快 寂寞就追不上你
-                                        </a>
-                                    </h1>
-                                    <div class="suggestion-summary">
-                                        <p>
-                                              今天逛NBA中文网站，准备抄袭他们数据展示方式的时候，发现一个热区数据展示，挺不错的。
-                                              忽视右边数据里的一些bug，总的来说是非常炫酷的… 
-                                              而且实现起来貌似也很简单，对照这14个区域做14个按钮就好了….
-                                              因为一直用的Java中的Swing包做用户界面开发，但是无论是JButton还是JLabe
-                                        </p>
-                                    </div>
-                                    <div class="suggestion-info">
-                                        <i class="fa fa-calender"></i> 2015-05-13  105 人围观; 
-                                        <i class="fa fa-map-marker"></i>
-                                        <a href="#">蒙古医生</a>
-                                    </div>
-                                    <div class="suggestion-readmore">
-                                        <a href="#">+展开建议</a>
-                                    </div>    
-                                </article>
-                            </li>
+                            </li> -->
                         </ul>
                     </div> 
 

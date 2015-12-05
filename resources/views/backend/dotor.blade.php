@@ -290,10 +290,14 @@
                 </div>
             </div>
             <div class="row">
+                <?php
+                // dd($hotExperts[4]['time']);
+                ?>
+                @foreach($hotExperts as $exp)
                 <div class="col-md-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Doctors</h3>
+                            <h3 class="panel-title">Expert</h3>
                             <div class="actions pull-right">
                             <i class="fa fa-expand"></i>
                                 <i class="fa fa-chevron-down"></i>
@@ -310,23 +314,23 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div class="row">   
-                                            <p>NAME</p>
+                                            <p>{{$exp['name']}}</p>
                                         </div>
                                         <div class="row">   
-                                            <p>ORGANIZATION</p>
+                                            <p>{{$exp['organization']}}</p>
                                         </div>
                                         <div class="row">   
-                                            <p>POSITION</p>
+                                            <p>{{$exp['position']}}</p>
                                         </div>
                                         <div class="row">
-                                            <p>MAILBOX</p>
+                                            <p>{{$exp['mailbox']}}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col-md-offset-3 col-md-4">
-                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
+                                        <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#{{$exp['name']}}">预约挂号</button>
                                     </div>
                                     <div class="col-md-4">
                                         <button type="button" class="btn btn-primary" onclick="">查看文章</button>
@@ -336,7 +340,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+
+                @endforeach
+                
+              <!--   <div class="col-md-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">Doctors</h3>
@@ -381,192 +388,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Doctors</h3>
-                            <div class="actions pull-right">
-                            <i class="fa fa-expand"></i>
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-times"></i>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="tab-wrapper tab-primary">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="date">
-                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="row">   
-                                            <p>NAME</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>ORGANIZATION</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>POSITION</p>
-                                        </div>
-                                        <div class="row">
-                                            <p>MAILBOX</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-4">
-                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Doctors</h3>
-                            <div class="actions pull-right">
-                            <i class="fa fa-expand"></i>
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-times"></i>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="tab-wrapper tab-primary">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="date">
-                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="row">   
-                                            <p>NAME</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>ORGANIZATION</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>POSITION</p>
-                                        </div>
-                                        <div class="row">
-                                            <p>MAILBOX</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-4">
-                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Doctors</h3>
-                            <div class="actions pull-right">
-                                <i class="fa fa-expand"></i>
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-times"></i>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="tab-wrapper tab-primary">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="date">
-                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="row">   
-                                            <p>NAME</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>ORGANIZATION</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>POSITION</p>
-                                        </div>
-                                        <div class="row">
-                                            <p>MAILBOX</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-4">
-                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Doctors</h3>
-                            <div class="actions pull-right">
-                            <i class="fa fa-expand"></i>
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-times"></i>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="tab-wrapper tab-primary">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="date">
-                                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="row">   
-                                            <p>NAME</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>ORGANIZATION</p>
-                                        </div>
-                                        <div class="row">   
-                                            <p>POSITION</p>
-                                        </div>
-                                        <div class="row">
-                                            <p>MAILBOX</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-offset-3 col-md-4">
-                                        <button type="button" class="btn btn-primary " onclick="">预约挂号</button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="button" class="btn btn-primary" onclick="">查看文章</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              
+                </div> -->
             </div>
                
         </section>
@@ -732,14 +554,8 @@
 </aside>
 <!--/sidebar right end-->
 
-<div class="col-md-4">
-    <h4>Modal Form</h4>
-    <!-- Button trigger modal -->
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formModal">
-        Launch form modal
-    </button>
-</div>
-<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+@foreach($hotExperts as $expert)
+<div class="modal fade" id="{{$expert['name']}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -755,22 +571,159 @@
                     </div>
                     <div class="col-md-9">
                         <div class="row">   
-                            <p>NAME</p>
+                            <p>{{$expert['name']}}</p>
                         </div>
                         <div class="row">   
-                            <p>ORGANIZATION</p>
+                            <p>{{$expert['organization']}}</p>
                         </div>
                         <div class="row">   
-                            <p>POSITION</p>
+                            <p>{{$expert['position']}}</p>
                         </div>
                     </div>
                 </div>
+                <?php
+                $duetime = $expert['time'];
+                // var_dump($duetime);
+                //维护一个时间表数组
+                $table = array(
+                    0 => "09:00",
+                    1 => "09:30",
+                    2 => "10:00",
+                    3 => "10:30",
+                    4 => "11:00",
+                    5 => "02:00",
+                    6 => "02:30",
+                    7 => "03:00",
+                    8 => "03:30",
+                    9 => "04:00",
+                );
+                // var_dump($table);
+                $day = 0;
+                $time = 0;
+                ?>
+
                 <div class="row">
+                
+                <div class="col-md-1">
+                <p></p>
+                </div>
+                
+                @foreach($duetime as $col)
+                    
+                    <div class=" col-md-2 appointment_cell">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <?php
+                                        echo date("m-d",strtotime("+($day) day"));
+                                        ?>
+                                    </th>
+                                </tr>
+                            </thead>
+                                    
+                            <tbody>
+                            <?php 
+                            $day = $day+1;
+                            ?>
+                    @foreach($col as $item)
+                        @if($item)
+                            <tr>
+                                <td>
+                                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/expert/order') }}" id="chatform">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                                        <input type="hidden" name="expert_name" value="{{$expert['name']}}">
+                                        <input type="hidden" name="patient_name" value="{{Auth::user()}}">
+                                        <input type="hidden" name="start_segment" value="{{$table[$time]}}">
+                                        <input type="hidden" name="created_at" value="<?php echo date("m-d",strtotime("+($day) day"));?>">
+
+                                        <button type="submit" class="btn btn-primary">{{$table[$time]}}</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @else
+                            <tr>
+                                <td class="appoint_box">  </td>
+                            </tr>
+                            <?php
+                            $time = $time + 1;
+                            ?>
+                        @endif
+                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <?php
+                        $time = 0;
+                        ?>
+                @endforeach
+                </div>
+
+                <!-- <div class="row">
                     <div class="col-md-offset-1 col-md-2 appointment_cell">
                         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Today</th>
+                                    <th>
+                                        <?php
+                                        echo date("m-d");
+                                        ?>
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">10:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">11:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <button type="button" class="btn btn-primary">12:30</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                 <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                                <tr>
+                                    <td class="appoint_box">  </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-md-2 appointment_cell">
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <?php
+                                        echo date("m-d",strtotime("+1 day"));
+                                        ?>
+                                    </th>
                                 </tr>
                             </thead>
 
@@ -818,7 +771,11 @@
                         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Today</th>
+                                    <th>
+                                        <?php
+                                        echo date("m-d",strtotime("+2 day"));
+                                        ?>
+                                    </th>
                                 </tr>
                             </thead>
 
@@ -866,7 +823,11 @@
                         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Today</th>
+                                    <th>
+                                        <?php
+                                        echo date("m-d",strtotime("+3 day"));
+                                        ?>
+                                    </th>
                                 </tr>
                             </thead>
 
@@ -914,7 +875,11 @@
                         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Today</th>
+                                    <th>
+                                        <?php
+                                        echo date("m-d",strtotime("+4 day"));
+                                        ?>
+                                    </th>
                                 </tr>
                             </thead>
 
@@ -958,65 +923,18 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-md-2 appointment_cell">
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Today</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">10:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">11:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <button type="button" class="btn btn-primary">12:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                 <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                </div> -->
                 
             </div>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Sign in</button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
 
+@endforeach
 
 <!--Config demo-->
 <div id="config" class="config hidden-xs">

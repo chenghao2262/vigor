@@ -235,9 +235,17 @@
                             <li>
                                 <a  href="/expert/index" title="医生私教" >医生私教</a>
                             </li>
-                             <li>
+                            <li>
                                 <a  href="/expert/suggestion/index" title="建议管理">建议管理</a>
                             </li>
+                            <?php
+                                // Auth::user->type
+                            ?>
+                            @if(true)
+                                <li>
+                                    <a  href="#" title="我的门诊">我的门诊</a>
+                                </li>
+                            @endif
                         </ul>
                 </li>
                 
