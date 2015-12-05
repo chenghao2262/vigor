@@ -405,6 +405,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-offset-7 col-md-4">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     <button type="submit" class="btn btn-primary">Submit Profile</button>
 
                                                 </div>
@@ -417,8 +418,8 @@
                                          <form class="form-inline signup"  method="POST" action="{{ url('/device') }}" enctype="multipart/form-data">
 
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="file" name="data" accept="application/vnd.ms-excel" id="exampleInputFile" multiple="multiple">
-                                            <p class="help-block">这里放一些提示性的文字.</p>
+                                            <input type="file" name="data[]" accept="application/vnd.ms-excel" id="exampleInputFile" multiple="multiple">
+                                            <p class="help-block">上传文件格式为.xls</p>
                                         
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                         </form>

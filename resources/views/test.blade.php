@@ -136,17 +136,17 @@
             {{--</div>--}}
         {{--</form>--}}
 
-        {{--这是上传文件--}}
-        {{--传文件需要注意: 需要加一个token 需要在meta里面加上csrf-token--}}
-        {{--<form class="form-inline signup"  method="POST" action="{{ url('/sports/data') }}" enctype="multipart/form-data">
+        这是上传文件
+        传文件需要注意: 需要加一个token 需要在meta里面加上csrf-token
+        <form class="form-inline signup"  method="POST" action="{{ url('/device') }}"  enctype="multipart/form-data">
 
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="file" name="data" accept="application/vnd.ms-excel" id="exampleInputFile" >
+            <input type="file" name="data[]" accept="application/vnd.ms-excel" multiple="multiple" id="exampleInputFile" >
             <p class="help-block">这里放一些提示性的文字.</p>
 
             <button type="submit" class="btn btn-primary">Submit</button>
 
-        </form>--}}
+        </form>
 
         {{--这里是聊天窗口--}}
         {{--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
@@ -206,11 +206,11 @@
         </div>
 
     </div>--}}
-        <form action="/test" method="POST">
+        {{--<form action="/test" method="POST">
             <input type="button" value="1235456" name="dd" />
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="submit" value="提交" />
-        </form>
+        </form>--}}
 </div>
 
 

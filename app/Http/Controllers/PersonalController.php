@@ -7,6 +7,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Maatwebsite\Excel\Facades\Excel;
+use App\SportRecord;
 
 class PersonalController extends Controller
 {
@@ -22,9 +24,16 @@ class PersonalController extends Controller
         return view('backend.profile',compact('user','haveClinic'));
     }
 
-    public function postReset()
+    public function postReset(Request $request)
     {
-        return ("������Ϣ�޸�");
+        $user=Auth::user();
+        $user->birthday=$request->input('birth');
+        $user->height = $request->input('height');
+        $user->weight=$request->input('weight');
+        $user->goal = $request->input('goal');
+        $user->save();
+        return redirect('/personal');
+
     }
 
     public function getDevice()
@@ -32,8 +41,40 @@ class PersonalController extends Controller
         return ("�豸����ҳ��");
     }
 
-    public function deviceBind()
+    public function deviceBind(Request $request)
     {
-        return ("�豸��");
+
+        if($request->hasFile('data')) {
+            $data = $request->file('data');
+
+            foreach($data as $each) {
+                Excel::load($each, function ($reader) {
+                    //获取excel的第几张表
+                    $reader = $reader->getSheet(0);
+                    //获取表中的数据
+                    $results = $reader->toArray();
+
+                    for ($x = 1; $x < count($results); $x++) {
+                        $tmpRecord = new SportRecord();
+                        $tmpRecord->userName = $results[$x][0];
+                        $tmpRecord->date = $results[$x][1];
+                        $tmpRecord->steps_detail = $results[$x][2];
+                        $tmpRecord->distance_detail = $results[$x][3];
+                        $tmpRecord->floorLevels_detail = $results[$x][4];
+                        $tmpRecord->calories_detail = $results[$x][5];
+                        $tmpRecord->steps = (int)$results[$x][6];
+                        $tmpRecord->distance = (int)$results[$x][7];
+                        $tmpRecord->floorLevels = (int)$results[$x][8];
+                        $tmpRecord->calories = (int)$results[$x][9];
+
+                        //dd($tmpRecord);
+                        $tmpRecord->save();
+                    }
+
+                });
+            }
+        }
+
+        return redirect('/personal');
     }
 }
