@@ -52,7 +52,7 @@ class ExpertController extends Controller
         }
 
 
-        return view('backend.doctor',compact('hotExperts'));
+        return view('backend.dotor',compact('hotExperts'));
 
     }
 
