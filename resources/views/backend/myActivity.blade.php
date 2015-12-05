@@ -35,13 +35,13 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">活动名称</label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" placeholder="Activity Name" >
+                                        <input type="text" name="activity_name" class="form-control" placeholder="Activity Name" >
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">活动地点</label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" placeholder="Activity Position">
+                                        <input type="text" name="activity_location" class="form-control" placeholder="Activity Position">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -54,7 +54,7 @@
                                     <label for="inputStart" class="col-sm-3 control-label">开始时间</label>
 
                                     <div class="col-sm-6">
-                                        <input name="start" type="text" readonly class="form-control input-append date form_datetime"
+                                        <input name="start" type="text" class="form-control input-append date form_datetime"
                                             id="inputStart" placeholder="start">
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
                                     <label for="inputStart" class="col-sm-3 control-label">结束时间</label>
 
                                     <div class="col-sm-6">
-                                        <input name="start" type="text" readonly class="form-control input-append date form_datetime"
+                                        <input name="end" type="text" class="form-control input-append date form_datetime"
                                             id="inputStart" placeholder="end">
                                     </div>
                                 </div>
@@ -97,12 +97,13 @@
                                     <section class="panel">
                                         <div class="panel-body">
                                             <ul id="activityul">
+
                                                 <li>
                                                     <div class="row">
                                                         <div class="activity-header">
                                                             <p style="text-align:center;">
-                                                                <i class="fa fa-calendar"></i>2015-09-26 &nbsp;50人参与
-                                                                <i class="fa fa-map-marker"></i> 杭州
+                                                                <i class="fa fa-calendar"></i>{{$latestActivities[0]['start']}} &nbsp;50人参与
+                                                                <i class="fa fa-map-marker"></i>{{$latestActivities[0]['location']}}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -111,17 +112,17 @@
                                                             <img src="/assets/img/vac-1.jpg" class="img-responsive img-semi-rec" alt="">
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                                            <h4>NAME</h4>
+                                                            <h4>{{$latestActivities[0]['name']}}</h4>
                                                             <div class="activity-content">
-                                                                天天酷跑 只要你跑的够快，寂寞就追不上你
+                                                                {{$latestActivities[0]['describe']}}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                             <h4>开始时间</h4>
-                                                            <p>2015-10-10</p>
+                                                            <p>{{$latestActivities[0]['start']}}</p>
                                                             <br>
                                                             <h4>结束时间</h4>
-                                                            <p>2015-10-10</p>
+                                                            <p>{{$latestActivities[0]['end']}}</p>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -130,8 +131,8 @@
                                                     <div class="row">
                                                         <div class="activity-header">
                                                             <p style="text-align:center;">
-                                                                <i class="fa fa-calendar"></i>2015-09-26 &nbsp;50人参与
-                                                                <i class="fa fa-map-marker"></i> 杭州
+                                                                <i class="fa fa-calendar"></i>{{$latestActivities[1]['start']}} &nbsp;50人参与
+                                                                <i class="fa fa-map-marker"></i> {{$latestActivities[1]['location']}}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -140,17 +141,17 @@
                                                             <img src="/assets/img/vac-2.jpg" class="img-responsive img-semi-rec" alt="">
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                                            <h4>NAME</h4>
+                                                            <h4>{{$latestActivities[1]['name']}}</h4>
                                                             <div class="activity-content">
-                                                                天天酷跑 只要你跑的够快，寂寞就追不上你
+                                                                {{$latestActivities[1]['describe']}}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                             <h4>开始时间</h4>
-                                                            <p>2015-10-10</p>
+                                                            <p>{{$latestActivities[1]['start']}}</p>
                                                             <br>
                                                             <h4>结束时间</h4>
-                                                            <p>2015-10-10</p>
+                                                            <p>{{$latestActivities[1]['end']}}</p>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -159,8 +160,8 @@
                                                     <div class="row">
                                                         <div class="activity-header">
                                                             <p style="text-align:center;">
-                                                                <i class="fa fa-calendar"></i>2015-09-26 &nbsp;50人参与
-                                                                <i class="fa fa-map-marker"></i> 杭州
+                                                                <i class="fa fa-calendar"></i>{{$latestActivities[2]['start']}} &nbsp;50人参与
+                                                                <i class="fa fa-map-marker"></i> {{$latestActivities[2]['location']}}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -169,17 +170,17 @@
                                                             <img src="/assets/img/vac-3.jpg" class="img-responsive img-semi-rec" alt="">
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                                            <h4>NAME</h4>
+                                                            <h4>{{$latestActivities[2]['name']}}</h4>
                                                             <div class="activity-content">
-                                                                天天酷跑 只要你跑的够快，寂寞就追不上你
+                                                                {{$latestActivities[2]['describe']}}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                             <h4>开始时间</h4>
-                                                            <p>2015-10-10</p>
+                                                            <p>{{$latestActivities[2]['start']}}</p>
                                                             <br>
                                                             <h4>结束时间</h4>
-                                                            <p>2015-10-10</p>
+                                                            <p>{{$latestActivities[2]['end']}}</p>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -188,8 +189,8 @@
                                                     <div class="row">
                                                         <div class="activity-header">
                                                             <p style="text-align:center;">
-                                                                <i class="fa fa-calendar"></i>2015-09-26 &nbsp;50人参与
-                                                                <i class="fa fa-map-marker"></i> 杭州
+                                                                <i class="fa fa-calendar"></i>{{$latestActivities[3]['start']}}&nbsp;50人参与
+                                                                <i class="fa fa-map-marker"></i> {{$latestActivities[3]['location']}}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -198,17 +199,17 @@
                                                             <img src="/assets/img/vac-4.jpg" class="img-responsive img-semi-rec" alt="">
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                                            <h4>NAME</h4>
+                                                            <h4>{{$latestActivities[3]['name']}}</h4>
                                                             <div class="activity-content">
-                                                                天天酷跑 只要你跑的够快，寂寞就追不上你
+                                                                {{$latestActivities[3]['describe']}}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                            <h4>开始时间</h4>
-                                                            <p>2015-10-10</p>
+                                                            <p>{{$latestActivities[3]['start']}}</p>
                                                             <br>
                                                             <h4>结束时间</h4>
-                                                            <p>2015-10-10</p>
+                                                            <p>{{$latestActivities[3]['end']}}</p>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -232,8 +233,8 @@
                                                     <div class="row">
                                                         <div class="activity-header">
                                                             <p style="text-align:center;">
-                                                                <i class="fa fa-calendar"></i>2015-09-26 &nbsp;50人参与
-                                                                <i class="fa fa-map-marker"></i> 杭州
+                                                                <i class="fa fa-calendar"></i>{{$latestActivities[0]['start']}} &nbsp;50人参与
+                                                                <i class="fa fa-map-marker"></i>{{$latestActivities[0]['location']}}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -242,19 +243,21 @@
                                                             <img src="/assets/img/vac-1.jpg" class="img-responsive img-semi-rec" alt="">
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                                            <h4>NAME</h4>
+                                                            <h4>{{$latestActivities[0]['name']}}</h4>
                                                             <div class="activity-content">
-                                                                天天酷跑 只要你跑的够快，寂寞就追不上你
+                                                                {{$latestActivities[0]['describe']}}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
-                                                            <!-- <button type="button" href="/activity/{{$activity->id}}" class="btn btn-modify-activity">修改</button> -->
-                                                            <!-- <button type="submit" href="/activity/<?php 
-                                                            // echo Auth::user()->id 
-                                                            ?>" class="btn btn-modify-activity">修改</button> -->
-                                                            <button type="submit"  class="btn btn-modify-activity">修改</button>
-                                                          
-                                                            <button type="submit" class="btn btn-participate-activity">删除</button>
+                                                            
+
+                                                            <button class="btn btn-modify-activity" id="subm" onclick="location.href='<?php echo url('/activity').'/'.$latestActivities[0]['activityID']?>'">修改</button>
+
+                                                             <form class="delete_activity_form" role="form" method="DELETE" action="{{ url('/activity')}}">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <input type="hidden" name="activityID_toDEL" value="{{ $latestActivities[0]['activityID'] }}">        
+                                                                <button type="submit" class="btn btn-modify-activity">删除</button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -263,8 +266,8 @@
                                                     <div class="row">
                                                         <div class="activity-header">
                                                             <p style="text-align:center;">
-                                                                <i class="fa fa-calendar"></i>2015-09-26 &nbsp;50人参与
-                                                                <i class="fa fa-map-marker"></i> 杭州
+                                                                <i class="fa fa-calendar"></i>{{$latestActivities[1]['start']}} &nbsp;50人参与
+                                                                <i class="fa fa-map-marker"></i>{{$latestActivities[1]['location']}}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -273,14 +276,18 @@
                                                             <img src="/assets/img/vac-2.jpg" class="img-responsive img-semi-rec" alt="">
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                                            <h4>NAME</h4>
+                                                            <h4>{{$latestActivities[1]['name']}}</h4>
                                                             <div class="activity-content">
-                                                                天天酷跑 只要你跑的够快，寂寞就追不上你
+                                                                {{$latestActivities[1]['describe']}}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
-                                                            <button type="button" class="btn btn-modify-activity">修改</button>
-                                                            <button type="button" class="btn btn-participate-activity">删除</button>
+                                                            <button class="btn btn-modify-activity" id="subm" onclick="location.href='<?php echo url('/activity').'/'.$latestActivities[1]['activityID']?>'">修改</button>
+                                                            <form class="delete_activity_form" role="form" method="DELETE" action="{{ url('/activity')}}">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <input type="hidden" name="activityID_toDEL" value="{{ $latestActivities[1]['activityID'] }}">        
+                                                                <button type="submit" class="btn btn-modify-activity">删除</button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -289,24 +296,28 @@
                                                     <div class="row">
                                                         <div class="activity-header">
                                                             <p style="text-align:center;">
-                                                                <i class="fa fa-calendar"></i>2015-09-26 &nbsp;50人参与
-                                                                <i class="fa fa-map-marker"></i> 杭州
+                                                                <i class="fa fa-calendar"></i>{{$latestActivities[2]['start']}} &nbsp;50人参与
+                                                                <i class="fa fa-map-marker"></i>{{$latestActivities[2]['location']}}
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <div class="row rowbottom" >
+                                                    <div class="row rowbottom">
                                                         <div class="col-md-3 col-sm-3 col-xs-3">
                                                             <img src="/assets/img/vac-3.jpg" class="img-responsive img-semi-rec" alt="">
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                                            <h4>NAME</h4>
+                                                            <h4>{{$latestActivities[2]['name']}}</h4>
                                                             <div class="activity-content">
-                                                                天天酷跑 只要你跑的够快，寂寞就追不上你
+                                                                {{$latestActivities[2]['describe']}}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
-                                                            <button type="button" class="btn btn-modify-activity">修改</button>
-                                                            <button type="button" class="btn btn-participate-activity">删除</button>
+                                                            <button class="btn btn-modify-activity" id="subm" onclick="location.href='<?php echo url('/activity').'/'.$latestActivities[2]['activityID']?>'">修改</button>
+                                                            <form class="delete_activity_form" role="form" method="DELETE" action="{{ url('/activity')}}">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <input type="hidden" name="activityID_toDEL" value="{{ $latestActivities[2]['activityID'] }}">        
+                                                                <button type="submit" class="btn btn-modify-activity">删除</button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -315,8 +326,8 @@
                                                     <div class="row">
                                                         <div class="activity-header">
                                                             <p style="text-align:center;">
-                                                                <i class="fa fa-calendar"></i>2015-09-26 &nbsp;50人参与
-                                                                <i class="fa fa-map-marker"></i> 杭州
+                                                                <i class="fa fa-calendar"></i>{{$latestActivities[3]['start']}} &nbsp;50人参与
+                                                                <i class="fa fa-map-marker"></i>{{$latestActivities[3]['location']}}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -325,14 +336,18 @@
                                                             <img src="/assets/img/vac-4.jpg" class="img-responsive img-semi-rec" alt="">
                                                         </div>
                                                         <div class="col-md-7 col-sm-7 col-xs-7">
-                                                            <h4>NAME</h4>
+                                                            <h4>{{$latestActivities[3]['name']}}</h4>
                                                             <div class="activity-content">
-                                                                天天酷跑 只要你跑的够快，寂寞就追不上你
+                                                                {{$latestActivities[3]['describe']}}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
-                                                            <button type="button" class="btn btn-modify-activity">修改</button>
-                                                            <button type="button" class="btn btn-participate-activity">删除</button><!-- delete -->
+                                                            <button class="btn btn-modify-activity" id="subm" onclick="location.href='<?php echo url('/activity').'/'.$latestActivities[3]['activityID']?>'">修改</button>
+                                                            <form class="delete_activity_form" role="form" method="DELETE" action="{{ url('/activity')}}">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <input type="hidden" name="activityID_toDEL" value="{{ $latestActivities[3]['activityID'] }}">        
+                                                                <button type="submit" class="btn btn-modify-activity">删除</button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </li>
