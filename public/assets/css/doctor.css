@@ -43,3 +43,38 @@
     -webkit-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
     transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
 }
+
+.upbutton{
+    color: #fff;
+    background-color: #556b8d;
+    border: none;
+    font-size: 15px;
+    font-weight: normal;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    padding: 8px 14px;
+    margin-bottom: 5px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+    transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+}
+.pushedbutton{
+    color: #fff;
+    background-color: #909aa0;
+    border: none;
+    font-size: 15px;
+    font-weight: normal;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    padding: 8px 14px;
+    margin-bottom: 5px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+    transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
+}

@@ -282,6 +282,9 @@
                 </ol>
             </div>
         </div>
+        <?php
+        // dd($expert['time']);
+        ?>
         <section id="main-content" class="animated fadeInUp">
             <div class="row">
                 <div class="col-md-8">
@@ -418,6 +421,18 @@
                             8 => "03:30",
                             9 => "04:00",
                         );
+                        $pics = array(
+                            0 => "/assets/img/avatar1.png",
+                            1 => "/assets/img/avatar2.png",
+                            2 => "/assets/img/avatar3.png",
+                            3 => "/assets/img/avatar4.jpg",
+                            4 => "/assets/img/avatar5.png",
+                            5 => "/assets/img/avatar6.png",
+                            6 => "/assets/img/avatar7.png",
+                            7 => "/assets/img/avatar8.png",
+                            8 => "/assets/img/avatar9.png",
+                            9 => "/assets/img/profile.jpg",
+                        );
 
                         ?>
                         <div class="panel-body">
@@ -429,65 +444,21 @@
                                                 <div class="row">
                                                     <div class="col-md-3">
                                                         <span class="avatar">
-                                                       
-                                                            <img src="/assets/img/avatar3.png" class="img-circle" alt="">
+                                                        
+                                                            <img src="<?php echo $pics[$order['startSegment']]?>" class="img-circle" alt="">
                                                          </span>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <small class="location text-muted">{{$order['watcherName']}}</small>
                                                     </div>
                                                     <div class="col-md-4">
+                                                        <small class="location text-muted">{{$order['date']}}</small>
+
                                                         <button type="button" class="btn btn-primary">{{$table[$order['startSegment']]}}</button>
                                                     </div>
                                                 </div>
                                             </li>
                                         @endforeach
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <span class="avatar">
-                                                        <img src="/assets/img/avatar3.png" class="img-circle" alt="">
-                                                     </span>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <small class="location text-muted">Ashley Bell</small>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <button type="button" class="btn btn-primary">12:30</button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <span class="avatar">
-                                                        <img src="/assets/img/avatar1.png" class="img-circle" alt="">
-                                                     </span>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <small class="location text-muted">Ashley Bell</small>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <button type="button" class="btn btn-primary">12:30</button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-3">
-                                                    <span class="avatar">
-                                                        <img src="/assets/img/avatar8.png" class="img-circle" alt="">
-                                                     </span>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <small class="location text-muted">Ashley Bell</small>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <button type="button" class="btn btn-primary">12:30</button>
-                                                </div>
-                                            </div>
-                                        </li>
-                             
                                     </ul>
                                 </div>
                             </div>
@@ -504,279 +475,139 @@
 
 <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">预约挂号</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-offset-1 col-md-2">
-                        <div class="date">
-                            <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="row">   
-                            <p>NAME</p>
-                        </div>
-                        <div class="row">   
-                            <p>ORGANIZATION</p>
-                        </div>
-                        <div class="row">   
-                            <p>POSITION</p>
-                        </div>
-                    </div>
+        <!-- huge form -->
+        <form class="form-horizontal" role="form" method="POST" action="{{ url('/expert/order') }}" id="chatform">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">设置日程</h4>
                 </div>
-                <div class="row">
-                    <div class="col-md-offset-1 col-md-2 appointment_cell">
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Today</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">10:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">11:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <button type="button" class="btn btn-primary">12:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                 <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-offset-1 col-md-2">
+                            <div class="date">
+                                <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">   
+                                <p>{{$expert['name']}}</p>
+                            </div>
+                            <div class="row">   
+                                <p>{{$expert['organization']}}</p>
+                            </div>
+                            <div class="row">   
+                                <p>{{$expert['position']}}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-2 appointment_cell">
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Today</th>
-                                </tr>
-                            </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">10:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">11:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <button type="button" class="btn btn-primary">12:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                 <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-2 appointment_cell">
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Today</th>
-                                </tr>
-                            </thead>
+                    
+                    <?php
+                    $duetime = $expert['time'];
 
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">10:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">11:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <button type="button" class="btn btn-primary">12:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                 <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-2 appointment_cell">
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Today</th>
-                                </tr>
-                            </thead>
+                    // var_dump($duetime);
+                    //维护一个时间表数组
+                    $table = array(
+                        0 => "09:00",
+                        1 => "09:30",
+                        2 => "10:00",
+                        3 => "10:30",
+                        4 => "11:00",
+                        5 => "02:00",
+                        6 => "02:30",
+                        7 => "03:00",
+                        8 => "03:30",
+                        9 => "04:00",
+                    );
+                    // var_dump($table);
+                    $day = 0;
+                    $time = 0;
+                    ?>
 
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">10:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">11:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <button type="button" class="btn btn-primary">12:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                 <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-2 appointment_cell">
-                        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Today</th>
-                                </tr>
-                            </thead>
+                    <div class="row">
+                    
+                        <div class="col-md-1">
+                        <p></p>
+                        </div>
 
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">10:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">11:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <button type="button" class="btn btn-primary">12:30</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                 <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                                <tr>
-                                    <td class="appoint_box">  </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        @foreach($duetime as $col)
+                            
+                            <div class=" col-md-2 appointment_cell">
+                                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                @if($day)
+                                                    <?php
+                                                    // echo '12-0'.strval(intval(date("d"))+$day);
+                                                    ?>
+                                                @else
+                                                    <?php
+                                                    // echo date("m-d");
+                                                    ?>
+                                                @endif
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                            
+                                    <tbody>
+                                    <?php 
+                                    $day = $day+1;
+                                    ?>
+                            @foreach($col as $item)
+                                <?php 
+                                    $ggg = "";
+                                    if($day) 
+                                        $ggg ='12-0'.strval(intval(date("d"))+$day).$table[$time];
+                                    else 
+                                        $ggg= date("m-d").$table[$time];
+                                    // echo $ggg;
+                                ?>
+                                @if($item)
+                                    <tr>
+                                        <td>
+                                            
+
+
+                                            <input type="hidden" name="{{$ggg}}" id="{{$ggg}}" value="1">
+                                           
+                                            <button type="button" class="pushedbutton" onclick="changeButtonStatusAndInputValue(this,'{{$ggg}}');">{{$table[$time]}}</button>
+
+                                        </td>
+                                    </tr>
+                                @else
+                                    <tr>
+                                        <td>
+                                            <input type="hidden" name="{{$ggg}}" id="{{$ggg}}" value="0">
+                                               
+                                            <button type="button" class="upbutton" onclick="changeButtonStatusAndInputValue(this,'{{$ggg}}');">{{$table[$time]}}</button>
+                                        </td>
+                                    </tr>
+
+                                @endif
+                                <?php
+                                $time = $time + 1;
+                                ?>
+                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <?php
+                                $time = 0;
+                                ?>
+                        @endforeach
                     </div>
+                    
                 </div>
-                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">提交日程</button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Sign in</button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 
@@ -1053,6 +884,8 @@
 <script src="{{ asset('/assets/plugins/pace/pace.min.js') }}"></script>
 <script src="{{ asset('/assets/plugins/fullscreen/jquery.fullscreen-min.js') }}"></script>
 <script src="{{ asset('/assets/js/src/app.js') }}"></script>
+<script src="{{ asset('/assets/js/src/doc.js') }}"></script>
+
 <!--Page Level JS-->
 <script src="{{ asset('/assets/plugins/countTo/jquery.countTo.js') }}"></script>
 <script src="{{ asset('/assets/plugins/weather/js/skycons.js') }}"></script>
