@@ -212,7 +212,8 @@ class ExpertController extends Controller
                 $time[$i][intval($each['segment'])]=1;
             }
         }
+        $expert['time']=$time;
 
-        return view('backend.myOutpatient',compact('orders','time'));
+        return view('backend.myOutpatient',compact('orders','expert'));
     }
 }
