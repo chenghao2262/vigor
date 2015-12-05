@@ -325,32 +325,70 @@
                 <div class="col-md-3" >
                     <div class="panel panel-default">
                        <div class="panel-body" id="label1">
-                        100
+                        
                          </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-default">
                         <div class="panel-body" id="label2">
-                        100
+                        
                          </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-default">
                         <div class="panel-body" id="label3">
-                        100
+                        
                          </div>
                     </div>    
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-default">
                         <div class="panel-body" id="label4">
-                        100
+                        
                          </div>
                     </div>    
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 >近一周睡眠情况</h2>
+                            <div class="actions pull-right">
+                                <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="panel-body text-center">
+                            <div class="chart">
+                                <div id="sleep"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 >心率监测</h2>
+                            <div class="actions pull-right">
+                                <i class="fa fa-expand"></i>
+                                <i class="fa fa-chevron-down"></i>
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="panel-body text-center">
+                            <div class="chart">
+                                <div id="heartbeat"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
 
 
             
@@ -658,6 +696,8 @@
 <!--Load these page level functions-->
 <script>
     height_weight_history();
+    sleep();
+    heartbeat();
 </script>
 </body>
 
