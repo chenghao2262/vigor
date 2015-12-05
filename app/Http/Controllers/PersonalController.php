@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 
 class PersonalController extends Controller
 {
@@ -15,21 +16,23 @@ class PersonalController extends Controller
 
     public function index()
     {
-        return ("个人信息管理页面");
+        $user=Auth::user();
+        $haveClinic=Cache::get('haveClinic');
+        return view('backend.profile',compact('user','haveClinic'));
     }
 
     public function postReset()
     {
-        return ("个人信息修改");
+        return ("锟斤拷锟斤拷锟斤拷息锟睫革拷");
     }
 
     public function getDevice()
     {
-        return ("设备管理页面");
+        return ("锟借备锟斤拷锟斤拷页锟斤拷");
     }
 
     public function deviceBind()
     {
-        return ("设备绑定");
+        return ("锟借备锟斤拷");
     }
 }
