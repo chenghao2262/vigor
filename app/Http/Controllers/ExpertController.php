@@ -172,8 +172,8 @@ class ExpertController extends Controller
     public function suggestionIndex(){
         $user = Auth::user();
         $suggestions = $user->getSuggestions()->get();
-        dd($suggestions);
-        return view('backend.suggestion');
+
+        return view('backend.suggestion' ,compact('suggestions'));
 
     }
 
