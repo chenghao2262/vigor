@@ -76,7 +76,6 @@ class ExpertController extends Controller
     {
         $expert = Expert::find($expertId);
         $articles = $expert->articles()->get();
-        dd($articles);
         return view('backend.doc_article',compact('articles'));
 
     }
@@ -134,8 +133,8 @@ class ExpertController extends Controller
         $user = Auth::user();
         $name = $user->name;
 
-        $title = $request->input('title');
-        $content = $request->input('content');
+        $title = "新文章";
+        $content = $request->input('publish_article');
 
         $article = new Article();
         $article->expertName = $name;
@@ -152,10 +151,9 @@ class ExpertController extends Controller
     {
         $user = Auth::user();
         $name = $user->name;
-        $watcherName = $request->input('watcherName');
-        $title = $request->input('title');
-        $content = $request->input('content');
-
+        $watcherName = $request->input('patientName');
+        $title = "这里是建议标题";
+        $content = $request->input('publish_suggestion');
         $suggestion = new Suggestion();
         $suggestion->expertName = $name;
         $suggestion->watcherName = $watcherName;
@@ -166,7 +164,7 @@ class ExpertController extends Controller
         $suggestion->type = 0;
 
         $suggestion->save();
-        dd($suggestion);
+        return redirect('/expert/clinic');
     }
 
     public function suggestionIndex(){
