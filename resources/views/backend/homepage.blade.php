@@ -243,7 +243,7 @@
                             ?>
                             @if(true)
                                 <li>
-                                    <a  href="#" title="我的门诊">我的门诊</a>
+                                    <a  href="/expert/clinic" title="我的门诊">我的门诊</a>
                                 </li>
                             @endif
                         </ul>
