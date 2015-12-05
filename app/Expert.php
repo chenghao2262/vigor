@@ -22,4 +22,10 @@ class Expert extends Model
     public function availableTime(){
         return $this->hasMany('App\AvailableTime','expertName','name');
     }
+
+    public function orders(){
+        return $this->hasMany('App\Order','expertName','name');
+    }
+
+
 }

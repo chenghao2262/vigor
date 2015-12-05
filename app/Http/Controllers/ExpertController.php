@@ -11,6 +11,7 @@ use App\Expert;
 use App\Article;
 use App\Order;
 use App\Suggestion;
+use Illuminate\Support\Facades\DB;
 
 class ExpertController extends Controller
 {
@@ -50,7 +51,7 @@ class ExpertController extends Controller
             $expert['time']=$time;
             $hotExperts[$k] = $expert;
         }
-        
+
         return view('backend.dotor',compact('hotExperts'));
 
 
@@ -187,5 +188,34 @@ class ExpertController extends Controller
     {
         $suggestion = Suggestion::find($suggestionId)->content;
         dd($suggestion);
+    }
+
+    public function myclinic(){
+
+        $expert = Expert::find(Auth::user()->name);
+        $orders = $expert->orders()->orderby('date')->orderby('startSegment')->get()->toArray();
+
+
+
+        $time =  array();
+        for($m=0;$m<5;$m++){
+            $tmp = array();
+            for($n=0;$n<10;$n++){
+                $tmp[$n]=0;
+            }
+            $time[$m]=$tmp;
+        }
+
+        for($i=0;$i<5;$i++){
+            $date = '2015-12-'.($i<3?'0':'').($i+7);
+
+            $times=Expert::find($expert['name'])->availableTime()->where('date','=',$date)->get()->toarray();
+
+            foreach($times as $each){
+                $time[$i][intval($each['segment'])]=1;
+            }
+        }
+        
+        return view('backend.myOutpatient',compact('orders','time'));
     }
 }
