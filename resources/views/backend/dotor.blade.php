@@ -615,9 +615,15 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        <?php
-                                        echo date("m-d",strtotime("+($day) day"));
-                                        ?>
+                                        @if($day)
+                                            <?php
+                                            echo '12-0'.strval(intval(date("d"))+$day);
+                                            ?>
+                                        @else
+                                            <?php
+                                            echo date("m-d");
+                                            ?>
+                                        @endif
                                     </th>
                                 </tr>
                             </thead>
@@ -635,8 +641,8 @@
 
                                         <input type="hidden" name="expert_name" value="{{$expert['name']}}">
                                         <input type="hidden" name="patient_name" value="{{Auth::user()}}">
-                                        <input type="hidden" name="start_segment" value="{{$table[$time]}}">
-                                        <input type="hidden" name="created_at" value="<?php echo date("m-d",strtotime("+($day) day"));?>">
+                                        <input type="hidden" name="start_segment" value="{{$time}}">
+                                        <input type="hidden" name="created_at" value="<?php if($day) echo '12-0'.strval(intval(date("d"))+$day);else echo date("m-d"); ?>">
 
                                         <button type="submit" class="btn btn-primary">{{$table[$time]}}</button>
                                     </form>
@@ -646,10 +652,11 @@
                             <tr>
                                 <td class="appoint_box">  </td>
                             </tr>
-                            <?php
-                            $time = $time + 1;
-                            ?>
+
                         @endif
+                        <?php
+                        $time = $time + 1;
+                        ?>
                     @endforeach
                                 </tbody>
                             </table>

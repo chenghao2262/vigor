@@ -39,7 +39,7 @@ class ExpertController extends Controller
             }
 
             for($i=0;$i<5;$i++){
-                $date = '2015-12-'.($i<3?'0':'').($i+7);
+                $date = '2015-12-'.($i<3?'0':'').($i+6);
 
                 $times=Expert::find($expert['name'])->availableTime()->where('date','=',$date)->get()->toarray();
 
@@ -98,25 +98,24 @@ class ExpertController extends Controller
 
     public function postOrder(Request $request)
     {
-        $expertName = $request->input('expertName');
-        $date =       $request->input('date');
-        $segments =   $request ->input('segment');
-
-        $userName = Auth::user()->name;
+        $expertName = $request->input('expert_name');
+        $patientName = $request->input('patient_name');
+        $date =       $request->input('created_at');
+        $start_segment =   $request ->input('start_segment');
 
 
         $order = new Order();
-        $order->watcherName = $userName;
+        $order->watcherName = Auth::user()->name;
         $order->expertName = $expertName;
-        $order->startSegment = $segments[0];
-        $order->endSegment = $segments[count($segments)-1];
+        $order->startSegment = $start_segment;
+        $order->endSegment =$start_segment;
         $order->status=0;
+        $order->payment=0;
+        $order->date = $date;
         $order->save();
-
-        $affectedRows = AvailableTime::where('date',$date) ->whereIn('segment',$segments)
-                                                           ->delete();
-        dd($order);
-        //return redirect();
+        AvailableTime::where('expertName',$expertName)->where('date','2015-'.$date) ->where('segment',$start_segment)->delete();
+        
+        return redirect('/expert/index');
 
     }
 
@@ -215,7 +214,7 @@ class ExpertController extends Controller
                 $time[$i][intval($each['segment'])]=1;
             }
         }
-        
+
         return view('backend.myOutpatient',compact('orders','time'));
     }
 }
