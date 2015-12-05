@@ -65,8 +65,8 @@ Route::get ('/friends/rank', 'FriendController@getRank');
 
 Route::get ('/activity', 'ActivityController@index');
 Route::post('/activity', 'ActivityController@newActivity');
-Route::put ('/activity', 'ActivityController@modifyActivity');
-Route::delete ('/activity', 'ActivityController@deleteActivity');
+Route::post('/activity/modification', 'ActivityController@modifyActivity');
+Route::post('/activity/del', 'ActivityController@deleteActivity');
 Route::get ('/activity/mine', 'ActivityController@myActivity');
 Route::get ('/activity/{id}', 'ActivityController@getActivity');
 Route::get ('/activity/{id}/participation', 'ActivityController@joinActivity');

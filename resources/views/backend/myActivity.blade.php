@@ -35,19 +35,19 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">活动名称</label>
                                     <div class="col-sm-6">
-                                        <input type="text" name="activity_name" class="form-control" placeholder="Activity Name" >
+                                        <input type="text" name="name" class="form-control" placeholder="Activity Name" >
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">活动地点</label>
                                     <div class="col-sm-6">
-                                        <input type="text" name="activity_location" class="form-control" placeholder="Activity Position">
+                                        <input type="text" name="location" class="form-control" placeholder="Activity Position">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">活动描述</label>
                                     <div class="col-sm-6">
-                                        <textarea class="form-control"></textarea>
+                                        <textarea class="form-control" name="describe"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -253,9 +253,9 @@
 
                                                             <button class="btn btn-modify-activity" id="subm" onclick="location.href='<?php echo url('/activity').'/'.$latestActivities[0]['activityID']?>'">修改</button>
 
-                                                             <form class="delete_activity_form" role="form" method="DELETE" action="{{ url('/activity')}}">
+                                                             <form class="delete_activity_form" role="form" method="POST" action="{{ url('/activity/del')}}">
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                <input type="hidden" name="activityID_toDEL" value="{{ $latestActivities[0]['activityID'] }}">        
+                                                                <input type="hidden" name="activityID" value="{{ $latestActivities[0]['activityID'] }}">
                                                                 <button type="submit" class="btn btn-modify-activity">删除</button>
                                                             </form>
                                                         </div>
@@ -283,9 +283,9 @@
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                             <button class="btn btn-modify-activity" id="subm" onclick="location.href='<?php echo url('/activity').'/'.$latestActivities[1]['activityID']?>'">修改</button>
-                                                            <form class="delete_activity_form" role="form" method="DELETE" action="{{ url('/activity')}}">
+                                                            <form class="delete_activity_form" role="form" method="POST" action="{{ url('/activity/del')}}">
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                <input type="hidden" name="activityID_toDEL" value="{{ $latestActivities[1]['activityID'] }}">        
+                                                                <input type="hidden" name="activityID" value="{{ $latestActivities[1]['activityID'] }}">
                                                                 <button type="submit" class="btn btn-modify-activity">删除</button>
                                                             </form>
                                                         </div>
@@ -313,9 +313,9 @@
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                             <button class="btn btn-modify-activity" id="subm" onclick="location.href='<?php echo url('/activity').'/'.$latestActivities[2]['activityID']?>'">修改</button>
-                                                            <form class="delete_activity_form" role="form" method="DELETE" action="{{ url('/activity')}}">
+                                                            <form class="delete_activity_form" role="form" method="POST" action="{{ url('/activity/del')}}">
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                <input type="hidden" name="activityID_toDEL" value="{{ $latestActivities[2]['activityID'] }}">        
+                                                                <input type="hidden" name="activityID" value="{{ $latestActivities[2]['activityID'] }}">
                                                                 <button type="submit" class="btn btn-modify-activity">删除</button>
                                                             </form>
                                                         </div>
@@ -343,9 +343,9 @@
                                                         </div>
                                                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                             <button class="btn btn-modify-activity" id="subm" onclick="location.href='<?php echo url('/activity').'/'.$latestActivities[3]['activityID']?>'">修改</button>
-                                                            <form class="delete_activity_form" role="form" method="DELETE" action="{{ url('/activity')}}">
+                                                            <form class="delete_activity_form" role="form" method="POST" action="{{ url('/activity/del')}}">
                                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                <input type="hidden" name="activityID_toDEL" value="{{ $latestActivities[3]['activityID'] }}">        
+                                                                <input type="hidden" name="activityID" value="{{ $latestActivities[3]['activityID'] }}">
                                                                 <button type="submit" class="btn btn-modify-activity">删除</button>
                                                             </form>
                                                         </div>

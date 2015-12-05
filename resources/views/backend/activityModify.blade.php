@@ -24,31 +24,31 @@
                             </div>
 
                             <div class=" col-md-9 col-lg-9">
-                                <form class="form-horizontal" role="form" method="PUT" action="{{ url('/activity') }}" id="chatform">
+                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/activity/modification') }}" id="chatform">
                                 <!-- <form class="form-horizontal" role="form"> -->
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">活动名称</label>
                                         <div class="col-sm-6">
-                                            <input type="text" name="activity_name" class="form-control" placeholder="{{$activity['name']}}" >
+                                            <input type="text" name="name" class="form-control" value="{{$activity['name']}}" >
                                         </div>
 
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">活动地点</label>
                                         <div class="col-sm-6">
-                                            <input type="text" name="activity_location" class="form-control" placeholder="{{$activity['location']}}">
+                                            <input type="text" name="location" class="form-control" value="{{$activity['location']}}">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">活动描述</label>
                                         <div class="col-sm-6">
-                                            <textarea class="form-control" name="activity_describe" placeholder="{{$activity['describe']}}"></textarea>
+                                            <textarea class="form-control" name="describe" >{{$activity['describe']}}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">开始时间</label>
                                         <div class="col-sm-6">
-                                            <input type="text" name="activity_start" readonly="readonly" class="form-control" placeholder="{{$activity['start']}}">
+                                            <input type="text" name="start" readonly="readonly" class="form-control" value="{{$activity['start']}}">
                                         </div>
                                     </div>
 
@@ -56,14 +56,14 @@
                                         <label for="inputStart" class="col-sm-3 control-label">结束时间</label>
 
                                         <div class="col-sm-6">
-                                            <input type="text" name="activity_end" class="form-control input-append date form_datetime"
-                                                id="inputStart"placeholder="{{$activity['end']}}" >
+                                            <input type="text" name="end" class="form-control input-append date form_datetime"
+                                                id="inputStart" value="{{$activity['end']}}" >
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="col-sm-offset-2 col-sm-10">
-                                            <input type="hidden" name="activity_ID" value="{{$activity['activityID']}}">
+                                            <input type="hidden" name="activityID" value="{{$activity['activityID']}}">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <button type="submit" class="btn btn-primary">修改</button>
                                         </div>

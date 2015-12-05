@@ -56,7 +56,7 @@ class ActivityController extends Controller
 
         $activity->save();
 
-        return redirect('/activity');
+        return redirect('/activity/mine');
     }
 
     public function getActivity($id)
@@ -88,22 +88,21 @@ class ActivityController extends Controller
     }
 
     public function modifyActivity(Request $request){
-
         $id = $request->input('activityID');
         $activity = Activity::find($id);
         $activity->name=$request->input('name');
         $activity->describe=$request->input('describe');
         $activity->location=$request->input('location');
-        $activity->founderName=$request->input('founderName');
         $activity->start=$request->input('start');
+        $activity->end=$request->input('end');
         $activity->save();
-        return redirect('/activity');
+        return redirect('/activity/mine');
     }
 
     public function deleteActivity(Request $request){
         $id = $request->input('activityID');
         $activity = Activity::find($id);
         $activity->delete();
-        return redirect('/activity');
+        return redirect('/activity/mine');
     }
 }

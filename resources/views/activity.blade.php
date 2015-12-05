@@ -571,7 +571,7 @@
 <script src="{{ asset('/assets/plugins/dropzone/js/dropzone.min.js') }}"></script>
 <script type="text/javascript">
     $(".form_datetime").datetimepicker({
-        format: 'yyyy-mm-dd hh:ii',
+        format: 'yyyy-mm-dd',
         autoclose: true,
         todayBtn: true,
         pickerPosition: "bottom-left"
