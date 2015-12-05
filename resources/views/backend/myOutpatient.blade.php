@@ -347,7 +347,7 @@
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <div>
-                                                                            <textarea name="editor1" name="suggestion_content" id="editor1" rows="10" cols="80">
+                                                                            <textarea name="suggestion_content" id="editor1" rows="10" cols="80">
 
                                                                             </textarea>
                                                                         </div>
@@ -405,11 +405,42 @@
                         <div class="panel-heading">
                             <h2>Patient In Line</h2>
                         </div>
-                        
+                        <?php
+                        // dd($orders);
+                        $table = array(
+                            0 => "09:00",
+                            1 => "09:30",
+                            2 => "10:00",
+                            3 => "10:30",
+                            4 => "11:00",
+                            5 => "02:00",
+                            6 => "02:30",
+                            7 => "03:00",
+                            8 => "03:30",
+                            9 => "04:00",
+                        );
+                        ?>
                         <div class="panel-body">
                             <div id="contact-list-wrapper">
                                 <div id="contact-list">
                                     <ul>
+                                        @foreach($orders as $order)
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <span class="avatar">
+                                                            <img src="/assets/img/avatar3.png" class="img-circle" alt="">
+                                                         </span>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <small class="location text-muted">{{$order['watcherName']}}</small>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <button type="button" class="btn btn-primary">{{$table[$order['startSegment']]}}</button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        @endforeach
                                         <li>
                                             <div class="row">
                                                 <div class="col-md-3">
