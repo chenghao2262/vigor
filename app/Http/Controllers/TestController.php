@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Activity;
 
 class TestController extends Controller
 {
@@ -15,7 +16,8 @@ class TestController extends Controller
      */
     public function index()
     {
-        return view('admin');
+        $latestActivities = Activity::latest()->take(5)->get()->toArray();
+        return view('test',compact('latestActivities'));
     }
 
     /**

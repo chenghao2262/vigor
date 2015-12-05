@@ -149,7 +149,7 @@
         </form>--}}
 
         {{--这里是聊天窗口--}}
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+        {{--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
             <div class="panel panel-default chat-widget">
                 <div class="panel-heading">
                     <h3 class="panel-title">chat</h3>
@@ -205,14 +205,17 @@
             </div>
         </div>
 
-    </div>
+    </div>--}}
+        <div>
+            <button class="btn btn-primary" id="subm" onclick="location.href='<?php echo url('/activity').'/'.$latestActivities[0]['activityID']?>'">SEND</button>
+        </div>
 
 
 
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="{{ asset('/assets/js/bootstrap.min.js') }}"></script>
 
-    <script src="{{ asset('assets/js/socket.io.js') }}"></script>
+  {{--  <script src="{{ asset('assets/js/socket.io.js') }}"></script>
 
     <script>
         var socket = io('http://localhost:3000');
@@ -245,7 +248,7 @@
             return false;
         });
 
-    </script>
+    </script>--}}
 
 </body>
 </html>

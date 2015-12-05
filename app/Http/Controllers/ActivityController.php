@@ -61,10 +61,10 @@ class ActivityController extends Controller
 
     public function getActivity($id)
     {
-        $activity =  Activity::find($id);
-        $participants = $activity->participants()->get()->toArray();
+        $activity =  Activity::find($id)->toArray();
+        //$participants = $activity->participants()->get()->toArray();
         //dd($participants);
-        return $activity;
+        return view('backend.activityModify',compact('activity'));
     }
 
     public function joinActivity($id)
