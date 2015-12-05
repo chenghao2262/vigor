@@ -47,6 +47,7 @@ Route::get ('/expert/articles/{articleId}', 'ExpertController@getArticle');
 Route::post('/expert/article', 'ExpertController@publishArticle');
 Route::get ('/expert/{expertId}/availableTime', 'ExpertController@getAvailableTime');
 Route::post('/expert/order', 'ExpertController@postOrder');
+Route::get ('/expert/clinic','ExpertController@myclinic');
 
 Route::post('/expert/order/chat', 'ExpertController@postChat');
 Route::post('/expert/order/grade', 'ExpertController@postGrade');
