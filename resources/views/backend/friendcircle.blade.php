@@ -165,7 +165,7 @@
                                 </span>Messages</a>
                     </li>
                     <li>
-                        <a href="javascript:void(0);">
+                        <a href="/personal">
                                 <span class="icon"><i class="fa fa-cog"></i>
                                 </span>Settings</a>
                     </li>
@@ -378,137 +378,7 @@
                                     <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
                                 </li>
                             @endforeach
-<!-- 
-                            <li>
-                                <div class="date">
-                                    <img src="/assets/img/avatar3.png" alt="" class="img-circle" width="50" height="50">
-                                </div>
-                                <h4>小刚:</h4>
-                                <p>
-                                    <p>
-                                     楼上傻逼<br>
-                                     找到一个挺不错的视频，可以看看。
-                                </p>
-                                    <div class='embed-container'>
-                                        <iframe src='//player.vimeo.com/video/16566326?title=0&amp;byline=0&amp;portrait=0"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                                    </div>
-                                </p>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                            </li>
 
-                            <li>
-                                <div class="date">
-                                    <img class="img-circle profile-image" src="/assets/img/profile.jpg" alt="profile">
-                                </div>
-                                <h4 class="user">袁睿:</h4>
-                                <p>
-                                    我的书包被猫毁了<br>
-                                    但是我的新包还挺好看的。
-                                </p>
-                                <h5 class="date-time">今天 19:00<br></h5>
-                                
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                                
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <img src="/assets/img/avatar3.png" alt="" class="img-circle" width="50" height="50">
-                                </div>
-                                <h4>小刚:</h4>
-                                <p>
-                                    <p>
-                                     楼上傻逼<br>
-                                     找到一个挺不错的视频，可以看看。
-                                </p>
-                                    <div class='embed-container'>
-                                        <iframe src='//player.vimeo.com/video/16566326?title=0&amp;byline=0&amp;portrait=0"' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                                    </div>
-                                </p>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <img src="/assets/img/avatar5.png" alt="" class="img-circle" width="50" height="50">
-                                </div>
-                                <h4>小红:</h4>
-                                <p>
-                                   注意缓存的释放。<br>
-                                   注意缓存的释放。<br>
-                                   注意缓存的释放。<br>
-                                   重要的事情说三遍
-                                </p>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <img src="/assets/img/avatar4.jpg" alt="" class="img-circle" width="50" height="50">
-                                </div>
-                                <h4>孙梦曦:</h4>
-                                <p>
-                                   看看第二张像不像我。
-                                </p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="/assets/img/vac-1.jpg" alt="" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="/assets/img/vac-2.jpg" alt="" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="/assets/img/vac-3.jpg" alt="" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img src="/assets/img/vac-4.jpg" alt="" />
-                                    </div>
-                                </div>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <img src="/assets/img/avatar8.png" alt="" class="img-circle" width="50" height="50">
-                                </div>
-                                <h4>小狗:</h4>
-                                <p>
-                                    汪汪汪！<br>
-                                    汪汪汪！<br>
-                                    汪汪汪！
-                                    
-                                </p>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <img src="/assets/img/avatar7.png" alt="" class="img-circle" width="50" height="50">
-                                </div>
-                                <h4>Boss:</h4>
-                                <p>
-                                    晚上开会，楼上明天别来上班了。
-                                </p>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-up"></i>99</a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-thumbs-o-down"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-times"></i></a>
-                                <a class="btn btn-default btn-sm" href="#"><i class="fa  fa-external-link"></i></a>
-                            </li> -->
                         </ul>
 
                     </div>
@@ -546,28 +416,7 @@
                 <section class="panel" style="min-width:380px;max-width:400px;">
                     <h4 class="rankingtitle">Ranking</h4>
                     <div class="panel-body">
-                        <!-- <div class="mail-option">
-                            <div class="row">
-                                <div class="btn-group col-md-2">
-                                    <a data-original-title="Refresh" data-placement="top" data-toggle="tooltip" href="#" class="btn btn-default btn-sm tooltips">
-                                        <i class=" fa fa-refresh"></i>
-                                    </a>
-                                </div>
-                                
-                                <div class="col-md-10">
-                                    <ul class="inbox-pag pull-right">
-                                        
-                                        <li>
-                                            <a class="btn btn-default btn-sm" href="#"><i class="fa fa-angle-left  pag-left"></i></a>
-                                        </li>
-                                        <li>
-                                            <a class="btn btn-default btn-sm" href="#"><i class="fa fa-angle-right pag-right"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div> -->
-                        
+                    
                         <div id="contact-list-wrapper">
                             <div id="contact-list">
                                 <ul>
@@ -582,12 +431,11 @@
                                                     <img src="/assets/img/avatar3.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-5">
                                                 <div class="name">Ashley Bell </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Sarasota, FL</small>
                                             </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
+                                            <div class="col-md-3">
+                                                <div class="name">6544步</div>
                                             </div>
                                         </div>
                                     </li>
@@ -601,12 +449,11 @@
                                                     <img src="/assets/img/avatar1.png" class="img-circle" alt="">                                                 </span>
                                                 </span>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-5">
                                                 <div class="name">Brian Johnson </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> San Francisco, CA</small>
                                             </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">10</i>
+                                            <div class="col-md-3">
+                                                <div class="name">6112步</div>
                                             </div>
                                         </div>
                                     </li>
@@ -620,12 +467,11 @@
                                                     <img src="/assets/img/avatar2.png" class="img-circle" alt="">                                                 </span>
                                                 </span>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-5">
                                                 <div class="name">Chris Jones </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Brooklyn, NY</small>
                                             </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">9</i>
+                                            <div class="col-md-3">
+                                                <div class="name">5897步</div>
                                             </div>
                                         </div>
                                     </li>
@@ -639,12 +485,11 @@
                                                     <img src="/assets/img/avatar4.jpg" class="img-circle" alt="">                                                 </span>
                                                 </span>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-5">
                                                 <div class="name">Erica Hill </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Palo Alto, Ca</small>
                                             </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">9</i>
+                                            <div class="col-md-3">
+                                                <div class="name">5111步</div>
                                             </div>
                                         </div>
                                     </li>
@@ -659,12 +504,11 @@
                                                     <img src="/assets/img/avatar5.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-5">
                                                 <div class="name">Greg Smith </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> London, UK</small>
                                             </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
+                                            <div class="col-md-3">
+                                                <div class="name">5000步</div>
                                             </div>
                                         </div>
                                     </li>
@@ -679,12 +523,11 @@
                                                     <img src="/assets/img/avatar6.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-5">
                                                 <div class="name">Jason Kendall </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> New York, NY </small>
                                             </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
+                                            <div class="col-md-3">
+                                                <div class="name">3579步</div>
                                             </div>
                                         </div>
                                     </li>
@@ -699,12 +542,11 @@
                                                     <img src="/assets/img/avatar7.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-5">
                                                 <div class="name">Kristen Davis </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Greenville, SC </small>
                                             </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
+                                            <div class="col-md-3">
+                                                <div class="name">3317步</div>
                                             </div>
                                         </div>
                                     </li>
@@ -720,32 +562,30 @@
                                                     <img src="/assets/img/avatar8.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-5">
                                                 <div class="name">Michael Shepard </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Vancouver, BC </small>
                                             </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
+                                            <div class="col-md-3">
+                                                <div class="name">3000步</div>
                                             </div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="row">
-                                            <div class="col-md-1">
+                                            <div class="col-md-1 col-lg-1">
                                                 <h1>9</h1>
                                             </div>
-                                            <div class="col-md-2">
+                                            <div class="col-md-2 col-lg-2">
 
                                                 <span class="avatar">
                                                     <img src="/assets/img/avatar9.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-4 col-lg-5">
                                                 <div class="name">Paul Allen </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Savannah, GA </small>
                                             </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
+                                            <div class="col-md-4 col-lg-3">
+                                                <div class="name">2500步 </div>
                                             </div>
                                         </div>
                                     </li>
@@ -757,15 +597,14 @@
                                             <div class="col-md-2">
 
                                                 <span class="avatar">
-                                                    <img src="/assets/img/avatar9.png" class="img-circle" alt="">
+                                                    <img src="/assets/img/profile.jpg" class="img-circle" alt="">
                                                  </span>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="name">Paul Allen </div>
-                                                <small class="location text-muted"><i class="icon-pointer"></i> Savannah, GA </small>
+                                            <div class="col-md-5">
+                                                <div class="name">April Avery </div>
                                             </div>
-                                            <div class="col-md-2">
-                                                <i class="fa fa-star">20</i>
+                                            <div class="col-md-3">
+                                                <div class="name">2000步</div>
                                             </div>
                                         </div>
                                     </li>

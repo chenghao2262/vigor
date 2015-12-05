@@ -377,7 +377,7 @@
                                                         <small class="location text-muted">{{$table[$order['startSegment']]}}</small>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <button class="btn btn-primary" data-toggle="modal" data-target="#chatModal">开始会话
+                                                        <button class="btn btn-primary" data-toggle="modal" data-target="#{{$order['id']}}">开始会话
                                                         </button>
                                                     </div>
                                                 </div>
@@ -479,7 +479,7 @@
     <?php
         $luk = rand(0,9);
     ?>
-<div class="modal fade" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="{{$item['id']}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <!-- huge form -->
             <div class="panel panel-default chat-widget">

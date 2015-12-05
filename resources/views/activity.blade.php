@@ -29,7 +29,7 @@
     <!-- CSS Animate -->
     <link rel="stylesheet" href="{{ asset('/assets/css/animate.css') }}">
     <!-- C3 Chart-->
-    <link rel="stylesheet" href="assets/plugins/c3Chart/css/c3.css">
+    <!-- <link rel="stylesheet" href="assets/plugins/c3Chart/css/c3.css"> -->
     <!-- Daterange Picker -->
     <link rel="stylesheet" href="{{ asset('/assets/plugins/daterangepicker/daterangepicker-bs3.css') }}">
     <!-- Calendar demo -->
@@ -112,7 +112,7 @@
                                     </span>Messages</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">
+                            <a href="/personal">
                                     <span class="icon"><i class="fa fa-cog"></i>
                                     </span>Settings</a>
                         </li>

@@ -21,4 +21,9 @@ function changeButtonStatus(obj){//button,input
 	}else{
 		obj.className ="btn btn-warning";
 	}
+	if(obj.innerHTML=="<i class="+"\""+"icon-user-follow"+"\""+"></i>关注"){
+		obj.innerHTML="<i class="+"\""+"icon-user-follow"+"\""+"></i>已关注";
+	}else{
+		obj.innerHTML="<i class="+"\""+"icon-user-follow"+"\""+"></i>关注";
+	}
 } 

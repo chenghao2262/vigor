@@ -454,7 +454,8 @@
                                                     <div class="col-md-4">
                                                         <small class="location text-muted">{{$order['date']}}</small>
 
-                                                        <button type="button" class="btn btn-primary">{{$table[$order['startSegment']]}}</button>
+                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$order['id']}}">{{$table[$order['startSegment']]}}</button>
+
                                                     </div>
                                                 </div>
                                             </li>
@@ -612,6 +613,71 @@
         </form>
     </div>
 </div>
+
+
+@foreach($orders as $item)
+    <?php
+        $luk = rand(0,9);
+    ?>
+<div class="modal fade" id="{{$item['id']}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <!-- huge form -->
+            <div class="panel panel-default chat-widget">
+                <div class="panel-heading">
+                    <h3 class="panel-title">chat</h3>
+                    <div class="actions pull-right">
+                        <i class="fa fa-expand"></i>
+                        <i class="fa fa-chevron-down"></i>
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="panel-body" id="chatPanel">
+                    <div class="row wrapper animated fadeInRight">
+                        <div class="col-xs-2 col-sm-2 col-md-2 ">
+                                        <span class="avatar">
+                                        <img src="{{ asset('/assets/img/avatar1.png') }}" class="img-circle" alt="">
+                                        <i class="on animated bounceIn"></i>
+                                    </span>
+                        </div>
+                        <div class="col-xs-10 col-sm-10 col-md-10">
+                            <div class="post default">
+                                <span class="arrow left"></span>
+                                <p>Hey Mike...Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibut</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row wrapper animated fadeInLeft">
+                        <div class="col-xs-10 col-sm-10 col-md-10">
+                            <div class="post primary">
+                                <span class="arrow right"></span>
+                                <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et.</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2">
+                                        <span class="avatar">
+                                        <img src="{{ asset('/assets/img/avatar7.png') }}"class="img-circle" alt="">
+                                        <i class="on animated bounceIn"></i>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <form method="POST" action="{{ url('/chat') }}" id="chatform">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Say something" name="content">
+                            <input type="hidden" name="toName" value="njusmx">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-primary" id="subm">SEND</button>
+                                         </span>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
 
 <!--sidebar right start-->
 <aside id="sidebar-right">
@@ -915,6 +981,40 @@
 <script src="{{ asset('/assets/plugins/switchery/switchery.min.js') }}"></script>
 <script src="{{ asset('/assets/plugins/dropzone/js/dropzone.min.js') }}"></script>
 <!--Load these page level functions-->
+<script src="{{ asset('assets/js/socket.io.js') }}"></script>
+
+    <script>
+        var socket = io('http://localhost:3000');
+        socket.on("test-channel:App\\Events\\ChatEvent", function(message){
+            var fromName =  message.data.fromName;
+            if(fromName=='YuanRui'){
+            $('#chatPanel').append("<div class='row wrapper animated fadeInLeft'>"+
+                                        "<div class='col-xs-10 col-sm-10 col-md-10'>"+
+                                            "<div class='post primary'>"+
+                                                "<span class='arrow right'></span>"+
+                                                "<p>"+message.data.content+"</p>"+
+                                            "</div>"+
+                                        "</div>"+
+                                        "<div class='col-xs-2 col-sm-2 col-md-2'>"+
+                                            "<span class='avatar'>"+
+                                            "<img src='assets/img/profile.jpg' class='img-circle' alt=''>"+
+                                            "<i class='on animated bounceIn'></i>"+
+                                            "</span>"+
+                                        "</div>"+
+                                    "</div>");
+            }
+        });
+
+        $('#subm').click(function () {
+            $.ajax({
+                url:"{{ url('/chat') }}",
+                data:$("#chatform").serialize(),
+                type:"post",
+            });
+            return false;
+        });
+
+    </script>
 
 <script>
     $(document).ready(function() {
@@ -924,6 +1024,7 @@
     });
     disableMyButton();
 </script>
+
 </body>
 
 
