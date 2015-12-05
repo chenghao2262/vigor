@@ -274,8 +274,8 @@
     <!--main content start-->
     <section class="main-content-wrapper">
         <div class="pageheader">
-            <h1>健康履历</h1>
-            <p class="description">这里展示我的健康履历 </p>
+            <h1>个人设置</h1>
+            <p class="description">这里展示我的个人信息与设置 </p>
             <div class="breadcrumb-wrapper hidden-xs">
                 <span class="label">You are here:</span>
                 <ol class="breadcrumb">
@@ -286,98 +286,145 @@
         <section id="main-content" class="animated fadeInUp">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="panel panel-default">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Form Wizard</h3>
+                            <b >Setting</b>
                             <div class="actions pull-right">
                                 <i class="fa fa-expand"></i>
                                 <i class="fa fa-chevron-down"></i>
                                 <i class="fa fa-times"></i>
                             </div>
                         </div>
+                        <?php
+                        // dd($user);
+                        $attr = $user['attributes'];
+                        // var_dump($attr);
+                        ?>
                         <div class="panel-body">
                             <section class="fuelux">
                                 <div>
                                     <ul class="nav nav-tabs">
-                                      <li role="presentation" class="active"><a href="#target" data-toggle="tab">Target</a></li>
-                                      <li role="presentation"><a href="#upload" data-toggle="tab">Upload</a></li>
-                                      <li role="presentation"><a href="#profile" data-toggle="tab">Profile</a></li>
+                                        <li role="presentation" class="active"><a href="#profile" data-toggle="tab">My Profile</a></li>
+
+                                        <li role="presentation"><a href="#editprofile" data-toggle="tab">Edit My Profile</a></li>
+
+                                        <li role="presentation"><a href="#changepassword" data-toggle="tab">Change Password</a></li>
+
+
+                                        <li role="presentation"><a href="#upload" data-toggle="tab">Upload</a></li>
                                     </ul>
                                 </div>
+
                                 <div id="myTabContent" class="upload_form tab-content">
-                                   <div class="tab-pane fade in active" id="target">
+                                   <div class="tab-pane fade in active" id="profile">
                                         <form class="form-horizontal">
                                             <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <h2 class="title">User Info</h2>
+                                                <label class="col-sm-3 control-label">Name</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" readonly="readonly" placeholder="{{$attr['name']}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label">First Name</label>
+                                                <label class="col-sm-3 control-label">gender</label>
                                                 <div class="col-sm-6">
-                                                    <input type="text" class="form-control">
+                                                    @if($attr['gender'])
+                                                    <input type="text" class="form-control" readonly="readonly" placeholder="Male">
+                                                    @else
+                                                    <input type="text" class="form-control" readonly="readonly" placeholder="Female">
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label">Last Name</label>
+                                                <label class="col-sm-3 control-label">birthday</label>
                                                 <div class="col-sm-6">
-                                                    <input type="text" class="form-control">
+                                                    <input type="password" class="form-control" readonly="readonly" placeholder="{{$attr['birthday']}}">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label">Password</label>
+                                                <label class="col-sm-3 control-label">height</label>
                                                 <div class="col-sm-6">
-                                                    <input type="password" class="form-control">
+                                                    <input type="password" class="form-control" readonly="readonly" placeholder="{{$attr['height']}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">weight</label>
+                                                <div class="col-sm-6">
+                                                    <input type="password" class="form-control" readonly="readonly" placeholder="{{$attr['weight']}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">goal</label>
+                                                <div class="col-sm-6">
+                                                    <input type="password" class="form-control" readonly="readonly" placeholder="{{$attr['goal']}}">
                                                 </div>
                                             </div>
                                         </form>
                                    </div>
-                                   
+
+                                    <div class="tab-pane fade in " id="editprofile">
+                                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/personal')}}">
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">Name</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" readonly="readonly" placeholder="{{$attr['name']}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">gender</label>
+                                                <div class="col-sm-6">
+                                                    @if($attr['gender'])
+                                                    <input type="text" class="form-control" readonly="readonly" placeholder="Male">
+                                                    @else
+                                                    <input type="text" class="form-control" readonly="readonly" placeholder="Female">
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">birthday</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" name="birth" value="{{$attr['birthday']}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">height</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" name="height" value="{{$attr['height']}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">weight</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" name="weight" value="{{$attr['weight']}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">goal</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" name="goal" value="{{$attr['goal']}}">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-offset-7 col-md-4">
+                                                    <button type="submit" class="btn btn-primary">Submit Profile</button>
+
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+
                                    <div class="tab-pane fade" id="upload">
                                          <form class="form-inline signup"  method="POST" action="{{ url('/device') }}" enctype="multipart/form-data">
 
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <input type="file" name="data" accept="application/vnd.ms-excel" id="exampleInputFile">
+                                            <input type="file" name="data" accept="application/vnd.ms-excel" id="exampleInputFile" multiple="multiple">
                                             <p class="help-block">这里放一些提示性的文字.</p>
-
+                                        
                                             <button type="submit" class="btn btn-primary">Submit</button>
-
                                         </form>
-                                   </div>
-
-                                   <div class="tab-pane fade" id="profile">
-                                        <form class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="col-sm-3">
-                                                    <h2 class="title">Payment Info</h2>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Card No</label>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Expiration</label>
-                                                <div class="col-sm-3">
-                                                    <select class="form-control">
-                                                        <option value="">Month</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <select class="form-control">
-                                                        <option value="">Year</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">CSV</label>
-                                                <div class="col-sm-1">
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                        </form>
+                                            <form action="#" class="dropzone" id="my-awesome-dropzone" enctype="multipart/form-data">
+                                            </form>
+                                        
                                    </div>
                                 </div>
                             </section>
@@ -385,29 +432,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-               <div class="col-md-6">
+            <!-- <div class="row">
+               <div class="col-md-12">
                    <div class="panel panel-primary">
-                        <!-- Default panel contents -->
-                        <div class="panel-heading">
-                            <b>当前情况</b>
-                            <div class="actions pull-right">
-                                <i class="fa fa-expand"></i>
-                                <i class="fa fa-chevron-down"></i>
-                                <i class="fa fa-times"></i>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <p>当前身高：cm</p>
-                            <p>当前体重：kg</p>
-                            <p>目标身高：cm</p>
-                            <p>目标体重：kg</p>
-                        </div>
-                    </div>
-               </div>
-               <div class="col-md-6">
-                   <div class="panel panel-primary">
-                <!-- Default panel contents -->
                         <div class="panel-heading">
                             <b>目标设置</b> <a href="javascript:form.submit();" type="button"
                                 class="btn btn-default btn-xs btn-success pull-right"> <span
@@ -424,9 +451,9 @@
                                     <div class="col-sm-8 col-md-6 col-lg-8">
                                         <div class="input-group">
                                             <input name="height" type="text" class="form-control"
-                                                id="inputHeight" placeholder="请输入目标身高"
+                                                id="inputHeight" placeholder="请输入目标步数"
                                                 aria-label="Amount (to the nearest dollar)"><span
-                                                class="input-group-addon">cm</span>
+                                                class="input-group-addon">步</span>
                                         </div>
                                     </div>
                                 </div>
@@ -434,35 +461,8 @@
                         </div>
                     </div>
                </div>
-           </div>
-            
-            <div class="panel panel-primary">
-                <!-- Default panel contents -->
-                <div class="panel-heading">
-                    <b>身高体重变化</b>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Interaction Zoom</h3>
-                                    <div class="actions pull-right">
-                                        <i class="fa fa-expand"></i>
-                                        <i class="fa fa-chevron-down"></i>
-                                        <i class="fa fa-times"></i>
-                                    </div>
-                                </div>
-                                <div class="panel-body text-center">
-                                    <div class="chart">
-                                        <div id="zoom"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-            </div>
+            </div> -->
+           
         </section>
 
     </section>
