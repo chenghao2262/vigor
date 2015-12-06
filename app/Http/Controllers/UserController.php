@@ -75,7 +75,8 @@ class UserController extends Controller
     }
 
     public function shop(){
-        return view('backend.store');
+        $haveClinic=Cache::get('haveClinic');
+        return view('backend.store',compact('haveClinic'));
     }
 
 

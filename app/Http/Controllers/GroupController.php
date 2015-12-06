@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 
 class GroupController extends Controller
 {
@@ -16,8 +17,8 @@ class GroupController extends Controller
 
     public function index()
     {
-
-        return view('backend.interest');
+        $haveClinic=Cache::get('haveClinic');
+        return view('backend.interest', compact('haveClinic'));
     }
 
     public function getGroup()
