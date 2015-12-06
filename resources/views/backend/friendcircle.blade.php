@@ -80,7 +80,7 @@
                             <span class="avatar">
                                 <img src="/assets/img/profile.jpg" class="img-circle" alt="">
                             </span>
-                        <span class="text">Mike Adams</span>
+                        <span class="text">YuanRui</span>
                         <span class="caret"></span>
                         </span>
                 </a>
@@ -140,8 +140,8 @@
                 <i class="on border-dark animated bounceIn"></i>
             </div>
             <div class="profile-body dropdown">
-                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4>Mike Adams <span class="caret"></span></h4></a>
-                <small class="title">Front-end Developer</small>
+                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><h4>YuanRui<span class="caret"></span></h4></a>
+                <small class="title">天才</small>
                 <ul class="dropdown-menu animated fadeInRight" role="menu">
                     <li class="profile-progress">
                         <h5>
@@ -171,7 +171,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="javascript:void(0);">
+                        <a href="/auth/logout">
                                 <span class="icon"><i class="fa fa-sign-out"></i>
                                 </span>Logout</a>
                     </li>
