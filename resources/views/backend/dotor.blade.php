@@ -216,9 +216,7 @@
                         <li>
                             <a  href="/group" title="我的兴趣组">我的兴趣组</a>
                         </li>
-                         <li>
-                            <a  href="/group" title="发现兴趣组">发现兴趣组</a>
-                        </li>
+                         
                     </ul>
                 </li>
                 <li class=" nav-dropdown">
@@ -647,7 +645,7 @@
                                         <input type="hidden" name="expert_name" value="{{$expert['name']}}">
                                         <input type="hidden" name="patient_name" value="{{Auth::user()}}">
                                         <input type="hidden" name="start_segment" value="{{$time}}">
-                                        <input type="hidden" name="created_at" value="<?php if($day) echo '12-0'.strval(intval(date("d"))+$day);else echo date("m-d"); ?>">
+                                        <input type="hidden" name="created_at" value="<?php if($day) echo '12-0'.strval(intval(date("d"))+$day-1);else echo date("m-d"); ?>">
 
                                         <button type="submit" class="btn btn-primary">{{$table[$time]}}</button>
                                     </form>

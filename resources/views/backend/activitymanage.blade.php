@@ -223,9 +223,6 @@
                             <li>
                                 <a  href="/group" title="我的兴趣组">我的兴趣组</a>
                             </li>
-                             <li>
-                                <a  href="/group" title="发现兴趣组">发现兴趣组</a>
-                            </li>
                         </ul>
                     </li>
                     <li class=" nav-dropdown">
