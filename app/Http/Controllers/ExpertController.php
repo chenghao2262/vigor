@@ -78,7 +78,7 @@ class ExpertController extends Controller
         $expert = Expert::find($expertId);
         $articles = $expert->articles()->get();
         $haveClinic=Cache::get('haveClinic');
-        return view('backend.doc_article',compact('articles','haveClinic'));
+        return view('backend.doc_article',compact('articles','haveClinic','expert'));
 
     }
 
