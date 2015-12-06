@@ -226,7 +226,7 @@
                     </a>
                 </li>
                 <li class="nav-dropdown">
-                    <a href="#" title="健货商城" data-toggle="collapse">
+                    <a href="/shop" title="健货商城" data-toggle="collapse">
                         <i class="fa fa-fw fa-shopping-cart"></i> 健货商城
                     </a>
                 </li>
@@ -241,6 +241,11 @@
                          <li>
                             <a  href="/expert/suggestion/index" title="建议管理">建议管理</a>
                         </li>
+                        @if($haveClinic)
+                                <li>
+                                    <a  href="/expert/clinic" title="我的门诊">我的门诊</a>
+                                </li>
+                            @endif
                     </ul>
                 </li>
                 
@@ -428,14 +433,14 @@
                                             <div class="col-md-2">
 
                                                 <span class="avatar">
-                                                    <img src="/assets/img/avatar3.png" class="img-circle" alt="">
+                                                    <img src="/assets/img/profile.jpg" class="img-circle" alt="">
                                                  </span>
                                             </div>
                                             <div class="col-md-5">
-                                                <div class="name">Ashley Bell </div>
+                                                <div class="name">YuanRui </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="name">6544步</div>
+                                                <div class="name">9312步</div>
                                             </div>
                                         </div>
                                     </li>
@@ -539,7 +544,7 @@
                                             <div class="col-md-2">
 
                                                 <span class="avatar">
-                                                    <img src="/assets/img/avatar7.png" class="img-circle" alt="">
+                                                    <img src="/assets/img/avatar3.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
                                             <div class="col-md-5">
@@ -597,7 +602,7 @@
                                             <div class="col-md-2">
 
                                                 <span class="avatar">
-                                                    <img src="/assets/img/profile.jpg" class="img-circle" alt="">
+                                                    <img src="/assets/img/avatar7.png" class="img-circle" alt="">
                                                  </span>
                                             </div>
                                             <div class="col-md-5">

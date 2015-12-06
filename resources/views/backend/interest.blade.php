@@ -219,12 +219,12 @@
                     </a>
                 </li>
                 <li class="nav-dropdown">
-                    <a href="#" title="健货商城" data-toggle="collapse">
+                    <a href="/shop" title="健货商城" data-toggle="collapse">
                         <i class="fa fa-fw fa-shopping-cart"></i> 健货商城
                     </a>
                 </li>
                 <li class="nav-dropdown">
-                    <a href="#" title="健货商城" data-toggle="collapse">
+                    <a href="#" title="专业咨询" data-toggle="collapse">
                         <i class="fa fa-fw fa-comment"></i> 专业咨询
                     </a>
                     <ul class=" nav-sub">
@@ -234,6 +234,11 @@
                          <li>
                             <a  href="/expert/suggestion/index" title="建议管理">建议管理</a>
                         </li>
+                        @if($haveClinic)
+                                <li>
+                                    <a  href="/expert/clinic" title="我的门诊">我的门诊</a>
+                                </li>
+                            @endif
                     </ul>
                 </li>
                 
