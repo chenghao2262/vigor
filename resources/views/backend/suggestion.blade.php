@@ -109,7 +109,7 @@
                                     </span>Messages</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);">
+                            <a href="/personal">
                                     <span class="icon"><i class="fa fa-cog"></i>
                                     </span>Settings</a>
                         </li>
