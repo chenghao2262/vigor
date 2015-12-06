@@ -90,6 +90,8 @@ Route::post('/personal', 'PersonalController@postReset');
 Route::get ('/device', 'PersonalController@getDevice');
 Route::post('/device', 'PersonalController@deviceBind');
 
+Route::get ('/shop', 'UserController@shop');
+
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',

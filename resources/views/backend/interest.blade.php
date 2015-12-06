@@ -426,7 +426,7 @@
                 <div class="col-md-3">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h2>我的兴趣组</h3>
+                            <h2>我的兴趣组</h2>
                         </div>
                         <ul class="interest-list">
                             <li class="interest-li">
@@ -754,8 +754,8 @@
 <script src="{{ asset('/assets/js/underscore.min.js') }}"></script>
 
 <!-- Switch -->
-<script src="{{ asset('/assets/plugins/switchery/switchery.min.js) }}"></script>
-<script src="{{ asset('/assets/plugins/dropzone/js/dropzone.min.js) }}"></script>
+<script src="{{ asset('/assets/plugins/switchery/switchery.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/dropzone/js/dropzone.min.js') }}"></script>
 <!--Load these page level functions-->
 
 </body>
